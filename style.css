@@ -195,3 +195,20 @@ footer {
         margin: 5px;
     }
 }
+
+/* BOTON DE NEWEGG */
+
+.enlace-newegg {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    padding: 11px 16px;
+    margin: 8px 4px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.enlace-newegg:hover {
+    background-color: #cc5200;
+}
