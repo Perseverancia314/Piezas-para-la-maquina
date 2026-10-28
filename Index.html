@@ -8,8 +8,9 @@
 
     <title>Piezas para la Computadora</title>
 
-    <!-- Conexion con CSS -->
+    <!-- CONEXION CON CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -17,7 +18,7 @@
     <!-- ENCABEZADO -->
     <header>
         <h1>Piezas para la Computadora</h1>
-        <p>Catálogo de componentes de computadoras</p>
+        <p>Tu catálogo de componentes para PC</p>
     </header>
 
     <!-- MENU DE NAVEGACION -->
@@ -30,20 +31,25 @@
     <!-- CONTENIDO PRINCIPAL -->
     <main class="contenedor" id="inicio">
 
+        <!-- SECCION DE PRODUCTOS -->
         <section id="productos">
 
             <h2>Catálogo de productos</h2>
+            <p>
+                Encuentra las mejores piezas para
+                construir o mejorar tu computadora.
+            </p>
 
             <!-- BUSCADOR -->
             <input
                 type="text"
                 class="buscador"
                 id="buscar"
-                placeholder="Buscar piezas de computadora..."
+                placeholder="Buscar componentes..."
                 oninput="mostrarProductos()"
             >
 
-            <!-- FILTROS -->
+            <!-- FILTROS POR CATEGORIA -->
             <div class="filtros">
 
                 <button onclick="filtrar('Todos')">
@@ -72,10 +78,8 @@
 
             </div>
 
-            <!-- CATALOGO -->
-            <div class="catalogo" id="catalogo">
-                <!-- Los productos aparecen mediante JS -->
-            </div>
+            <!-- PRODUCTOS GENERADOS POR JAVASCRIPT -->
+            <div class="catalogo" id="catalogo"></div>
 
         </section>
 
@@ -84,12 +88,19 @@
 
             <h2>Carrito de compras</h2>
 
+            <p>
+                Revisa los productos que has seleccionado.
+            </p>
+
+            <!-- LISTA DEL CARRITO -->
             <ul id="listaCarrito"></ul>
 
+            <!-- TOTAL -->
             <h3>
                 Total: $<span id="total">0.00</span>
             </h3>
 
+            <!-- VACIAR CARRITO -->
             <button onclick="vaciarCarrito()">
                 Vaciar carrito
             </button>
@@ -100,14 +111,16 @@
 
     <!-- PIE DE PAGINA -->
     <footer>
+
         <p>
             &copy; 2026 Piezas para la Computadora
         </p>
 
-        <p>Catálogo de demostración</p>
+        <p>Catálogo de componentes para PC</p>
+
     </footer>
 
-    <!-- Conexion con JavaScript -->
+    <!-- CONEXION CON JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
