@@ -1,55 +1,97 @@
 
-// =====================================
+// ==========================================
 // PIEZAS PARA LA COMPUTADORA
-// CATALOGO DE EQUIPOS COMPLETOS
-// =====================================
+// CATALOGO DE EQUIPOS COMPLETOS - NEWEGG
+// ==========================================
 
-// Precios ilustrativos.
-// Las imagenes son URLs externas de Newegg.
-// Algunos enlaces necesitan verificacion.
+// Precios ilustrativos, no actualizados en vivo.
+// Las imagenes se cargan directamente desde Newegg.
 
 const productos = [
+    // ===== DESKTOP =====
     {
         id: 1,
-        nombre: "ABS Flux II Aqua Gaming Desktop",
+        nombre: "ABS Cyclone Aqua Gaming PC",
         categoria: "Desktop",
-        precio: 1149.99,
-        descripcion: "Computadora gaming preensamblada con procesador Intel, grafica RTX, memoria RAM y SSD.",
-        imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-976-10.jpg",
-        enlace: "https://www.newegg.com/p/N82E16883360976"
+        precio: 1049.99,
+        descripcion: "Intel Core i5-14400F, RTX 5060, 32GB RAM, SSD 1TB, Windows 11.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-936-17.jpg",
+        enlace: "https://www.newegg.com/p/N82E16883360936"
     },
     {
         id: 2,
-        nombre: "MSI Vector 16 HX AI",
-        categoria: "Laptop",
-        precio: 2299.00,
-        descripcion: "Laptop gaming de alto rendimiento para videojuegos y multitarea.",
-        imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-737-01.jpg",
-        enlace: "https://www.newegg.com/p/N82E16834156737"
+        nombre: "ABS Cyclone Aqua Ultra Gaming",
+        categoria: "Desktop",
+        precio: 1499.99,
+        descripcion: "Intel Core Ultra 5 250KF Plus, RTX 5060, 32GB DDR5, SSD 1TB.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-968-22.jpg",
+        enlace: "https://www.newegg.com/p/N82E16883360968"
     },
+
+    // ===== LAPTOP =====
     {
         id: 3,
-        nombre: "Samsung Galaxy A17 5G",
-        categoria: "Móvil",
-        precio: 279.99,
-        descripcion: "Smartphone con conectividad 5G y pantalla de gran tamaño.",
-        imagen: "https://c1.neweggimages.com/productimage/nb640/23B-0002-01YD6-01.jpg",
-        enlace: "https://www.newegg.com/p/23B-0002-01YD6"
+        nombre: "MSI Gaming Laptop RTX 4060",
+        categoria: "Laptop",
+        precio: 1499.00,
+        descripcion: "Intel Core i7-13620H, RTX 4060, 16GB DDR5, SSD 1TB, pantalla 15.6 pulgadas.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-427-14.jpg",
+        enlace: "https://www.newegg.com/p/N82E16834156427"
     },
     {
         id: 4,
+        nombre: "HP ProBook 640 G4",
+        categoria: "Laptop",
+        precio: 649.99,
+        descripcion: "Laptop reacondicionada de 14 pulgadas, Intel Core i5, 8GB RAM y SSD 256GB.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/A6ZP_1_201912041570217384.jpg",
+        enlace: "https://www.newegg.com/p/2WC-0001-00YP4"
+    },
+
+    // ===== MOVIL =====
+    {
+        id: 5,
+        nombre: "Samsung Galaxy A17 4G",
+        categoria: "Móvil",
+        precio: 194.99,
+        descripcion: "Smartphone desbloqueado, pantalla 6.7 pulgadas, 4GB RAM y 128GB.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/ABPXS2512020MIWLS9A.jpg",
+        enlace: "https://www.newegg.com/p/23B-0002-01ZV3"
+    },
+    {
+        id: 6,
+        nombre: "Samsung Galaxy S25 256GB",
+        categoria: "Móvil",
+        precio: 938.25,
+        descripcion: "Samsung Galaxy S25, pantalla AMOLED 6.2 pulgadas, 12GB RAM y 256GB.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/A24GD2502110EEKAR23.jpg",
+        enlace: "https://www.newegg.com/p/0V4-000B-01S27"
+    },
+
+    // ===== WORKSTATION =====
+    {
+        id: 7,
         nombre: "Lenovo ThinkStation P3 Tower",
         categoria: "Workstation",
-        precio: null,
-        descripcion: "Estacion de trabajo para aplicaciones profesionales, ingenieria y diseño.",
-        imagen: null,
-        enlace: "https://www.newegg.com/p/pl?d=Lenovo+ThinkStation+P3"
+        precio: 839.00,
+        descripcion: "Workstation profesional con Intel Core Ultra 5, 16GB DDR5, SSD 512GB y Windows 11 Pro.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/B0GJD2603311D1VC058.jpg",
+        enlace: "https://www.newegg.com/p/1VK-01WM-00046"
+    },
+    {
+        id: 8,
+        nombre: "Lenovo ThinkStation P3 i3",
+        categoria: "Workstation",
+        precio: 1776.93,
+        descripcion: "Estacion de trabajo reacondicionada con Intel Core i3-13100, 16GB RAM y SSD 512GB.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/APGHD2407020Q2US525.jpg",
+        enlace: "https://www.newegg.com/p/1VK-0003-1RWE6"
     }
 ];
 
-// =====================================
-// VARIABLES GLOBALES
-// =====================================
+// ==========================================
+// VARIABLES
+// ==========================================
 
 let categoriaActual = "Todos";
 let carrito = [];
@@ -60,9 +102,9 @@ const buscar = document.getElementById("buscar");
 const ordenar = document.getElementById("ordenar");
 const contador = document.getElementById("resultCount");
 
-// =====================================
-// FORMATO DE PRECIO
-// =====================================
+// ==========================================
+// FORMATO DE DINERO
+// ==========================================
 
 function dinero(valor) {
     return new Intl.NumberFormat("en-US", {
@@ -71,18 +113,22 @@ function dinero(valor) {
     }).format(valor);
 }
 
-// =====================================
-// VERIFICAR IMAGEN EXTERNA
-// =====================================
+// ==========================================
+// VERIFICAR IMAGEN
+// ==========================================
+
+const imagenesValidas = new Map();
 
 function verificarImagen(url) {
-    return new Promise(resolve => {
+    if (!url || !url.startsWith("https://")) {
+        return Promise.resolve(false);
+    }
 
-        if (!url || !url.startsWith("https://")) {
-            resolve(false);
-            return;
-        }
+    if (imagenesValidas.has(url)) {
+        return imagenesValidas.get(url);
+    }
 
+    const comprobacion = new Promise(resolve => {
         const imagen = new Image();
 
         imagen.onload = () => {
@@ -96,54 +142,41 @@ function verificarImagen(url) {
             resolve(false);
         };
 
-        // La imagen no se descarga al proyecto.
-        // El navegador la solicita externamente.
         imagen.src = url;
     });
+
+    imagenesValidas.set(url, comprobacion);
+    return comprobacion;
 }
 
-// =====================================
-// MOSTRAR CATALOGO
-// =====================================
+// ==========================================
+// MOSTRAR PRODUCTOS
+// ==========================================
 
 async function mostrarProductos() {
-
-    // Identificador para evitar resultados viejos
-    const renderId = ++renderActual;
-
+    const solicitud = ++renderActual;
     const texto = buscar.value.toLowerCase().trim();
 
     let visibles = productos.filter(producto => {
-
         const categoriaCorrecta =
             categoriaActual === "Todos" ||
             producto.categoria === categoriaActual;
 
-        const textoCompleto = (
+        const coincideBusqueda = (
             producto.nombre + " " +
-            producto.categoria + " " +
-            producto.descripcion
-        ).toLowerCase();
+            producto.descripcion + " " +
+            producto.categoria
+        ).toLowerCase().includes(texto);
 
-        const busquedaCorrecta =
-            textoCompleto.includes(texto);
-
-        return categoriaCorrecta && busquedaCorrecta;
+        return categoriaCorrecta && coincideBusqueda;
     });
 
-    // ORDENAMIENTO
     if (ordenar.value === "asc") {
-        visibles.sort((a, b) =>
-            (a.precio ?? Infinity) -
-            (b.precio ?? Infinity)
-        );
+        visibles.sort((a, b) => a.precio - b.precio);
     }
 
     if (ordenar.value === "desc") {
-        visibles.sort((a, b) =>
-            (b.precio ?? -Infinity) -
-            (a.precio ?? -Infinity)
-        );
+        visibles.sort((a, b) => b.precio - a.precio);
     }
 
     if (ordenar.value === "name") {
@@ -153,74 +186,44 @@ async function mostrarProductos() {
     }
 
     catalogo.innerHTML = "";
-
     contador.textContent = "Cargando equipos...";
 
-    // Comprobar todas las imagenes en paralelo
+    // Esperar a que las imagenes esten disponibles.
     const resultados = await Promise.all(
-        visibles.map(async producto => {
-            const imagenValida = await verificarImagen(
-                producto.imagen
-            );
-
-            return {
-                producto,
-                imagenValida
-            };
-        })
+        visibles.map(async producto => ({
+            producto,
+            valida: await verificarImagen(producto.imagen)
+        }))
     );
 
-    // Evitar que una busqueda anterior
-    // reemplace los resultados actuales
-    if (renderId !== renderActual) {
-        return;
-    }
+    // Evitar resultados de busquedas anteriores.
+    if (solicitud !== renderActual) return;
 
     const disponibles = resultados
-        .filter(item => item.imagenValida)
-        .map(item => item.producto);
-
-    contador.textContent =
-        disponibles.length +
-        " equipos con imagen disponible";
+        .filter(resultado => resultado.valida)
+        .map(resultado => resultado.producto);
 
     if (disponibles.length === 0) {
         catalogo.innerHTML = `
             <div class="empty-results">
                 No hay equipos con imagen disponible
-                en esta categoría actualmente.
+                para esta seleccion.
             </div>
         `;
-        return;
+    } else {
+        disponibles.forEach(crearTarjeta);
     }
 
-    disponibles.forEach(producto => {
-        crearTarjeta(producto);
-    });
+    actualizarContador();
 }
 
-// =====================================
-// CREAR TARJETA DE PRODUCTO
-// =====================================
+// ==========================================
+// CREAR TARJETA
+// ==========================================
 
 function crearTarjeta(producto) {
-
     const tarjeta = document.createElement("article");
     tarjeta.className = "producto";
-
-    const precioHTML = producto.precio !== null
-        ? `
-            <p class="precio">
-                ${dinero(producto.precio)}
-                <small>Precio ilustrativo</small>
-            </p>
-          `
-        : `
-            <p class="precio">
-                Consultar
-                <small>Precio en Newegg</small>
-            </p>
-          `;
 
     tarjeta.innerHTML = `
         <span class="product-category">
@@ -231,7 +234,6 @@ function crearTarjeta(producto) {
             <img
                 src="${producto.imagen}"
                 alt="${producto.nombre}"
-                loading="lazy"
             >
         </div>
 
@@ -242,11 +244,14 @@ function crearTarjeta(producto) {
         </p>
 
         <div class="product-bottom">
-            ${precioHTML}
+            <p class="precio">
+                ${dinero(producto.precio)}
+                <small>Precio ilustrativo</small>
+            </p>
 
             <div class="product-actions">
                 <button class="add-btn">
-                    + Agregar
+                    + Agregar al carrito
                 </button>
 
                 <a
@@ -254,131 +259,93 @@ function crearTarjeta(producto) {
                     class="external-btn"
                     target="_blank"
                     rel="noopener noreferrer"
-                    title="Ver en Newegg"
-                    aria-label="Ver producto en Newegg"
-                >
+                    aria-label="Ver en Newegg"
+                    title="Ver en Newegg">
                     ↗
                 </a>
             </div>
         </div>
     `;
 
-    // Si falla despues de la comprobacion,
-    // se elimina la tarjeta completa.
     const imagen = tarjeta.querySelector("img");
 
+    // Si falla la imagen, eliminar toda la tarjeta.
     imagen.addEventListener("error", () => {
         tarjeta.remove();
-        actualizarContadorVisible();
+        actualizarContador();
     });
 
-    const boton = tarjeta.querySelector(".add-btn");
-
-    boton.addEventListener("click", () => {
-        agregarCarrito(producto.id);
-    });
+    tarjeta.querySelector(".add-btn")
+        .addEventListener("click", () => {
+            agregarCarrito(producto.id);
+        });
 
     catalogo.appendChild(tarjeta);
 }
 
-// =====================================
-// CONTADOR DE PRODUCTOS
-// =====================================
+// ==========================================
+// CONTADOR
+// ==========================================
 
-function actualizarContadorVisible() {
+function actualizarContador() {
     const cantidad = catalogo.querySelectorAll(
         ".producto"
     ).length;
 
     contador.textContent =
-        cantidad + " equipos con imagen disponible";
+        cantidad + " equipos disponibles en el catálogo";
 }
 
-// =====================================
-// FILTRAR CATEGORIAS
-// =====================================
+// ==========================================
+// FILTROS
+// ==========================================
 
 function filtrar(categoria) {
-
     categoriaActual = categoria;
 
     document.querySelectorAll(".filters button")
         .forEach(boton => {
-
-            const activo =
-                boton.dataset.category === categoria;
-
-            boton.classList.toggle("active", activo);
+            boton.classList.toggle(
+                "active",
+                boton.dataset.category === categoria
+            );
         });
 
     mostrarProductos();
 }
 
-// =====================================
-// AGREGAR AL CARRITO
-// =====================================
+// ==========================================
+// CARRITO
+// ==========================================
 
 function agregarCarrito(id) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) return;
 
-    const producto = productos.find(
-        p => p.id === id
-    );
-
-    if (!producto || producto.precio === null) {
-        return;
-    }
-
-    const existente = carrito.find(
-        item => item.id === id
-    );
+    const existente = carrito.find(p => p.id === id);
 
     if (existente) {
         existente.cantidad++;
     } else {
-        carrito.push({
-            id: id,
-            cantidad: 1
-        });
+        carrito.push({ id, cantidad: 1 });
     }
 
     actualizarCarrito();
 }
 
-// =====================================
-// ELIMINAR PRODUCTO
-// =====================================
-
 function eliminarProducto(id) {
-
-    carrito = carrito.filter(
-        item => item.id !== id
-    );
-
+    carrito = carrito.filter(p => p.id !== id);
     actualizarCarrito();
 }
-
-// =====================================
-// VACIAR CARRITO
-// =====================================
 
 function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
 
-// =====================================
-// ACTUALIZAR CARRITO
-// =====================================
-
 function actualizarCarrito() {
-
-    const lista = document.getElementById(
-        "listaCarrito"
-    );
-
-    const totalElemento = document.getElementById(
-        "total"
-    );
+    const lista = document.getElementById("listaCarrito");
+    const totalElemento = document.getElementById("total");
 
     lista.innerHTML = "";
 
@@ -389,24 +356,19 @@ function actualizarCarrito() {
         lista.innerHTML = `
             <div class="cart-empty">
                 🛒 Tu carrito está vacío.
-                Agrega un equipo para comenzar.
+                Selecciona un equipo para comenzar.
             </div>
         `;
     }
 
     carrito.forEach(item => {
-
         const producto = productos.find(
             p => p.id === item.id
         );
 
-        if (!producto || producto.precio === null) {
-            return;
-        }
+        if (!producto) return;
 
-        const subtotal =
-            producto.precio * item.cantidad;
-
+        const subtotal = producto.precio * item.cantidad;
         total += subtotal;
         cantidad += item.cantidad;
 
@@ -416,9 +378,8 @@ function actualizarCarrito() {
         fila.innerHTML = `
             <div>
                 <strong>${producto.nombre}</strong>
-
                 <small>
-                    ${item.cantidad} ×
+                    ${item.cantidad} x
                     ${dinero(producto.precio)}
                 </small>
             </div>
@@ -446,20 +407,15 @@ function actualizarCarrito() {
         cantidad;
 }
 
-// =====================================
-// EVENTOS
-// =====================================
+// ==========================================
+// EVENTOS DEL CATALOGO
+// ==========================================
 
-// BUSCAR
 buscar.addEventListener("input", mostrarProductos);
-
-// ORDENAR
 ordenar.addEventListener("change", mostrarProductos);
 
-// FILTRAR
 document.getElementById("filtros")
     .addEventListener("click", evento => {
-
         const boton = evento.target.closest(
             "[data-category]"
         );
@@ -469,20 +425,18 @@ document.getElementById("filtros")
         }
     });
 
-// VACIAR CARRITO
 document.getElementById("vaciarCarrito")
     .addEventListener("click", vaciarCarrito);
 
-// =====================================
-// PC ANIMADA INTERACTIVA
-// =====================================
+// ==========================================
+// ANIMACION DE LA PC
+// ==========================================
 
 const pcInteractive = document.getElementById(
     "pcInteractive"
 );
 
 function togglePcAnimation() {
-
     const pausada = pcInteractive.classList.toggle(
         "paused"
     );
@@ -499,39 +453,27 @@ function togglePcAnimation() {
             : "Pausar animación"
     );
 
-    const estado = pcInteractive.querySelector(
-        ".state-text"
-    );
-
-    estado.textContent = pausada
-        ? "ENSAMBLAJE EN PAUSA"
-        : "ENSAMBLANDO COMPONENTES";
+    pcInteractive.querySelector(".state-text")
+        .textContent = pausada
+            ? "ENSAMBLAJE EN PAUSA"
+            : "ENSAMBLANDO COMPONENTES";
 }
 
-// CLIC SOBRE LA PC
 pcInteractive.addEventListener(
     "click",
     togglePcAnimation
 );
 
-// TECLADO
-pcInteractive.addEventListener(
-    "keydown",
-    evento => {
-
-        if (
-            evento.key === "Enter" ||
-            evento.key === " "
-        ) {
-            evento.preventDefault();
-            togglePcAnimation();
-        }
+pcInteractive.addEventListener("keydown", evento => {
+    if (evento.key === "Enter" || evento.key === " ") {
+        evento.preventDefault();
+        togglePcAnimation();
     }
-);
+});
 
-// =====================================
-// INICIAR PAGINA
-// =====================================
+// ==========================================
+// INICIAR
+// ==========================================
 
 mostrarProductos();
 actualizarCarrito();
