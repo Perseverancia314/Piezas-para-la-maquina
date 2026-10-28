@@ -3,288 +3,265 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piezas para la Computadora</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-<header>
+<header class="glass-header" id="inicio">
     <div class="container navbar">
-        <a href="#inicio" class="logo">
-            PIEZAS<span>PC</span>
-        </a>
-
+        <a class="logo" href="#inicio">PIEZAS<span>PC</span></a>
         <nav>
             <a href="#inicio">Inicio</a>
-            <a href="#productos">Productos</a>
+            <a href="#productos">Componentes</a>
             <a href="#carrito">Carrito</a>
         </nav>
-
-        <a class="cart-link" href="#carrito">
+        <a class="cart-badge" href="#carrito">
             🛒 <span id="cartCount">0</span>
         </a>
     </div>
 </header>
 
 <main>
+    <!-- PORTADA DEPORTIVA -->
+    <section class="hero">
+        <div class="speed-line"></div>
 
-    <!-- PRESENTACION -->
-    <section class="hero" id="inicio">
         <div class="container hero-grid">
-
             <div class="hero-text">
-                <span class="etiqueta">
-                    HARDWARE • GAMING • TECNOLOGÍA
-                </span>
+                <div class="eyebrow">
+                    <span class="live-dot"></span>
+                    PERFORMANCE SERIES / PC BUILD
+                </div>
 
                 <h1>
-                    ARMA TU PC.
-                    <span>HAZLA TUYA.</span>
+                    POTENCIA.<br>
+                    PRECISIÓN.<br>
+                    <span>RENDIMIENTO.</span>
                 </h1>
 
                 <p>
-                    Descubre los mejores componentes
-                    para construir tu computadora.
-                    Explora procesadores, tarjetas
-                    gráficas, memorias y mucho más.
+                    Construye la computadora de tus sueños.
+                    Descubre componentes de alto rendimiento,
+                    compara alternativas y diseña una PC
+                    a tu medida.
                 </p>
 
-                <div class="hero-buttons">
-                    <a class="btn principal"
-                       href="#productos">
-                        Explorar piezas ↗
+                <div class="hero-actions">
+                    <a href="#productos" class="btn btn-orange">
+                        EXPLORAR PIEZAS ↗
                     </a>
-
-                    <a class="btn secundario"
-                       href="#carrito">
-                        Mi carrito
+                    <a href="#carrito" class="btn btn-glass">
+                        MI CARRITO
                     </a>
                 </div>
 
-                <div class="estadisticas">
+                <div class="stats">
                     <div>
                         <strong>12+</strong>
-                        <small>Componentes</small>
+                        <small>COMPONENTES</small>
                     </div>
-
                     <div>
                         <strong>6</strong>
-                        <small>Categorías</small>
+                        <small>CATEGORÍAS</small>
                     </div>
-
                     <div>
                         <strong>100%</strong>
-                        <small>Tu estilo</small>
+                        <small>TU ESTILO</small>
                     </div>
                 </div>
             </div>
 
-            <!-- COMPUTADORA ANIMADA -->
-            <div class="pc-area">
+            <!-- COMPUTADORA INTERACTIVA -->
+            <div class="pc-visual"
+                 id="pcInteractive"
+                 role="button"
+                 tabindex="0"
+                 aria-label="Pausar animación"
+                 aria-pressed="false">
 
-                <div class="pc-animation" id="pcAnimation">
+                <div class="visual-glow"></div>
+                <div class="orbit orbit-1"></div>
+                <div class="orbit orbit-2"></div>
+
+                <div class="pc-stage">
+                    <div class="pc-shadow"></div>
 
                     <div class="pc-case">
-                        <div class="pc-glass">
+                        <div class="case-edge"></div>
 
-                            <div class="motherboard"></div>
+                        <div class="case-window">
+                            <div class="motherboard part">
+                                <div class="board-lines"></div>
+                                <div class="cpu-socket"></div>
+                                <div class="ram-slot"></div>
+                                <div class="gpu-slot"></div>
+                            </div>
 
                             <div class="cpu part">
-                                CPU
+                                <span>CPU</span>
                             </div>
 
                             <div class="ram part">
-                                <i></i>
-                                <i></i>
+                                <i></i><i></i>
+                                <i></i><i></i>
                             </div>
 
                             <div class="gpu part">
-                                <span>GEFORCE RTX</span>
-                                <div class="gpu-fans">
-                                    <i></i>
-                                    <i></i>
-                                </div>
+                                <span class="gpu-name">RTX</span>
+                                <div class="gpu-fan"></div>
+                                <div class="gpu-fan"></div>
                             </div>
 
                             <div class="cooler part">
                                 <div class="cooler-fan"></div>
                             </div>
 
-                            <div class="case-fan fan1"></div>
-                            <div class="case-fan fan2"></div>
-
+                            <div class="case-fan fan-1"></div>
+                            <div class="case-fan fan-2"></div>
                         </div>
 
-                        <div class="pc-front">
-                            <div class="power-light"></div>
-                        </div>
+                        <div class="case-feet"></div>
                     </div>
 
-                    <div class="pc-stand"></div>
+                    <div class="floating-tag tag-cpu">CPU ↘</div>
+                    <div class="floating-tag tag-gpu">GPU ↖</div>
+                    <div class="floating-tag tag-ram">RAM ↙</div>
+                </div>
 
-                    <span class="floating-label label-cpu">
-                        CPU
-                    </span>
-
-                    <span class="floating-label label-gpu">
-                        GPU
-                    </span>
-
-                    <span class="floating-label label-ram">
-                        RAM
+                <div class="build-status">
+                    <span class="live-dot"></span>
+                    <span class="state-text">
+                        ENSAMBLANDO COMPONENTES
                     </span>
                 </div>
 
-                <div class="animation-status">
-                    <span class="status-light"></span>
-                    ENSAMBLANDO COMPONENTES
-                </div>
-
-                <button id="animationToggle"
-                        class="pause-btn">
-                    ⏸ Pausar animación
-                </button>
-
+                <p class="pc-hint">
+                    ◉ HAZ CLIC EN LA PC PARA PAUSAR O REANUDAR
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- BENEFICIOS -->
-    <section class="beneficios">
-        <div class="container beneficios-grid">
-
-            <div>⚡ Explora componentes</div>
-            <div>🔍 Compara alternativas</div>
-            <div>🛒 Crea tu lista de piezas</div>
-
+    <!-- BARRA DE BENEFICIOS -->
+    <section class="features">
+        <div class="container features-grid">
+            <div class="feature glass">
+                <span>⚡</span>
+                <div>
+                    <strong>Alto rendimiento</strong>
+                    <small>Componentes para tu PC</small>
+                </div>
+            </div>
+            <div class="feature glass">
+                <span>◈</span>
+                <div>
+                    <strong>Explora categorías</strong>
+                    <small>Encuentra tus piezas</small>
+                </div>
+            </div>
+            <div class="feature glass">
+                <span>↗</span>
+                <div>
+                    <strong>Newegg</strong>
+                    <small>Visita el vendedor</small>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- CATALOGO -->
-    <section id="productos" class="products">
+    <!-- PRODUCTOS -->
+    <section class="products-section" id="productos">
         <div class="container">
 
-            <span class="etiqueta">NUESTRO CATÁLOGO</span>
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">ELIGE TU HARDWARE</span>
+                    <h2>CATÁLOGO DE <span>PIEZAS</span></h2>
+                    <p>Selecciona componentes para tu próxima PC.</p>
+                </div>
+                <span id="resultCount"></span>
+            </div>
 
-            <h2>
-                Explora <span>componentes</span>
-            </h2>
-
-            <p class="subtitulo">
-                Encuentra las piezas para tu próxima PC.
-            </p>
-
-            <div class="toolbar">
-
+            <div class="toolbar glass">
                 <input
                     id="buscar"
                     type="search"
-                    placeholder="Buscar componentes..."
+                    placeholder="⌕ Buscar componentes..."
                     aria-label="Buscar componentes"
                 >
 
-                <select id="ordenar"
-                        aria-label="Ordenar productos">
-                    <option value="default">
-                        Destacados
-                    </option>
-                    <option value="asc">
-                        Menor precio
-                    </option>
-                    <option value="desc">
-                        Mayor precio
-                    </option>
-                    <option value="name">
-                        Nombre A-Z
-                    </option>
+                <select id="ordenar" aria-label="Ordenar productos">
+                    <option value="default">Destacados</option>
+                    <option value="asc">Menor precio</option>
+                    <option value="desc">Mayor precio</option>
+                    <option value="name">Nombre A-Z</option>
                 </select>
-
             </div>
 
-            <div id="filtros" class="filtros">
-                <button class="active"
-                        data-category="Todos">
-                    Todos
-                </button>
-
-                <button data-category="Procesadores">
-                    Procesadores
-                </button>
-
-                <button data-category="Tarjetas gráficas">
-                    Tarjetas gráficas
-                </button>
-
-                <button data-category="Memoria RAM">
-                    Memoria RAM
-                </button>
-
-                <button data-category="Almacenamiento">
-                    Almacenamiento
-                </button>
-
-                <button data-category="Tarjetas madre">
-                    Tarjetas madre
-                </button>
-
-                <button data-category="Otros">
-                    Otros
-                </button>
+            <div id="filtros" class="filters">
+                <button class="active" data-category="Todos">Todos</button>
+                <button data-category="Procesadores">Procesadores</button>
+                <button data-category="Tarjetas gráficas">Tarjetas gráficas</button>
+                <button data-category="Memoria RAM">Memoria RAM</button>
+                <button data-category="Almacenamiento">Almacenamiento</button>
+                <button data-category="Tarjetas madre">Tarjetas madre</button>
+                <button data-category="Otros">Otros</button>
             </div>
-
-            <p id="resultCount"></p>
 
             <div id="catalogo" class="catalogo"></div>
 
-            <p class="aviso">
-                Los precios son ilustrativos.
-                Confirma el precio y disponibilidad
-                directamente en Newegg.
+            <p class="notice">
+                Los precios son ilustrativos. Verifica los precios
+                y la disponibilidad en Newegg.
             </p>
-
         </div>
     </section>
 
     <!-- CARRITO -->
-    <section id="carrito" class="cart-section">
+    <section class="cart-section" id="carrito">
         <div class="container">
-
-            <h2>Tu <span>carrito</span></h2>
-
-            <div class="cart-panel">
-
-                <div id="listaCarrito"></div>
-
-                <div class="cart-total">
-                    <p>Total estimado</p>
-
-                    <h3 id="total">$0.00</h3>
-
-                    <button id="vaciarCarrito">
+            <div class="glass cart-panel">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">TU SELECCIÓN</span>
+                        <h2>MI <span>CARRITO</span></h2>
+                    </div>
+                    <button id="vaciarCarrito" class="clear-btn">
                         Vaciar carrito
                     </button>
+                </div>
 
-                    <a href="https://www.newegg.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="btn principal">
-                        Visitar Newegg ↗
-                    </a>
+                <div class="cart-grid">
+                    <div id="listaCarrito" class="cart-items"></div>
+
+                    <div class="cart-summary glass">
+                        <small>TOTAL ESTIMADO</small>
+                        <h3 id="total">$0.00</h3>
+                        <p>
+                            Este catálogo es una demostración.
+                            No procesa pagos.
+                        </p>
+                        <a href="https://www.newegg.com/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="btn btn-orange">
+                            VISITAR NEWEGG ↗
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
-
 </main>
 
 <footer>
     <div class="container">
+        <strong>PIEZAS<span>PC</span></strong>
         <p>© 2026 Piezas para la Computadora</p>
-        <p>Construye sin límites.</p>
+        <small>CONSTRUYE SIN LÍMITES.</small>
     </div>
 </footer>
 
