@@ -1,8 +1,6 @@
 
-// PRODUCTOS DEL CATALOGO
-
-// Los precios son ejemplos.
-// No se actualizan automaticamente desde Newegg.
+// PIEZAS PARA LA COMPUTADORA
+// Los precios son ejemplos, no precios en vivo.
 
 const productos = [
     {
@@ -10,7 +8,7 @@ const productos = [
         nombre: "Intel Core Ultra 7 265K",
         categoria: "Procesadores",
         precio: 359.99,
-        descripcion: "Procesador Intel para escritorio.",
+        descripcion: "Procesador Intel de alto rendimiento.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/19-118-506-06.jpg",
         enlace: "https://www.newegg.com/p/N82E16819118506"
     },
@@ -28,7 +26,7 @@ const productos = [
         nombre: "NVIDIA GeForce RTX 5070",
         categoria: "Tarjetas gráficas",
         precio: 549.99,
-        descripcion: "Tarjeta gráfica para videojuegos.",
+        descripcion: "Tarjeta gráfica dedicada para gaming.",
         imagen: null,
         enlace: "https://www.newegg.com/p/pl?d=RTX+5070"
     },
@@ -37,7 +35,7 @@ const productos = [
         nombre: "AMD Radeon RX",
         categoria: "Tarjetas gráficas",
         precio: 399.99,
-        descripcion: "Gráficos dedicados para PC.",
+        descripcion: "Gráficos para computadoras de escritorio.",
         imagen: null,
         enlace: "https://www.newegg.com/p/pl?d=AMD+Radeon+RX"
     },
@@ -46,7 +44,7 @@ const productos = [
         nombre: "Corsair Vengeance DDR5 32GB",
         categoria: "Memoria RAM",
         precio: 519.99,
-        descripcion: "Memoria DDR5 para computadoras.",
+        descripcion: "Memoria DDR5 de alto rendimiento.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/20-236-828-V01.jpg",
         enlace: "https://www.newegg.com/p/N82E16820982007"
     },
@@ -55,7 +53,7 @@ const productos = [
         nombre: "Kingston RAM 16GB",
         categoria: "Memoria RAM",
         precio: 59.99,
-        descripcion: "Memoria para actualizar tu PC.",
+        descripcion: "Memoria para actualizar tu equipo.",
         imagen: null,
         enlace: "https://www.newegg.com/p/pl?d=Kingston+16GB+RAM"
     },
@@ -64,7 +62,7 @@ const productos = [
         nombre: "Samsung 990 PRO SSD 2TB",
         categoria: "Almacenamiento",
         precio: 409.99,
-        descripcion: "Unidad SSD M.2 NVMe.",
+        descripcion: "Unidad SSD NVMe para alto rendimiento.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/20-147-861-01.jpg",
         enlace: "https://www.newegg.com/p/N82E16820147861"
     },
@@ -73,7 +71,7 @@ const productos = [
         nombre: "WD Black SSD 1TB",
         categoria: "Almacenamiento",
         precio: 79.99,
-        descripcion: "Almacenamiento SSD para juegos.",
+        descripcion: "Almacenamiento SSD para videojuegos.",
         imagen: null,
         enlace: "https://www.newegg.com/p/pl?d=WD+Black+SSD+1TB"
     },
@@ -82,7 +80,7 @@ const productos = [
         nombre: "MSI MAG Motherboard",
         categoria: "Tarjetas madre",
         precio: 189.99,
-        descripcion: "Placa base para ensamblar tu PC.",
+        descripcion: "Tarjeta madre para construir tu PC.",
         imagen: null,
         enlace: "https://www.newegg.com/p/pl?d=MSI+MAG+motherboard"
     },
@@ -91,7 +89,7 @@ const productos = [
         nombre: "ASUS TUF Motherboard",
         categoria: "Tarjetas madre",
         precio: 199.99,
-        descripcion: "Tarjeta madre con expansión.",
+        descripcion: "Placa base con opciones de expansión.",
         imagen: null,
         enlace: "https://www.newegg.com/p/pl?d=ASUS+TUF+motherboard"
     },
@@ -116,7 +114,6 @@ const productos = [
 ];
 
 // VARIABLES
-
 let categoriaActual = "Todos";
 let carrito = [];
 
@@ -124,8 +121,7 @@ const catalogo = document.getElementById("catalogo");
 const buscar = document.getElementById("buscar");
 const ordenar = document.getElementById("ordenar");
 
-// FORMATO DE DINERO
-
+// FORMATO DE PRECIOS
 function dinero(valor) {
     return new Intl.NumberFormat("en-US", {
         style: "currency",
@@ -134,24 +130,21 @@ function dinero(valor) {
 }
 
 // MOSTRAR PRODUCTOS
-
 function mostrarProductos() {
-
     const texto = buscar.value.toLowerCase().trim();
 
-    let visibles = productos.filter(producto => {
-
-        const categoriaCorrecta =
+    const visibles = productos.filter(p => {
+        const coincideCategoria =
             categoriaActual === "Todos" ||
-            producto.categoria === categoriaActual;
+            p.categoria === categoriaActual;
 
-        const nombreCorrecto =
-            producto.nombre.toLowerCase().includes(texto);
+        const coincideBusqueda =
+            (p.nombre + " " + p.categoria)
+                .toLowerCase()
+                .includes(texto);
 
-        return categoriaCorrecta && nombreCorrecto;
+        return coincideCategoria && coincideBusqueda;
     });
-
-    // ORDENAR PRODUCTOS
 
     if (ordenar.value === "asc") {
         visibles.sort((a, b) => a.precio - b.precio);
@@ -163,59 +156,58 @@ function mostrarProductos() {
 
     if (ordenar.value === "name") {
         visibles.sort((a, b) =>
-            a.nombre.localeCompare(b.nombre)
+            a.nombre.localeCompare(b.nombre, "es")
         );
     }
 
     document.getElementById("resultCount").textContent =
-        visibles.length + " componentes encontrados";
+        `${visibles.length} componentes encontrados`;
 
     catalogo.innerHTML = "";
 
     if (visibles.length === 0) {
         catalogo.innerHTML = `
             <div class="empty-results">
-                No encontramos productos.
+                No encontramos componentes.
+                Intenta otra búsqueda.
             </div>
         `;
         return;
     }
 
-    visibles.forEach(producto => {
-
+    visibles.forEach(p => {
         const tarjeta = document.createElement("article");
         tarjeta.className = "producto";
 
-        const imagenHTML = producto.imagen
-            ? `<img src="${producto.imagen}"
-                    alt="${producto.nombre}"
+        const imagenHTML = p.imagen
+            ? `<img src="${p.imagen}"
+                    alt="${p.nombre}"
                     loading="lazy">`
             : "";
 
         tarjeta.innerHTML = `
             <span class="product-category">
-                ${producto.categoria}
+                ${p.categoria}
             </span>
 
             <div class="product-image">
                 ${imagenHTML}
-
                 <div class="product-placeholder"
-                     ${producto.imagen ? "hidden" : ""}>
-                    <span>▣</span>
+                     ${p.imagen ? "hidden" : ""}>
+                    <span>◈</span>
                     Imagen no disponible
                 </div>
             </div>
 
-            <h3>${producto.nombre}</h3>
+            <h3>${p.nombre}</h3>
 
             <p class="product-description">
-                ${producto.descripcion}
+                ${p.descripcion}
             </p>
 
             <div class="product-bottom">
                 <p class="precio">
-                    ${dinero(producto.precio)}
+                    ${dinero(p.precio)}
                     <small>Precio ilustrativo</small>
                 </p>
 
@@ -224,8 +216,8 @@ function mostrarProductos() {
                         ＋ Agregar
                     </button>
 
-                    <a class="external-btn"
-                       href="${producto.enlace}"
+                    <a href="${p.enlace}"
+                       class="external-btn"
                        target="_blank"
                        rel="noopener noreferrer"
                        title="Ver en Newegg">
@@ -235,14 +227,11 @@ function mostrarProductos() {
             </div>
         `;
 
-        // SI FALLA LA IMAGEN, MOSTRAR AVISO
+        const img = tarjeta.querySelector("img");
 
-        const imagen = tarjeta.querySelector("img");
-
-        if (imagen) {
-            imagen.addEventListener("error", () => {
-                imagen.remove();
-
+        if (img) {
+            img.addEventListener("error", () => {
+                img.remove();
                 tarjeta.querySelector(
                     ".product-placeholder"
                 ).hidden = false;
@@ -251,21 +240,19 @@ function mostrarProductos() {
 
         tarjeta.querySelector(".add-btn")
             .addEventListener("click", () => {
-                agregarCarrito(producto.id);
+                agregarCarrito(p.id);
             });
 
         catalogo.appendChild(tarjeta);
     });
 }
 
-// FILTRAR POR CATEGORIA
-
+// FILTROS
 function filtrar(categoria) {
     categoriaActual = categoria;
 
-    document.querySelectorAll(".filtros button")
+    document.querySelectorAll(".filters button")
         .forEach(boton => {
-
             boton.classList.toggle(
                 "active",
                 boton.dataset.category === categoria
@@ -275,50 +262,31 @@ function filtrar(categoria) {
     mostrarProductos();
 }
 
-// AGREGAR AL CARRITO
-
+// CARRITO
 function agregarCarrito(id) {
+    const item = carrito.find(p => p.id === id);
 
-    const existente = carrito.find(
-        producto => producto.id === id
-    );
-
-    if (existente) {
-        existente.cantidad++;
+    if (item) {
+        item.cantidad++;
     } else {
-        carrito.push({
-            id: id,
-            cantidad: 1
-        });
+        carrito.push({ id, cantidad: 1 });
     }
 
     actualizarCarrito();
 }
 
-// ELIMINAR PRODUCTO
-
 function eliminarProducto(id) {
-    carrito = carrito.filter(
-        producto => producto.id !== id
-    );
-
+    carrito = carrito.filter(p => p.id !== id);
     actualizarCarrito();
 }
-
-// VACIAR CARRITO
 
 function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
 
-// ACTUALIZAR CARRITO
-
 function actualizarCarrito() {
-
     const lista = document.getElementById("listaCarrito");
-    const totalElemento = document.getElementById("total");
-
     lista.innerHTML = "";
 
     let total = 0;
@@ -328,19 +296,16 @@ function actualizarCarrito() {
         lista.innerHTML = `
             <div class="cart-empty">
                 🛒 Tu carrito está vacío.
+                Agrega componentes para comenzar.
             </div>
         `;
     }
 
     carrito.forEach(item => {
+        const p = productos.find(p => p.id === item.id);
+        if (!p) return;
 
-        const producto = productos.find(
-            p => p.id === item.id
-        );
-
-        if (!producto) return;
-
-        total += producto.precio * item.cantidad;
+        total += p.precio * item.cantidad;
         cantidad += item.cantidad;
 
         const fila = document.createElement("div");
@@ -348,18 +313,17 @@ function actualizarCarrito() {
 
         fila.innerHTML = `
             <div>
-                <strong>${producto.nombre}</strong>
+                <strong>${p.nombre}</strong>
                 <small>
-                    ${item.cantidad} ×
-                    ${dinero(producto.precio)}
+                    ${item.cantidad} × ${dinero(p.precio)}
                 </small>
             </div>
 
             <div class="cart-row-right">
                 <span>
-                    ${dinero(producto.precio * item.cantidad)}
+                    ${dinero(p.precio * item.cantidad)}
                 </span>
-
+                <br>
                 <button class="remove-btn">
                     Quitar
                 </button>
@@ -368,31 +332,28 @@ function actualizarCarrito() {
 
         fila.querySelector(".remove-btn")
             .addEventListener("click", () => {
-                eliminarProducto(producto.id);
+                eliminarProducto(p.id);
             });
 
         lista.appendChild(fila);
     });
 
-    totalElemento.textContent = dinero(total);
+    document.getElementById("total").textContent =
+        dinero(total);
 
     document.getElementById("cartCount").textContent =
         cantidad;
 }
 
-// EVENTOS DEL BUSCADOR
-
+// BUSCADOR
 buscar.addEventListener("input", mostrarProductos);
 
-// EVENTOS DEL ORDENAMIENTO
-
+// ORDENAR
 ordenar.addEventListener("change", mostrarProductos);
 
-// BOTONES DE CATEGORIAS
-
+// BOTONES DE FILTROS
 document.getElementById("filtros")
     .addEventListener("click", evento => {
-
         const boton = evento.target.closest(
             "[data-category]"
         );
@@ -403,27 +364,45 @@ document.getElementById("filtros")
     });
 
 // VACIAR CARRITO
-
 document.getElementById("vaciarCarrito")
     .addEventListener("click", vaciarCarrito);
 
-// PAUSAR LA ANIMACION DE LA PC
+// ANIMACION INTERACTIVA DE LA COMPUTADORA
+const pcInteractive = document.getElementById("pcInteractive");
 
-const botonAnimacion =
-    document.getElementById("animationToggle");
+function togglePcAnimation() {
+    const pausada = pcInteractive.classList.toggle("paused");
 
-botonAnimacion.addEventListener("click", () => {
+    pcInteractive.setAttribute(
+        "aria-pressed",
+        String(pausada)
+    );
 
-    const area = document.querySelector(".pc-area");
+    pcInteractive.setAttribute(
+        "aria-label",
+        pausada
+            ? "Reanudar animación"
+            : "Pausar animación"
+    );
 
-    const pausada = area.classList.toggle("paused");
+    const estado = pcInteractive.querySelector(".state-text");
 
-    botonAnimacion.textContent = pausada
-        ? "▶ Reanudar animación"
-        : "⏸ Pausar animación";
+    estado.textContent = pausada
+        ? "ENSAMBLAJE EN PAUSA"
+        : "ENSAMBLANDO COMPONENTES";
+}
+
+// CLIC DIRECTAMENTE SOBRE LA PC
+pcInteractive.addEventListener("click", togglePcAnimation);
+
+// ENTER O ESPACIO PARA ACCESIBILIDAD
+pcInteractive.addEventListener("keydown", evento => {
+    if (evento.key === "Enter" || evento.key === " ") {
+        evento.preventDefault();
+        togglePcAnimation();
+    }
 });
 
-// INICIAR PAGINA
-
+// INICIAR
 mostrarProductos();
 actualizarCarrito();
