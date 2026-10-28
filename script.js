@@ -1,87 +1,42 @@
 
-/* ===================================
-   PIEZAS PARA LA COMPUTADORA
-   Archivo: script.js
-=================================== */
+/* PIEZAS PARA LA COMPUTADORA
+   Catalogo con productos de Newegg
+*/
 
-// LISTA DE PRODUCTOS
+// PRODUCTOS DE NEWEGG
 
 const productos = [
     {
-        nombre: "Intel Core i7",
+        nombre: "Intel Core Ultra 7 265K",
         categoria: "Procesadores",
-        precio: 299.99,
-        imagen: "https://placehold.co/300x200?text=Intel+Core+i7"
+        precio: 359.99,
+        imagen: "https://c1.neweggimages.com/productimage/nb640/19-118-506-06.jpg",
+        enlace: "https://www.newegg.com/p/N82E16819118506"
     },
     {
-        nombre: "AMD Ryzen 7",
-        categoria: "Procesadores",
-        precio: 279.99,
-        imagen: "https://placehold.co/300x200?text=AMD+Ryzen+7"
-    },
-    {
-        nombre: "NVIDIA RTX 5070",
-        categoria: "Tarjetas gráficas",
-        precio: 549.99,
-        imagen: "https://placehold.co/300x200?text=RTX+5070"
-    },
-    {
-        nombre: "AMD Radeon RX",
-        categoria: "Tarjetas gráficas",
-        precio: 399.99,
-        imagen: "https://placehold.co/300x200?text=AMD+Radeon"
-    },
-    {
-        nombre: "Corsair RAM 32GB",
+        nombre: "Corsair Vengeance DDR5 32GB 6000MHz",
         categoria: "Memoria RAM",
-        precio: 109.99,
-        imagen: "https://placehold.co/300x200?text=RAM+32GB"
+        precio: 519.99,
+        imagen: "https://c1.neweggimages.com/productimage/nb640/20-236-828-V01.jpg",
+        enlace: "https://www.newegg.com/p/N82E16820982007"
     },
     {
-        nombre: "Kingston RAM 16GB",
+        nombre: "Samsung 990 PRO SSD 2TB",
+        categoria: "Almacenamiento",
+        precio: 409.99,
+        imagen: "https://c1.neweggimages.com/productimage/nb640/20-147-861-01.jpg",
+        enlace: "https://www.newegg.com/p/N82E16820147861"
+    },
+    {
+        nombre: "Corsair Vengeance DDR5 32GB 7000MHz",
         categoria: "Memoria RAM",
-        precio: 59.99,
-        imagen: "https://placehold.co/300x200?text=RAM+16GB"
-    },
-    {
-        nombre: "Samsung SSD 2TB",
-        categoria: "Almacenamiento",
-        precio: 149.99,
-        imagen: "https://placehold.co/300x200?text=SSD+2TB"
-    },
-    {
-        nombre: "WD SSD 1TB",
-        categoria: "Almacenamiento",
-        precio: 79.99,
-        imagen: "https://placehold.co/300x200?text=SSD+1TB"
-    },
-    {
-        nombre: "MSI Motherboard",
-        categoria: "Otros",
-        precio: 189.99,
-        imagen: "https://placehold.co/300x200?text=Motherboard"
-    },
-    {
-        nombre: "Fuente de poder 750W",
-        categoria: "Otros",
-        precio: 99.99,
-        imagen: "https://placehold.co/300x200?text=PSU+750W"
-    },
-    {
-        nombre: "Disipador CPU",
-        categoria: "Otros",
-        precio: 69.99,
-        imagen: "https://placehold.co/300x200?text=CPU+Cooler"
-    },
-    {
-        nombre: "Gabinete Gaming",
-        categoria: "Otros",
-        precio: 119.99,
-        imagen: "https://placehold.co/300x200?text=PC+Case"
+        precio: 635.99,
+        imagen: "https://c1.neweggimages.com/productimage/nb640/20-236-931-05.jpg",
+        enlace: "https://www.newegg.com/p/N82E16820236931"
     }
 ];
 
-// VARIABLES GENERALES
+// VARIABLES
 
 let categoriaActual = "Todos";
 let carrito = [];
@@ -101,23 +56,25 @@ function mostrarProductos() {
 
     productos.forEach((producto, indice) => {
 
-        const coincideCategoria =
+        const categoriaCorrecta =
             categoriaActual === "Todos" ||
             producto.categoria === categoriaActual;
 
-        const coincideBusqueda =
+        const nombreCorrecto =
             producto.nombre.toLowerCase()
                 .includes(busqueda);
 
-        if (coincideCategoria && coincideBusqueda) {
+        if (categoriaCorrecta && nombreCorrecto) {
 
             const tarjeta = document.createElement("div");
-
             tarjeta.className = "producto";
 
             tarjeta.innerHTML = `
-                <img src="${producto.imagen}"
-                     alt="${producto.nombre}">
+                <img
+                    src="${producto.imagen}"
+                    alt="${producto.nombre}"
+                    loading="lazy"
+                >
 
                 <h3>${producto.nombre}</h3>
 
@@ -127,9 +84,20 @@ function mostrarProductos() {
                     $${producto.precio.toFixed(2)}
                 </p>
 
+                <p>Precio de referencia</p>
+
                 <button onclick="agregarCarrito(${indice})">
                     Agregar al carrito
                 </button>
+
+                <a
+                    href="${producto.enlace}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="enlace-newegg"
+                >
+                    Ver en Newegg
+                </a>
             `;
 
             catalogo.appendChild(tarjeta);
@@ -137,29 +105,26 @@ function mostrarProductos() {
     });
 }
 
-// FILTRAR PRODUCTOS
+// FILTRAR POR CATEGORIA
 
 function filtrar(categoria) {
     categoriaActual = categoria;
     mostrarProductos();
 }
 
-// AGREGAR PRODUCTOS AL CARRITO
+// AGREGAR AL CARRITO
 
 function agregarCarrito(indice) {
     carrito.push(productos[indice]);
     actualizarCarrito();
 }
 
-// ACTUALIZAR EL CARRITO
+// ACTUALIZAR CARRITO
 
 function actualizarCarrito() {
 
-    const lista = document
-        .getElementById("listaCarrito");
-
-    const totalElemento = document
-        .getElementById("total");
+    const lista = document.getElementById("listaCarrito");
+    const totalElemento = document.getElementById("total");
 
     lista.innerHTML = "";
 
@@ -192,21 +157,20 @@ function actualizarCarrito() {
     totalElemento.textContent = total.toFixed(2);
 }
 
-// ELIMINAR UN PRODUCTO
+// ELIMINAR PRODUCTO
 
 function eliminarProducto(indice) {
     carrito.splice(indice, 1);
     actualizarCarrito();
 }
 
-// VACIAR EL CARRITO
+// VACIAR CARRITO
 
 function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
 
-// INICIAR EL CATALOGO
+// CARGAR CATALOGO
 
 mostrarProductos();
-
