@@ -1,214 +1,988 @@
 
-/* ESTILOS GENERALES */
+/* CONFIGURACION GENERAL */
+
+:root {
+    --fondo: #0b0b0e;
+    --panel: #17171d;
+    --panel2: #202027;
+    --naranja: #ff6b00;
+    --naranja2: #ff9a35;
+    --texto: #ffffff;
+    --gris: #a4a4b1;
+    --borde: #303038;
+}
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f4f6f9;
-    color: #222;
+    background: var(--fondo);
+    color: var(--texto);
 }
 
-/* ENCABEZADO */
+.container {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 42px);
+}
+
+h2 span {
+    color: var(--naranja);
+}
+
+/* HEADER */
 
 header {
-    background-color: #102a43;
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 11, 14, .95);
+    border-bottom: 1px solid var(--borde);
 }
 
-header h1 {
-    margin: 0 0 10px;
-    font-size: 32px;
+.navbar {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
 }
 
-header p {
-    font-size: 16px;
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-/* MENU DE NAVEGACION */
+.logo span {
+    color: var(--naranja);
+}
 
 nav {
-    background-color: #1976d2;
-    padding: 15px;
-    text-align: center;
+    display: flex;
+    gap: 30px;
 }
 
 nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
+    color: #ddd;
+    transition: color .2s;
 }
 
 nav a:hover {
-    color: #ffeb3b;
+    color: var(--naranja);
 }
 
-/* CONTENEDOR PRINCIPAL */
-
-.contenedor {
-    max-width: 1200px;
-    margin: auto;
-    padding: 25px;
+.cart-link {
+    padding: 10px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
 }
 
-/* BUSCADOR */
+.cart-link span {
+    color: var(--naranja);
+    font-weight: bold;
+}
 
-.buscador {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+/* PRESENTACION */
+
+.hero {
+    padding: 75px 0 90px;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 85% 40%,
+            #57270955,
+            transparent 55%
+        ),
+        #0b0b0e;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.etiqueta {
+    color: var(--naranja2);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    margin: 22px 0;
+    font-size: clamp(42px, 5vw, 70px);
+    line-height: 1.08;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--naranja);
+}
+
+.hero-text > p {
+    color: var(--gris);
+    line-height: 1.8;
+    font-size: 17px;
+    max-width: 540px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: .25s;
+}
+
+.principal {
+    color: white;
+    background: var(--naranja);
+}
+
+.principal:hover {
+    background: #e45b00;
+    transform: translateY(-3px);
+}
+
+.secundario {
+    border: 1px solid #57575e;
+    background: #24242a;
+}
+
+.secundario:hover {
+    border-color: var(--naranja);
+}
+
+.estadisticas {
+    display: flex;
+    gap: 32px;
+    margin-top: 45px;
+}
+
+.estadisticas div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.estadisticas strong {
+    color: var(--naranja);
+    font-size: 30px;
+}
+
+.estadisticas small {
+    color: var(--gris);
+}
+
+/* AREA DE COMPUTADORA */
+
+.pc-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 510px;
+}
+
+.pc-animation {
+    position: relative;
+    width: 390px;
+    height: 420px;
+    max-width: 100%;
+    filter: drop-shadow(0 25px 45px #ff6b0029);
+}
+
+/* GABINETE */
+
+.pc-case {
+    position: absolute;
+    width: 265px;
+    height: 350px;
+    left: 54px;
+    top: 22px;
+    background: #18191e;
+    border: 5px solid #41414a;
+    border-radius: 16px;
+    box-shadow:
+        inset 0 0 30px #000,
+        0 0 35px #ff6b0022;
+    display: flex;
+}
+
+.pc-glass {
+    position: relative;
+    width: 220px;
+    height: 335px;
+    overflow: visible;
+    background:
+        linear-gradient(
+            135deg,
+            #28283199,
+            #07080bdd
+        );
+    border-radius: 9px;
+}
+
+.pc-front {
+    flex: 1;
+    border-left: 2px solid #555;
+    background: #101015;
+    border-radius: 0 9px 9px 0;
+}
+
+.power-light {
+    width: 8px;
+    height: 8px;
+    background: var(--naranja);
+    border-radius: 50%;
+    margin: 25px auto;
+    box-shadow: 0 0 12px var(--naranja);
+}
+
+.pc-stand {
+    position: absolute;
+    left: 52px;
+    top: 375px;
+    width: 275px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff6b0044;
+    filter: blur(6px);
+}
+
+/* TARJETA MADRE */
+
+.motherboard {
+    position: absolute;
+    top: 45px;
+    left: 19px;
+    width: 177px;
+    height: 245px;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 15px,
+            #ff6b0017 16px 17px
+        ),
+        #18221e;
+    border: 3px solid #435044;
+    border-radius: 7px;
+    animation: boardBuild 8s infinite ease-in-out;
+}
+
+/* PARTES */
+
+.part {
+    position: absolute;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* PROCESADOR */
+
+.cpu {
+    top: 91px;
+    left: 65px;
+    width: 65px;
+    height: 65px;
+    border: 5px solid #3b4143;
+    background: linear-gradient(135deg, #aaa, #565b60);
+    display: grid;
+    place-items: center;
+    color: #171717;
+    font-weight: bold;
     border-radius: 6px;
-    font-size: 16px;
+    animation-name: cpuBuild;
 }
 
-.buscador:focus {
-    outline: 2px solid #1976d2;
+/* MEMORIA RAM */
+
+.ram {
+    top: 66px;
+    left: 152px;
+    display: flex;
+    gap: 8px;
+    animation-name: ramBuild;
 }
 
-/* FILTROS */
+.ram i {
+    width: 12px;
+    height: 125px;
+    background: linear-gradient(
+        90deg,
+        #ff6b00,
+        #803700
+    );
+    border: 2px solid #e77b25;
+    border-radius: 3px;
+    box-shadow: 0 0 10px #ff6b0066;
+}
+
+/* TARJETA GRAFICA */
+
+.gpu {
+    left: 16px;
+    top: 222px;
+    width: 188px;
+    height: 69px;
+    background: linear-gradient(
+        140deg,
+        #3e4149,
+        #17191f
+    );
+    border: 3px solid #747780;
+    border-radius: 7px;
+    box-shadow: 0 0 20px #ff6b0033;
+    animation-name: gpuBuild;
+}
+
+.gpu span {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+    color: var(--naranja);
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.gpu-fans {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.gpu-fans i {
+    width: 32px;
+    height: 32px;
+    border: 6px dashed #85858e;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+/* DISIPADOR */
+
+.cooler {
+    top: 98px;
+    left: 76px;
+    width: 48px;
+    height: 48px;
+    background: #22252b;
+    border: 4px solid #6d727b;
+    border-radius: 7px;
+    animation-name: coolerBuild;
+}
+
+.cooler-fan {
+    width: 100%;
+    height: 100%;
+    border: 5px dashed var(--naranja);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+/* VENTILADORES */
+
+.case-fan {
+    position: absolute;
+    left: 160px;
+    width: 48px;
+    height: 48px;
+    border: 7px dashed var(--naranja);
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ff6b0055;
+    animation: spin 2s linear infinite;
+}
+
+.fan1 {
+    top: 225px;
+}
+
+.fan2 {
+    top: 280px;
+}
+
+/* ETIQUETAS FLOTANTES */
+
+.floating-label {
+    position: absolute;
+    background: #25252d;
+    color: var(--naranja2);
+    border: 1px solid #ff6b0066;
+    border-radius: 8px;
+    padding: 8px 13px;
+    font-size: 12px;
+    font-weight: bold;
+    animation: floating 3s ease-in-out infinite;
+}
+
+.label-cpu {
+    top: 90px;
+    left: 5px;
+}
+
+.label-gpu {
+    top: 255px;
+    right: 0;
+}
+
+.label-ram {
+    top: 34px;
+    right: 15px;
+}
+
+/* ANIMACIONES DE ENSAMBLAJE */
+
+@keyframes boardBuild {
+    0%, 10% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+    25%, 70% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    90%, 100% {
+        opacity: 0;
+        transform: translateY(-70px);
+    }
+}
+
+@keyframes cpuBuild {
+    0%, 20% {
+        opacity: 0;
+        transform: translate(-120px, -60px);
+    }
+    35%, 70% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    90%, 100% {
+        opacity: 0;
+        transform: translate(-120px, -60px);
+    }
+}
+
+@keyframes ramBuild {
+    0%, 30% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    45%, 70% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    85%, 100% {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+}
+
+@keyframes gpuBuild {
+    0%, 40% {
+        opacity: 0;
+        transform: translateX(240px);
+    }
+    55%, 70% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    80%, 100% {
+        opacity: 0;
+        transform: translateX(240px);
+    }
+}
+
+@keyframes coolerBuild {
+    0%, 50% {
+        opacity: 0;
+        transform: scale(.2) translateY(-100px);
+    }
+    60%, 75% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+    85%, 100% {
+        opacity: 0;
+        transform: scale(.2) translateY(-100px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animation-status {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    color: #d8d8df;
+    margin-top: 10px;
+}
+
+.status-light {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--naranja);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--naranja);
+    margin-right: 7px;
+}
+
+.pause-btn {
+    margin-top: 15px;
+    border: 1px solid #555;
+    border-radius: 9px;
+    background: #232329;
+    color: white;
+    padding: 10px 16px;
+}
+
+.pc-area.paused .pc-animation *,
+.pc-area.paused .pc-animation {
+    animation-play-state: paused !important;
+}
+
+/* BENEFICIOS */
+
+.beneficios {
+    background: #16161b;
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 25px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* PRODUCTOS */
+
+.products {
+    padding: 80px 0;
+}
+
+.subtitulo {
+    color: var(--gris);
+    margin: 15px 0 30px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.toolbar input,
+.toolbar select {
+    padding: 15px;
+    background: #1b1b22;
+    color: white;
+    border: 1px solid #373740;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.toolbar input {
+    flex: 1;
+    min-width: 0;
+}
+
+.toolbar select {
+    max-width: 220px;
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+    outline: 1px solid var(--naranja);
+}
 
 .filtros {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
     margin-bottom: 25px;
 }
 
-/* BOTONES */
+.filtros button {
+    background: #24242b;
+    border: 1px solid #404048;
+    color: #ccc;
+    padding: 11px 17px;
+    border-radius: 30px;
+    transition: .2s;
+}
 
-button {
-    background-color: #1976d2;
+.filtros button:hover,
+.filtros button.active {
+    background: var(--naranja);
+    border-color: var(--naranja);
     color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 4px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
 }
 
-button:hover {
-    background-color: #0d47a1;
+#resultCount {
+    color: var(--gris);
+    margin-bottom: 20px;
 }
-
-/* CATALOGO DE PRODUCTOS */
 
 .catalogo {
     display: grid;
     grid-template-columns:
-        repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+        repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
 }
 
-/* TARJETAS DE PRODUCTOS */
-
 .producto {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 15px;
     padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 3px 10px #00000015;
-    transition: transform 0.3s;
+    transition: .25s;
 }
 
 .producto:hover {
     transform: translateY(-5px);
+    border-color: var(--naranja);
+    box-shadow: 0 12px 30px #ff6b0011;
 }
 
-/* IMAGENES */
+.product-category {
+    color: var(--naranja2);
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
 
-.producto img {
+.product-image {
+    height: 190px;
+    display: grid;
+    place-items: center;
+    background: #24242c;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+.product-image img {
     width: 100%;
-    height: 150px;
+    height: 100%;
     object-fit: contain;
 }
 
-/* NOMBRE DEL PRODUCTO */
-
-.producto h3 {
-    margin: 15px 0 8px;
-    font-size: 19px;
+.product-placeholder {
+    text-align: center;
+    color: #9f9fa9;
+    font-size: 12px;
 }
 
-/* PRECIOS */
+.product-placeholder span {
+    display: block;
+    color: var(--naranja);
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.producto h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    color: var(--gris);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-bottom {
+    margin-top: auto;
+}
 
 .precio {
-    color: #087c49;
-    font-size: 21px;
+    color: white;
+    font-size: 25px;
     font-weight: bold;
 }
 
-/* CARRITO DE COMPRAS */
+.precio small {
+    display: block;
+    color: var(--gris);
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: 5px;
+}
 
-.carrito {
-    background-color: white;
-    padding: 20px;
+.product-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 17px;
+}
+
+.add-btn {
+    background: var(--naranja);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 9px;
+    font-weight: bold;
+    flex: 1;
+}
+
+.add-btn:hover {
+    background: #e45b00;
+}
+
+.external-btn {
+    display: grid;
+    place-items: center;
+    background: #33333c;
+    color: white;
+    border-radius: 9px;
+    width: 45px;
+    font-size: 22px;
+}
+
+.external-btn:hover {
+    background: #555;
+}
+
+.empty-results {
+    grid-column: 1 / -1;
+    padding: 30px;
+    text-align: center;
+    background: var(--panel);
+    border-radius: 12px;
+    color: var(--gris);
+}
+
+.aviso {
+    margin-top: 25px;
+    color: var(--gris);
+    font-size: 12px;
+}
+
+/* CARRITO */
+
+.cart-section {
+    background: #131318;
+    padding: 70px 0;
+}
+
+.cart-panel {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 25px;
     margin-top: 30px;
-    border-radius: 10px;
-    box-shadow: 0 3px 10px #00000015;
 }
 
-.carrito h2 {
-    color: #102a43;
+#listaCarrito,
+.cart-total {
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 15px;
+    padding: 25px;
 }
 
-.carrito li {
-    padding: 6px 0;
+.cart-empty {
+    color: var(--gris);
+    text-align: center;
+    padding: 35px 0;
 }
 
-/* PIE DE PAGINA */
+.cart-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--borde);
+    padding: 15px 0;
+}
+
+.cart-row:last-child {
+    border-bottom: none;
+}
+
+.cart-row strong,
+.cart-row small {
+    display: block;
+}
+
+.cart-row small {
+    color: var(--gris);
+    margin-top: 7px;
+}
+
+.cart-row-right {
+    text-align: right;
+}
+
+.remove-btn,
+#vaciarCarrito {
+    background: #3a2020;
+    color: #ffaaaa;
+    padding: 9px 13px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.cart-total p {
+    color: var(--gris);
+}
+
+.cart-total h3 {
+    font-size: 35px;
+    margin: 15px 0;
+    color: var(--naranja);
+}
+
+.cart-total .btn {
+    margin-top: 18px;
+    width: 100%;
+}
+
+/* FOOTER */
 
 footer {
-    background-color: #102a43;
-    color: white;
+    background: #09090c;
+    padding: 25px 0;
+    color: var(--gris);
+    border-top: 1px solid var(--borde);
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
 }
 
-/* DISEÑO PARA CELULARES */
+footer p {
+    margin: 6px;
+}
+
+/* CELULARES Y TABLETAS */
+
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text > p {
+        margin: auto;
+    }
+
+    .hero-buttons,
+    .estadisticas {
+        justify-content: center;
+    }
+
+    .cart-panel {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 600px) {
-
-    header h1 {
-        font-size: 24px;
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 0;
     }
 
-    nav a {
-        display: inline-block;
-        margin: 8px;
+    nav {
+        gap: 12px;
+        font-size: 13px;
     }
 
-    .contenedor {
-        padding: 15px;
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .pc-area {
+        transform: scale(.82);
+        margin: -40px 0;
+    }
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .toolbar select {
+        max-width: none;
+    }
+
+    .estadisticas {
+        gap: 20px;
     }
 
     .catalogo {
         grid-template-columns: 1fr;
     }
+}
 
-    .filtros button {
-        margin: 5px;
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
     }
-}
-
-/* BOTON DE NEWEGG */
-
-.enlace-newegg {
-    display: inline-block;
-    background-color: #ff6600;
-    color: white;
-    text-decoration: none;
-    padding: 11px 16px;
-    margin: 8px 4px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.enlace-newegg:hover {
-    background-color: #cc5200;
 }
