@@ -1,127 +1,292 @@
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
     <title>Piezas para la Computadora</title>
-
-    <!-- CONEXION CON CSS -->
     <link rel="stylesheet" href="style.css">
-
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <!-- ENCABEZADO -->
-    <header>
-        <h1>Piezas para la Computadora</h1>
-        <p>Tu catálogo de componentes para PC</p>
-    </header>
+<header>
+    <div class="container navbar">
+        <a href="#inicio" class="logo">
+            PIEZAS<span>PC</span>
+        </a>
 
-    <!-- MENU DE NAVEGACION -->
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#productos">Productos</a>
-        <a href="#carrito">Carrito</a>
-    </nav>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#carrito">Carrito</a>
+        </nav>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="contenedor" id="inicio">
+        <a class="cart-link" href="#carrito">
+            🛒 <span id="cartCount">0</span>
+        </a>
+    </div>
+</header>
 
-        <!-- SECCION DE PRODUCTOS -->
-        <section id="productos">
+<main>
 
-            <h2>Catálogo de productos</h2>
-            <p>
-                Encuentra las mejores piezas para
-                construir o mejorar tu computadora.
-            </p>
+    <!-- PRESENTACION -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
 
-            <!-- BUSCADOR -->
-            <input
-                type="text"
-                class="buscador"
-                id="buscar"
-                placeholder="Buscar componentes..."
-                oninput="mostrarProductos()"
-            >
+            <div class="hero-text">
+                <span class="etiqueta">
+                    HARDWARE • GAMING • TECNOLOGÍA
+                </span>
 
-            <!-- FILTROS POR CATEGORIA -->
-            <div class="filtros">
+                <h1>
+                    ARMA TU PC.
+                    <span>HAZLA TUYA.</span>
+                </h1>
 
-                <button onclick="filtrar('Todos')">
-                    Todos
-                </button>
+                <p>
+                    Descubre los mejores componentes
+                    para construir tu computadora.
+                    Explora procesadores, tarjetas
+                    gráficas, memorias y mucho más.
+                </p>
 
-                <button onclick="filtrar('Procesadores')">
-                    Procesadores
-                </button>
+                <div class="hero-buttons">
+                    <a class="btn principal"
+                       href="#productos">
+                        Explorar piezas ↗
+                    </a>
 
-                <button onclick="filtrar('Tarjetas gráficas')">
-                    Tarjetas gráficas
-                </button>
+                    <a class="btn secundario"
+                       href="#carrito">
+                        Mi carrito
+                    </a>
+                </div>
 
-                <button onclick="filtrar('Memoria RAM')">
-                    Memoria RAM
-                </button>
+                <div class="estadisticas">
+                    <div>
+                        <strong>12+</strong>
+                        <small>Componentes</small>
+                    </div>
 
-                <button onclick="filtrar('Almacenamiento')">
-                    Almacenamiento
-                </button>
+                    <div>
+                        <strong>6</strong>
+                        <small>Categorías</small>
+                    </div>
 
-                <button onclick="filtrar('Otros')">
-                    Otros
+                    <div>
+                        <strong>100%</strong>
+                        <small>Tu estilo</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPUTADORA ANIMADA -->
+            <div class="pc-area">
+
+                <div class="pc-animation" id="pcAnimation">
+
+                    <div class="pc-case">
+                        <div class="pc-glass">
+
+                            <div class="motherboard"></div>
+
+                            <div class="cpu part">
+                                CPU
+                            </div>
+
+                            <div class="ram part">
+                                <i></i>
+                                <i></i>
+                            </div>
+
+                            <div class="gpu part">
+                                <span>GEFORCE RTX</span>
+                                <div class="gpu-fans">
+                                    <i></i>
+                                    <i></i>
+                                </div>
+                            </div>
+
+                            <div class="cooler part">
+                                <div class="cooler-fan"></div>
+                            </div>
+
+                            <div class="case-fan fan1"></div>
+                            <div class="case-fan fan2"></div>
+
+                        </div>
+
+                        <div class="pc-front">
+                            <div class="power-light"></div>
+                        </div>
+                    </div>
+
+                    <div class="pc-stand"></div>
+
+                    <span class="floating-label label-cpu">
+                        CPU
+                    </span>
+
+                    <span class="floating-label label-gpu">
+                        GPU
+                    </span>
+
+                    <span class="floating-label label-ram">
+                        RAM
+                    </span>
+                </div>
+
+                <div class="animation-status">
+                    <span class="status-light"></span>
+                    ENSAMBLANDO COMPONENTES
+                </div>
+
+                <button id="animationToggle"
+                        class="pause-btn">
+                    ⏸ Pausar animación
                 </button>
 
             </div>
+        </div>
+    </section>
 
-            <!-- PRODUCTOS GENERADOS POR JAVASCRIPT -->
-            <div class="catalogo" id="catalogo"></div>
+    <!-- BENEFICIOS -->
+    <section class="beneficios">
+        <div class="container beneficios-grid">
 
-        </section>
+            <div>⚡ Explora componentes</div>
+            <div>🔍 Compara alternativas</div>
+            <div>🛒 Crea tu lista de piezas</div>
 
-        <!-- CARRITO DE COMPRAS -->
-        <section class="carrito" id="carrito">
+        </div>
+    </section>
 
-            <h2>Carrito de compras</h2>
+    <!-- CATALOGO -->
+    <section id="productos" class="products">
+        <div class="container">
 
-            <p>
-                Revisa los productos que has seleccionado.
+            <span class="etiqueta">NUESTRO CATÁLOGO</span>
+
+            <h2>
+                Explora <span>componentes</span>
+            </h2>
+
+            <p class="subtitulo">
+                Encuentra las piezas para tu próxima PC.
             </p>
 
-            <!-- LISTA DEL CARRITO -->
-            <ul id="listaCarrito"></ul>
+            <div class="toolbar">
 
-            <!-- TOTAL -->
-            <h3>
-                Total: $<span id="total">0.00</span>
-            </h3>
+                <input
+                    id="buscar"
+                    type="search"
+                    placeholder="Buscar componentes..."
+                    aria-label="Buscar componentes"
+                >
 
-            <!-- VACIAR CARRITO -->
-            <button onclick="vaciarCarrito()">
-                Vaciar carrito
-            </button>
+                <select id="ordenar"
+                        aria-label="Ordenar productos">
+                    <option value="default">
+                        Destacados
+                    </option>
+                    <option value="asc">
+                        Menor precio
+                    </option>
+                    <option value="desc">
+                        Mayor precio
+                    </option>
+                    <option value="name">
+                        Nombre A-Z
+                    </option>
+                </select>
 
-        </section>
+            </div>
 
-    </main>
+            <div id="filtros" class="filtros">
+                <button class="active"
+                        data-category="Todos">
+                    Todos
+                </button>
 
-    <!-- PIE DE PAGINA -->
-    <footer>
+                <button data-category="Procesadores">
+                    Procesadores
+                </button>
 
-        <p>
-            &copy; 2026 Piezas para la Computadora
-        </p>
+                <button data-category="Tarjetas gráficas">
+                    Tarjetas gráficas
+                </button>
 
-        <p>Catálogo de componentes para PC</p>
+                <button data-category="Memoria RAM">
+                    Memoria RAM
+                </button>
 
-    </footer>
+                <button data-category="Almacenamiento">
+                    Almacenamiento
+                </button>
 
-    <!-- CONEXION CON JAVASCRIPT -->
-    <script src="script.js"></script>
+                <button data-category="Tarjetas madre">
+                    Tarjetas madre
+                </button>
+
+                <button data-category="Otros">
+                    Otros
+                </button>
+            </div>
+
+            <p id="resultCount"></p>
+
+            <div id="catalogo" class="catalogo"></div>
+
+            <p class="aviso">
+                Los precios son ilustrativos.
+                Confirma el precio y disponibilidad
+                directamente en Newegg.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- CARRITO -->
+    <section id="carrito" class="cart-section">
+        <div class="container">
+
+            <h2>Tu <span>carrito</span></h2>
+
+            <div class="cart-panel">
+
+                <div id="listaCarrito"></div>
+
+                <div class="cart-total">
+                    <p>Total estimado</p>
+
+                    <h3 id="total">$0.00</h3>
+
+                    <button id="vaciarCarrito">
+                        Vaciar carrito
+                    </button>
+
+                    <a href="https://www.newegg.com/"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="btn principal">
+                        Visitar Newegg ↗
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 Piezas para la Computadora</p>
+        <p>Construye sin límites.</p>
+    </div>
+</footer>
 
 </body>
 </html>
