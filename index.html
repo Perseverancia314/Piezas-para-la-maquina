@@ -3,152 +3,119 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#090a0e">
-
   <title>Piezas para la Computadora</title>
-
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-
 <body>
 
 <header class="site-header" id="inicio">
   <div class="container navbar">
-
     <a href="#inicio" class="logo">
       PIEZAS<span>PC</span>
     </a>
 
     <nav aria-label="Navegación principal">
-      <a href="#inicio">Inicio</a>
-      <a href="#productos">Equipos</a>
-      <a href="#carrito">Carrito</a>
+      <a href="#inicio" data-i18n="navHome">Inicio</a>
+      <a href="#productos" data-i18n="navProducts">Equipos</a>
+      <a href="#carrito" data-i18n="navCart">Carrito</a>
     </nav>
 
-    <!-- CARRITO VECTORIAL -->
-    <a href="#carrito" class="cart-link"
-       id="cartLink" aria-label="Ver carrito">
+    <div class="nav-actions">
+      <div class="language-switch" aria-label="Language">
+        <button id="langES" class="active"
+                type="button" aria-pressed="true">ES</button>
+        <button id="langEN"
+                type="button" aria-pressed="false">EN</button>
+      </div>
 
-      <span class="cart-icon-wrap">
-        <svg class="cart-svg"
-             viewBox="0 0 64 64"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="3"
-             stroke-linecap="round"
-             stroke-linejoin="round"
-             aria-hidden="true">
+      <a href="#carrito" class="cart-link"
+         id="cartLink" aria-label="Carrito">
+        <svg class="cart-svg" viewBox="0 0 64 64"
+             fill="none" stroke="currentColor"
+             stroke-width="3" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
           <path d="M5 10h9l7 31h29l7-24H17"/>
           <path d="M23 46h28"/>
           <circle cx="26" cy="53" r="4"/>
           <circle cx="48" cy="53" r="4"/>
         </svg>
-      </span>
-
-      <span class="cart-label">Carrito</span>
-      <span class="cart-count" id="cartCount">0</span>
-    </a>
-
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
   </div>
 </header>
 
 <main>
 
-  <!-- PORTADA -->
   <section class="hero">
     <div class="container hero-grid">
-
       <div class="hero-copy">
-        <span class="eyebrow">
-          PERFORMANCE / TECHNOLOGY
-        </span>
+        <span class="eyebrow">PERFORMANCE / TECHNOLOGY</span>
 
         <h1>
-          POTENCIA.<br>
-          PRECISIÓN.<br>
-          <span>VELOCIDAD.</span>
+          <span data-i18n="heroOne">POTENCIA.</span><br>
+          <span data-i18n="heroTwo">PRECISIÓN.</span><br>
+          <span class="accent" data-i18n="heroThree">VELOCIDAD.</span>
         </h1>
 
-        <p>
+        <p data-i18n="heroDescription">
           Encuentra tu próxima computadora.
-          Descubre desktops, laptops, dispositivos
-          móviles y workstations para cada necesidad.
+          Explora desktops, laptops, dispositivos
+          móviles y estaciones de trabajo.
         </p>
 
         <div class="hero-actions">
-          <a href="#productos"
-             class="btn btn-primary">
-            EXPLORAR EQUIPOS
-          </a>
-
-          <a href="#carrito"
-             class="btn btn-glass">
-            VER CARRITO
-          </a>
+          <a href="#productos" class="btn btn-primary"
+             data-i18n="explore">EXPLORAR EQUIPOS</a>
+          <a href="#carrito" class="btn btn-glass"
+             data-i18n="viewCart">VER CARRITO</a>
         </div>
 
         <div class="hero-stats">
           <div>
-            <strong>12</strong>
-            <small>EQUIPOS EN CATÁLOGO</small>
+            <strong id="heroCount">12</strong>
+            <small data-i18n="registered">EQUIPOS REGISTRADOS</small>
           </div>
           <div>
             <strong>4</strong>
-            <small>CATEGORÍAS</small>
+            <small data-i18n="categories">CATEGORÍAS</small>
           </div>
         </div>
       </div>
 
-      <!-- COMPUTADORA ANIMADA -->
-      <div class="pc-visual"
-           id="pcInteractive"
-           role="button"
-           tabindex="0"
+      <!-- PC MINIMALISTA: CLIC PARA PAUSAR -->
+      <div class="pc-visual" id="pcInteractive"
+           role="button" tabindex="0"
            aria-pressed="false"
-           aria-label="Pausar animación de PC">
+           aria-label="Pausar animación">
 
         <div class="pc-glow"></div>
-
         <div class="pc-case">
           <div class="pc-window">
             <div class="motherboard pc-part"></div>
-
-            <div class="processor pc-part">
-              CPU
-            </div>
-
-            <div class="memory pc-part">
-              <i></i><i></i>
-            </div>
-
+            <div class="processor pc-part">CPU</div>
+            <div class="memory pc-part"><i></i><i></i></div>
             <div class="graphics pc-part">
-              <span>RTX</span>
-              <b></b><b></b>
+              <span>RTX</span><b></b><b></b>
             </div>
-
             <div class="pc-fan"></div>
           </div>
-
-          <div class="case-front">
-            <span></span>
-          </div>
+          <div class="case-front"><span></span></div>
         </div>
-
         <div class="pc-shadow"></div>
       </div>
-
     </div>
   </section>
 
-  <!-- CUATRO CATEGORIAS -->
+  <!-- CATEGORIAS -->
   <section class="categories-intro">
     <div class="container category-highlights">
       <div class="glass">Desktop</div>
       <div class="glass">Laptop</div>
-      <div class="glass">Móvil</div>
+      <div class="glass" data-i18n="mobile">Móvil</div>
       <div class="glass">Workstation</div>
     </div>
   </section>
@@ -159,75 +126,80 @@
 
       <div class="section-heading">
         <div>
-          <span class="eyebrow">
+          <span class="eyebrow" data-i18n="catalogLabel">
             CATÁLOGO DE EQUIPOS
           </span>
-
-          <h2>NUESTROS <span>EQUIPOS</span></h2>
-          <p>Explora equipos completos.</p>
+          <h2>
+            <span data-i18n="catalogTitle">NUESTROS</span>
+            <span class="accent" data-i18n="catalogTitle2">
+              EQUIPOS
+            </span>
+          </h2>
+          <p data-i18n="catalogDescription">
+            Equipos completos para cada necesidad.
+          </p>
         </div>
-
-        <span id="resultCount"></span>
+        <span id="resultCount" aria-live="polite"></span>
       </div>
 
       <div class="catalog-toolbar glass">
-
-        <input type="search"
-               id="buscar"
+        <input type="search" id="buscar"
                placeholder="Buscar equipos..."
                aria-label="Buscar equipos">
+      </div>
 
-        <select id="ordenar"
-                aria-label="Ordenar equipos">
-          <option value="default">Destacados</option>
-          <option value="asc">Menor precio</option>
-          <option value="desc">Mayor precio</option>
-          <option value="name">Nombre A-Z</option>
-        </select>
+      <!-- ORDENAMIENTO SIN DROPDOWN -->
+      <div class="sort-bar">
+        <span data-i18n="sortBy">Ordenar por:</span>
+        <div class="sort-buttons" id="sortButtons">
+          <button type="button" class="active"
+                  data-sort="default"
+                  data-i18n="featured">Destacados</button>
+          <button type="button" data-sort="asc"
+                  data-i18n="lowPrice">Menor precio</button>
+          <button type="button" data-sort="desc"
+                  data-i18n="highPrice">Mayor precio</button>
+          <button type="button" data-sort="name"
+                  data-i18n="alphabetical">Nombre A-Z</button>
+        </div>
       </div>
 
       <div class="filtros" id="filtros">
-        <button class="active"
-                data-category="Todos">Todos</button>
-        <button data-category="Desktop">Desktop</button>
-        <button data-category="Laptop">Laptop</button>
-        <button data-category="Móvil">Móvil</button>
-        <button data-category="Workstation">
-          Workstation
-        </button>
+        <button type="button" class="active"
+                data-category="Todos" data-i18n="all">Todos</button>
+        <button type="button" data-category="Desktop">Desktop</button>
+        <button type="button" data-category="Laptop">Laptop</button>
+        <button type="button" data-category="Móvil"
+                data-i18n="mobile">Móvil</button>
+        <button type="button"
+                data-category="Workstation">Workstation</button>
       </div>
 
-      <div id="catalogo" class="catalogo"></div>
+      <div class="catalogo" id="catalogo"></div>
 
-      <p class="pricing-note">
-        Los precios son ilustrativos.
-        Verifica precios y disponibilidad en Newegg.
+      <p class="pricing-note" data-i18n="priceNotice">
+        Los precios son ilustrativos. Consulta los precios
+        reales directamente en Newegg.
       </p>
-
     </div>
   </section>
 
   <!-- CARRITO -->
   <section class="cart-section" id="carrito">
     <div class="container">
-
       <div class="cart-racetrack" aria-hidden="true">
         <div class="track-line"></div>
-
         <div class="running-cart" id="runningCart">
           <svg viewBox="0 0 100 75" fill="none">
             <path d="M5 15h13l14 37h48l12-29H24"
                   stroke="#ff7900" stroke-width="5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <path d="M33 59h50"
-                  stroke="#ff7900" stroke-width="4"/>
-            <circle cx="40" cy="66" r="6"
-                    fill="white" stroke="#ff7900"
-                    stroke-width="3"/>
-            <circle cx="75" cy="66" r="6"
-                    fill="white" stroke="#ff7900"
-                    stroke-width="3"/>
+                  stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M33 59h50" stroke="#ff7900"
+                  stroke-width="4"/>
+            <circle cx="40" cy="66" r="6" fill="white"
+                    stroke="#ff7900" stroke-width="3"/>
+            <circle cx="75" cy="66" r="6" fill="white"
+                    stroke="#ff7900" stroke-width="3"/>
             <path d="M42 20h28l3 26H39L42 20Z"
                   fill="#ff7900"/>
             <path d="M49 21v-6a7 7 0 0 1 14 0v6"
@@ -239,11 +211,18 @@
       <div class="cart-panel glass">
         <div class="cart-header">
           <div>
-            <span class="eyebrow">TU SELECCIÓN</span>
-            <h2>CARRITO DE <span>COMPRAS</span></h2>
+            <span class="eyebrow" data-i18n="yourSelection">
+              TU SELECCIÓN
+            </span>
+            <h2>
+              <span data-i18n="cartTitle">CARRITO DE</span>
+              <span class="accent" data-i18n="cartTitle2">
+                COMPRAS
+              </span>
+            </h2>
           </div>
-
-          <button id="vaciarCarrito" class="clear-btn">
+          <button type="button" id="vaciarCarrito"
+                  class="clear-btn" data-i18n="clearCart">
             Vaciar carrito
           </button>
         </div>
@@ -252,63 +231,51 @@
           <div id="listaCarrito" class="cart-items"></div>
 
           <div class="cart-summary glass">
-            <p>TOTAL ESTIMADO</p>
+            <p data-i18n="estimatedTotal">TOTAL ESTIMADO</p>
             <strong id="total">$0.00</strong>
-
-            <small>
-              Carrito de demostración.
-              No procesa pagos.
+            <small data-i18n="demoWarning">
+              Carrito de demostración. No procesa pagos.
             </small>
-
             <a href="https://www.newegg.com/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn btn-primary">
-              VISITAR NEWEGG
-            </a>
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               data-i18n="visitNewegg">VISITAR NEWEGG</a>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 </main>
 
 <footer>
   <div class="container footer-content">
-    <strong>PIEZAS<span>PC</span></strong>
+    <strong class="logo">PIEZAS<span>PC</span></strong>
     <p>© 2026 Piezas para la Computadora</p>
   </div>
 </footer>
 
-<!-- PLANTILLA SVG DE BOLSA REDONDA -->
-<!-- JavaScript la coloca encima de la pagina
-     y la lanza hacia el carrito. -->
+<!-- VISOR DE FOTOGRAFIAS -->
+<dialog id="imageViewer" class="image-viewer"
+        aria-label="Vista completa del equipo">
+  <button type="button" id="closeImage"
+          class="close-image" aria-label="Cerrar">×</button>
+  <img id="largeImage" alt="">
+  <p id="imageCaption"></p>
+</dialog>
+
+<!-- BOLSA SVG REDONDA -->
 <template id="shoppingBagTemplate">
-  <svg viewBox="0 0 48 48"
-       fill="none"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-hidden="true">
-
-    <circle cx="24" cy="24" r="22"
-            fill="#ff7900"/>
-
+  <svg viewBox="0 0 48 48" fill="none"
+       xmlns="http://www.w3.org/2000/svg">
+    <circle cx="24" cy="24" r="22" fill="#ff7900"/>
     <circle cx="24" cy="24" r="21"
-            stroke="#ffc48b"
-            stroke-opacity=".75"/>
-
-    <path d="M16 21h16l1.5 14h-19L16 21Z"
-          fill="#ffffff"/>
-
+            stroke="#ffc48b" stroke-opacity=".75"/>
+    <path d="M16 21h16l1.5 14h-19L16 21Z" fill="white"/>
     <path d="M20 22v-4a4 4 0 0 1 8 0v4"
-          stroke="#ffffff"
-          stroke-width="2.6"
+          stroke="white" stroke-width="2.6"
           stroke-linecap="round"/>
-
-    <path d="M20 27h8"
-          stroke="#ff7900"
-          stroke-width="2"
-          stroke-linecap="round"/>
+    <path d="M20 27h8" stroke="#ff7900"
+          stroke-width="2" stroke-linecap="round"/>
   </svg>
 </template>
 
