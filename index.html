@@ -2,401 +2,315 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#090a0e">
-    <title>Piezas para la Computadora</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0e">
+
+  <title>Piezas para la Computadora</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
-<!-- NAVEGACION -->
 <header class="site-header" id="inicio">
-    <div class="container navbar">
+  <div class="container navbar">
 
-        <a href="#inicio" class="logo">
-            PIEZAS<span>PC</span>
-        </a>
+    <a href="#inicio" class="logo">
+      PIEZAS<span>PC</span>
+    </a>
 
-        <nav aria-label="Navegación">
-            <a href="#inicio">Inicio</a>
-            <a href="#productos">Equipos</a>
-            <a href="#carrito">Carrito</a>
-        </nav>
+    <nav aria-label="Navegación principal">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Equipos</a>
+      <a href="#carrito">Carrito</a>
+    </nav>
 
-        <!-- CARRITO SVG -->
-        <a href="#carrito" class="cart-link"
-           id="cartLink" aria-label="Ver carrito">
+    <!-- CARRITO VECTORIAL -->
+    <a href="#carrito" class="cart-link"
+       id="cartLink" aria-label="Ver carrito">
 
-            <span class="cart-icon-wrap">
+      <span class="cart-icon-wrap">
+        <svg class="cart-svg"
+             viewBox="0 0 64 64"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="3"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M5 10h9l7 31h29l7-24H17"/>
+          <path d="M23 46h28"/>
+          <circle cx="26" cy="53" r="4"/>
+          <circle cx="48" cy="53" r="4"/>
+        </svg>
+      </span>
 
-                <svg class="cart-svg"
-                     viewBox="0 0 64 64"
-                     fill="none"
-                     stroke="currentColor"
-                     stroke-width="3"
-                     stroke-linecap="round"
-                     stroke-linejoin="round"
-                     aria-hidden="true">
+      <span class="cart-label">Carrito</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
 
-                    <path d="M5 10h9l7 31h29l7-24H17"/>
-                    <path d="M23 46h28"/>
-                    <circle cx="26" cy="53" r="4"/>
-                    <circle cx="48" cy="53" r="4"/>
-                </svg>
-
-                <!-- BOLSA QUE LLEGA DESDE LA IZQUIERDA -->
-                <svg class="cart-bag"
-                     viewBox="0 0 32 36"
-                     aria-hidden="true">
-
-                    <path d="M5 12h22l2 21H3L5 12Z"
-                          fill="#ff7900"/>
-
-                    <path d="M10 14V9a6 6 0 0 1 12 0v5"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2.5"
-                          stroke-linecap="round"/>
-                </svg>
-
-            </span>
-
-            <span class="cart-label">Carrito</span>
-            <span class="cart-count" id="cartCount">0</span>
-
-        </a>
-    </div>
+  </div>
 </header>
 
 <main>
 
-    <!-- PORTADA -->
-    <section class="hero">
+  <!-- PORTADA -->
+  <section class="hero">
+    <div class="container hero-grid">
 
-        <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">
+          PERFORMANCE / TECHNOLOGY
+        </span>
 
-            <div class="hero-copy">
+        <h1>
+          POTENCIA.<br>
+          PRECISIÓN.<br>
+          <span>VELOCIDAD.</span>
+        </h1>
 
-                <span class="eyebrow">
-                    PERFORMANCE / TECHNOLOGY
-                </span>
+        <p>
+          Encuentra tu próxima computadora.
+          Descubre desktops, laptops, dispositivos
+          móviles y workstations para cada necesidad.
+        </p>
 
-                <h1>
-                    POTENCIA.<br>
-                    PRECISIÓN.<br>
-                    <span>VELOCIDAD.</span>
-                </h1>
+        <div class="hero-actions">
+          <a href="#productos"
+             class="btn btn-primary">
+            EXPLORAR EQUIPOS
+          </a>
 
-                <p>
-                    Encuentra la computadora perfecta
-                    para tus necesidades. Explora
-                    desktops, laptops, dispositivos
-                    móviles y estaciones de trabajo
-                    de alto rendimiento.
-                </p>
-
-                <div class="hero-actions">
-
-                    <a href="#productos"
-                       class="btn btn-primary">
-                        EXPLORAR EQUIPOS
-                    </a>
-
-                    <a href="#carrito"
-                       class="btn btn-glass">
-                        VER CARRITO
-                    </a>
-
-                </div>
-
-                <div class="hero-stats">
-
-                    <div>
-                        <strong>12</strong>
-                        <small>EQUIPOS EN CATÁLOGO</small>
-                    </div>
-
-                    <div>
-                        <strong>4</strong>
-                        <small>CATEGORÍAS</small>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- COMPUTADORA MINIMALISTA -->
-            <div class="pc-visual"
-                 id="pcInteractive"
-                 role="button"
-                 tabindex="0"
-                 aria-pressed="false"
-                 aria-label="Pausar animación">
-
-                <div class="pc-glow"></div>
-
-                <div class="pc-case">
-
-                    <div class="pc-window">
-
-                        <div class="motherboard pc-part"></div>
-
-                        <div class="processor pc-part">
-                            CPU
-                        </div>
-
-                        <div class="memory pc-part">
-                            <i></i>
-                            <i></i>
-                        </div>
-
-                        <div class="graphics pc-part">
-                            <span>RTX</span>
-                            <b></b>
-                            <b></b>
-                        </div>
-
-                        <div class="pc-fan"></div>
-
-                    </div>
-
-                    <div class="case-front">
-                        <span></span>
-                    </div>
-
-                </div>
-
-                <div class="pc-shadow"></div>
-
-            </div>
+          <a href="#carrito"
+             class="btn btn-glass">
+            VER CARRITO
+          </a>
         </div>
-    </section>
 
-    <!-- CATEGORIAS -->
-    <section class="categories-intro">
-        <div class="container category-highlights">
-
-            <div class="glass">Desktop</div>
-            <div class="glass">Laptop</div>
-            <div class="glass">Móvil</div>
-            <div class="glass">Workstation</div>
-
+        <div class="hero-stats">
+          <div>
+            <strong>12</strong>
+            <small>EQUIPOS EN CATÁLOGO</small>
+          </div>
+          <div>
+            <strong>4</strong>
+            <small>CATEGORÍAS</small>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- CATALOGO -->
-    <section class="products-section" id="productos">
+      <!-- COMPUTADORA ANIMADA -->
+      <div class="pc-visual"
+           id="pcInteractive"
+           role="button"
+           tabindex="0"
+           aria-pressed="false"
+           aria-label="Pausar animación de PC">
 
-        <div class="container">
+        <div class="pc-glow"></div>
 
-            <div class="section-heading">
+        <div class="pc-case">
+          <div class="pc-window">
+            <div class="motherboard pc-part"></div>
 
-                <div>
-                    <span class="eyebrow">
-                        CATÁLOGO DE EQUIPOS
-                    </span>
-
-                    <h2>
-                        NUESTROS <span>EQUIPOS</span>
-                    </h2>
-
-                    <p>
-                        Selecciona la categoría
-                        que deseas explorar.
-                    </p>
-                </div>
-
-                <span id="resultCount"></span>
-
+            <div class="processor pc-part">
+              CPU
             </div>
 
-            <!-- BUSCADOR -->
-            <div class="catalog-toolbar glass">
-
-                <input
-                    type="search"
-                    id="buscar"
-                    placeholder="Buscar equipos..."
-                    aria-label="Buscar equipos"
-                >
-
-                <select id="ordenar"
-                        aria-label="Ordenar equipos">
-
-                    <option value="default">
-                        Destacados
-                    </option>
-
-                    <option value="asc">
-                        Menor precio
-                    </option>
-
-                    <option value="desc">
-                        Mayor precio
-                    </option>
-
-                    <option value="name">
-                        Nombre A-Z
-                    </option>
-
-                </select>
-
+            <div class="memory pc-part">
+              <i></i><i></i>
             </div>
 
-            <!-- FILTROS -->
-            <div class="filtros" id="filtros">
-
-                <button class="active"
-                        data-category="Todos">
-                    Todos
-                </button>
-
-                <button data-category="Desktop">
-                    Desktop
-                </button>
-
-                <button data-category="Laptop">
-                    Laptop
-                </button>
-
-                <button data-category="Móvil">
-                    Móvil
-                </button>
-
-                <button data-category="Workstation">
-                    Workstation
-                </button>
-
+            <div class="graphics pc-part">
+              <span>RTX</span>
+              <b></b><b></b>
             </div>
 
-            <!-- PRODUCTOS -->
-            <div class="catalogo" id="catalogo"></div>
+            <div class="pc-fan"></div>
+          </div>
 
-            <p class="pricing-note">
-                Los precios son ilustrativos.
-                Consulta los precios y la disponibilidad
-                directamente en Newegg.
-            </p>
-
+          <div class="case-front">
+            <span></span>
+          </div>
         </div>
-    </section>
 
-    <!-- CARRITO DE COMPRAS -->
-    <section class="cart-section" id="carrito">
+        <div class="pc-shadow"></div>
+      </div>
 
-        <div class="container">
+    </div>
+  </section>
 
-            <!-- CARRITO QUE CORRE -->
-            <div class="cart-racetrack" aria-hidden="true">
+  <!-- CUATRO CATEGORIAS -->
+  <section class="categories-intro">
+    <div class="container category-highlights">
+      <div class="glass">Desktop</div>
+      <div class="glass">Laptop</div>
+      <div class="glass">Móvil</div>
+      <div class="glass">Workstation</div>
+    </div>
+  </section>
 
-                <div class="track-line"></div>
+  <!-- CATALOGO -->
+  <section class="products-section" id="productos">
+    <div class="container">
 
-                <div class="running-cart" id="runningCart">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">
+            CATÁLOGO DE EQUIPOS
+          </span>
 
-                    <svg viewBox="0 0 100 75" fill="none">
-
-                        <path d="M5 15h13l14 37h48l12-29H24"
-                              stroke="#ff7900"
-                              stroke-width="5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"/>
-
-                        <path d="M33 59h50"
-                              stroke="#ff7900"
-                              stroke-width="4"/>
-
-                        <circle cx="40" cy="66" r="6"
-                                fill="white"
-                                stroke="#ff7900"
-                                stroke-width="3"/>
-
-                        <circle cx="75" cy="66" r="6"
-                                fill="white"
-                                stroke="#ff7900"
-                                stroke-width="3"/>
-
-                        <!-- BOLSA DENTRO DEL CARRITO -->
-                        <path d="M42 20h28l3 26H39L42 20Z"
-                              fill="#ff7900"/>
-
-                        <path d="M49 21v-6a7 7 0 0 1 14 0v6"
-                              stroke="white"
-                              stroke-width="3"/>
-
-                    </svg>
-
-                </div>
-            </div>
-
-            <div class="cart-panel glass">
-
-                <div class="cart-header">
-
-                    <div>
-                        <span class="eyebrow">
-                            TU SELECCIÓN
-                        </span>
-
-                        <h2>
-                            CARRITO DE <span>COMPRAS</span>
-                        </h2>
-                    </div>
-
-                    <button id="vaciarCarrito"
-                            class="clear-btn">
-                        Vaciar carrito
-                    </button>
-
-                </div>
-
-                <div class="cart-content">
-
-                    <div id="listaCarrito"
-                         class="cart-items"></div>
-
-                    <div class="cart-summary glass">
-
-                        <p>TOTAL ESTIMADO</p>
-
-                        <strong id="total">$0.00</strong>
-
-                        <small>
-                            Catálogo de demostración.
-                            No procesa compras reales.
-                        </small>
-
-                        <a href="https://www.newegg.com/"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           class="btn btn-primary">
-                            VISITAR NEWEGG
-                        </a>
-
-                    </div>
-
-                </div>
-            </div>
-
+          <h2>NUESTROS <span>EQUIPOS</span></h2>
+          <p>Explora equipos completos.</p>
         </div>
-    </section>
 
+        <span id="resultCount"></span>
+      </div>
+
+      <div class="catalog-toolbar glass">
+
+        <input type="search"
+               id="buscar"
+               placeholder="Buscar equipos..."
+               aria-label="Buscar equipos">
+
+        <select id="ordenar"
+                aria-label="Ordenar equipos">
+          <option value="default">Destacados</option>
+          <option value="asc">Menor precio</option>
+          <option value="desc">Mayor precio</option>
+          <option value="name">Nombre A-Z</option>
+        </select>
+      </div>
+
+      <div class="filtros" id="filtros">
+        <button class="active"
+                data-category="Todos">Todos</button>
+        <button data-category="Desktop">Desktop</button>
+        <button data-category="Laptop">Laptop</button>
+        <button data-category="Móvil">Móvil</button>
+        <button data-category="Workstation">
+          Workstation
+        </button>
+      </div>
+
+      <div id="catalogo" class="catalogo"></div>
+
+      <p class="pricing-note">
+        Los precios son ilustrativos.
+        Verifica precios y disponibilidad en Newegg.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CARRITO -->
+  <section class="cart-section" id="carrito">
+    <div class="container">
+
+      <div class="cart-racetrack" aria-hidden="true">
+        <div class="track-line"></div>
+
+        <div class="running-cart" id="runningCart">
+          <svg viewBox="0 0 100 75" fill="none">
+            <path d="M5 15h13l14 37h48l12-29H24"
+                  stroke="#ff7900" stroke-width="5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"/>
+            <path d="M33 59h50"
+                  stroke="#ff7900" stroke-width="4"/>
+            <circle cx="40" cy="66" r="6"
+                    fill="white" stroke="#ff7900"
+                    stroke-width="3"/>
+            <circle cx="75" cy="66" r="6"
+                    fill="white" stroke="#ff7900"
+                    stroke-width="3"/>
+            <path d="M42 20h28l3 26H39L42 20Z"
+                  fill="#ff7900"/>
+            <path d="M49 21v-6a7 7 0 0 1 14 0v6"
+                  stroke="white" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="cart-panel glass">
+        <div class="cart-header">
+          <div>
+            <span class="eyebrow">TU SELECCIÓN</span>
+            <h2>CARRITO DE <span>COMPRAS</span></h2>
+          </div>
+
+          <button id="vaciarCarrito" class="clear-btn">
+            Vaciar carrito
+          </button>
+        </div>
+
+        <div class="cart-content">
+          <div id="listaCarrito" class="cart-items"></div>
+
+          <div class="cart-summary glass">
+            <p>TOTAL ESTIMADO</p>
+            <strong id="total">$0.00</strong>
+
+            <small>
+              Carrito de demostración.
+              No procesa pagos.
+            </small>
+
+            <a href="https://www.newegg.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary">
+              VISITAR NEWEGG
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 </main>
 
 <footer>
-    <div class="container footer-content">
-
-        <strong>
-            PIEZAS<span>PC</span>
-        </strong>
-
-        <p>
-            © 2026 Piezas para la Computadora
-        </p>
-
-    </div>
+  <div class="container footer-content">
+    <strong>PIEZAS<span>PC</span></strong>
+    <p>© 2026 Piezas para la Computadora</p>
+  </div>
 </footer>
+
+<!-- PLANTILLA SVG DE BOLSA REDONDA -->
+<!-- JavaScript la coloca encima de la pagina
+     y la lanza hacia el carrito. -->
+<template id="shoppingBagTemplate">
+  <svg viewBox="0 0 48 48"
+       fill="none"
+       xmlns="http://www.w3.org/2000/svg"
+       aria-hidden="true">
+
+    <circle cx="24" cy="24" r="22"
+            fill="#ff7900"/>
+
+    <circle cx="24" cy="24" r="21"
+            stroke="#ffc48b"
+            stroke-opacity=".75"/>
+
+    <path d="M16 21h16l1.5 14h-19L16 21Z"
+          fill="#ffffff"/>
+
+    <path d="M20 22v-4a4 4 0 0 1 8 0v4"
+          stroke="#ffffff"
+          stroke-width="2.6"
+          stroke-linecap="round"/>
+
+    <path d="M20 27h8"
+          stroke="#ff7900"
+          stroke-width="2"
+          stroke-linecap="round"/>
+  </svg>
+</template>
 
 </body>
 </html>
