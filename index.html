@@ -3,275 +3,398 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090a0e">
     <title>Piezas para la Computadora</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
 
-<header class="glass-header" id="inicio">
+<!-- NAVEGACION -->
+<header class="site-header" id="inicio">
     <div class="container navbar">
-        <a class="logo" href="#inicio">PIEZAS<span>PC</span></a>
-        <nav>
+
+        <a href="#inicio" class="logo">
+            PIEZAS<span>PC</span>
+        </a>
+
+        <nav aria-label="Navegación">
             <a href="#inicio">Inicio</a>
-            <a href="#productos">Componentes</a>
+            <a href="#productos">Equipos</a>
             <a href="#carrito">Carrito</a>
         </nav>
-        <a class="cart-badge" href="#carrito">
-            🛒 <span id="cartCount">0</span>
+
+        <!-- CARRITO SVG -->
+        <a href="#carrito" class="cart-link"
+           id="cartLink" aria-label="Ver carrito">
+
+            <span class="cart-icon-wrap">
+
+                <svg class="cart-svg"
+                     viewBox="0 0 64 64"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="3"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+
+                    <path d="M5 10h9l7 31h29l7-24H17"/>
+                    <path d="M23 46h28"/>
+                    <circle cx="26" cy="53" r="4"/>
+                    <circle cx="48" cy="53" r="4"/>
+                </svg>
+
+                <!-- BOLSA QUE LLEGA DESDE LA IZQUIERDA -->
+                <svg class="cart-bag"
+                     viewBox="0 0 32 36"
+                     aria-hidden="true">
+
+                    <path d="M5 12h22l2 21H3L5 12Z"
+                          fill="#ff7900"/>
+
+                    <path d="M10 14V9a6 6 0 0 1 12 0v5"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2.5"
+                          stroke-linecap="round"/>
+                </svg>
+
+            </span>
+
+            <span class="cart-label">Carrito</span>
+            <span class="cart-count" id="cartCount">0</span>
+
         </a>
     </div>
 </header>
 
 <main>
-    <!-- PORTADA DEPORTIVA -->
+
+    <!-- PORTADA -->
     <section class="hero">
-        <div class="speed-line"></div>
 
         <div class="container hero-grid">
-            <div class="hero-text">
-                <div class="eyebrow">
-                    <span class="live-dot"></span>
-                    PERFORMANCE SERIES / PC BUILD
-                </div>
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    PERFORMANCE / TECHNOLOGY
+                </span>
 
                 <h1>
                     POTENCIA.<br>
                     PRECISIÓN.<br>
-                    <span>RENDIMIENTO.</span>
+                    <span>VELOCIDAD.</span>
                 </h1>
 
                 <p>
-                    Construye la computadora de tus sueños.
-                    Descubre componentes de alto rendimiento,
-                    compara alternativas y diseña una PC
-                    a tu medida.
+                    Encuentra la computadora perfecta
+                    para tus necesidades. Explora
+                    desktops, laptops, dispositivos
+                    móviles y estaciones de trabajo
+                    de alto rendimiento.
                 </p>
 
                 <div class="hero-actions">
-                    <a href="#productos" class="btn btn-orange">
-                        EXPLORAR PIEZAS ↗
+
+                    <a href="#productos"
+                       class="btn btn-primary">
+                        EXPLORAR EQUIPOS
                     </a>
-                    <a href="#carrito" class="btn btn-glass">
-                        MI CARRITO
+
+                    <a href="#carrito"
+                       class="btn btn-glass">
+                        VER CARRITO
                     </a>
+
                 </div>
 
-                <div class="stats">
+                <div class="hero-stats">
+
                     <div>
-                        <strong>12+</strong>
-                        <small>COMPONENTES</small>
+                        <strong>12</strong>
+                        <small>EQUIPOS EN CATÁLOGO</small>
                     </div>
+
                     <div>
-                        <strong>6</strong>
+                        <strong>4</strong>
                         <small>CATEGORÍAS</small>
                     </div>
-                    <div>
-                        <strong>100%</strong>
-                        <small>TU ESTILO</small>
-                    </div>
+
                 </div>
             </div>
 
-            <!-- COMPUTADORA INTERACTIVA -->
+            <!-- COMPUTADORA MINIMALISTA -->
             <div class="pc-visual"
                  id="pcInteractive"
                  role="button"
                  tabindex="0"
-                 aria-label="Pausar animación"
-                 aria-pressed="false">
+                 aria-pressed="false"
+                 aria-label="Pausar animación">
 
-                <div class="visual-glow"></div>
-                <div class="orbit orbit-1"></div>
-                <div class="orbit orbit-2"></div>
+                <div class="pc-glow"></div>
 
-                <div class="pc-stage">
-                    <div class="pc-shadow"></div>
+                <div class="pc-case">
 
-                    <div class="pc-case">
-                        <div class="case-edge"></div>
+                    <div class="pc-window">
 
-                        <div class="case-window">
-                            <div class="motherboard part">
-                                <div class="board-lines"></div>
-                                <div class="cpu-socket"></div>
-                                <div class="ram-slot"></div>
-                                <div class="gpu-slot"></div>
-                            </div>
+                        <div class="motherboard pc-part"></div>
 
-                            <div class="cpu part">
-                                <span>CPU</span>
-                            </div>
-
-                            <div class="ram part">
-                                <i></i><i></i>
-                                <i></i><i></i>
-                            </div>
-
-                            <div class="gpu part">
-                                <span class="gpu-name">RTX</span>
-                                <div class="gpu-fan"></div>
-                                <div class="gpu-fan"></div>
-                            </div>
-
-                            <div class="cooler part">
-                                <div class="cooler-fan"></div>
-                            </div>
-
-                            <div class="case-fan fan-1"></div>
-                            <div class="case-fan fan-2"></div>
+                        <div class="processor pc-part">
+                            CPU
                         </div>
 
-                        <div class="case-feet"></div>
+                        <div class="memory pc-part">
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                        <div class="graphics pc-part">
+                            <span>RTX</span>
+                            <b></b>
+                            <b></b>
+                        </div>
+
+                        <div class="pc-fan"></div>
+
                     </div>
 
-                    <div class="floating-tag tag-cpu">CPU ↘</div>
-                    <div class="floating-tag tag-gpu">GPU ↖</div>
-                    <div class="floating-tag tag-ram">RAM ↙</div>
+                    <div class="case-front">
+                        <span></span>
+                    </div>
+
                 </div>
 
-                <div class="build-status">
-                    <span class="live-dot"></span>
-                    <span class="state-text">
-                        ENSAMBLANDO COMPONENTES
-                    </span>
-                </div>
+                <div class="pc-shadow"></div>
 
-                <p class="pc-hint">
-                    ◉ HAZ CLIC EN LA PC PARA PAUSAR O REANUDAR
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- BARRA DE BENEFICIOS -->
-    <section class="features">
-        <div class="container features-grid">
-            <div class="feature glass">
-                <span>⚡</span>
-                <div>
-                    <strong>Alto rendimiento</strong>
-                    <small>Componentes para tu PC</small>
-                </div>
-            </div>
-            <div class="feature glass">
-                <span>◈</span>
-                <div>
-                    <strong>Explora categorías</strong>
-                    <small>Encuentra tus piezas</small>
-                </div>
-            </div>
-            <div class="feature glass">
-                <span>↗</span>
-                <div>
-                    <strong>Newegg</strong>
-                    <small>Visita el vendedor</small>
-                </div>
-            </div>
+    <!-- CATEGORIAS -->
+    <section class="categories-intro">
+        <div class="container category-highlights">
+
+            <div class="glass">Desktop</div>
+            <div class="glass">Laptop</div>
+            <div class="glass">Móvil</div>
+            <div class="glass">Workstation</div>
+
         </div>
     </section>
 
-    <!-- PRODUCTOS -->
+    <!-- CATALOGO -->
     <section class="products-section" id="productos">
+
         <div class="container">
 
             <div class="section-heading">
+
                 <div>
-                    <span class="section-label">ELIGE TU HARDWARE</span>
-                    <h2>CATÁLOGO DE <span>PIEZAS</span></h2>
-                    <p>Selecciona componentes para tu próxima PC.</p>
+                    <span class="eyebrow">
+                        CATÁLOGO DE EQUIPOS
+                    </span>
+
+                    <h2>
+                        NUESTROS <span>EQUIPOS</span>
+                    </h2>
+
+                    <p>
+                        Selecciona la categoría
+                        que deseas explorar.
+                    </p>
                 </div>
+
                 <span id="resultCount"></span>
+
             </div>
 
-            <div class="toolbar glass">
+            <!-- BUSCADOR -->
+            <div class="catalog-toolbar glass">
+
                 <input
-                    id="buscar"
                     type="search"
-                    placeholder="⌕ Buscar componentes..."
-                    aria-label="Buscar componentes"
+                    id="buscar"
+                    placeholder="Buscar equipos..."
+                    aria-label="Buscar equipos"
                 >
 
-                <select id="ordenar" aria-label="Ordenar productos">
-                    <option value="default">Destacados</option>
-                    <option value="asc">Menor precio</option>
-                    <option value="desc">Mayor precio</option>
-                    <option value="name">Nombre A-Z</option>
+                <select id="ordenar"
+                        aria-label="Ordenar equipos">
+
+                    <option value="default">
+                        Destacados
+                    </option>
+
+                    <option value="asc">
+                        Menor precio
+                    </option>
+
+                    <option value="desc">
+                        Mayor precio
+                    </option>
+
+                    <option value="name">
+                        Nombre A-Z
+                    </option>
+
                 </select>
+
             </div>
 
-            
-<div id="filtros" class="filters">
-    <button class="active" data-category="Todos">
-        Todos
-    </button>
-    <button data-category="Desktop">
-        🖥️ Desktop
-    </button>
-    <button data-category="Laptop">
-        💻 Laptop
-    </button>
-    <button data-category="Móvil">
-        📱 Móvil
-    </button>
-    <button data-category="Workstation">
-        ⚙️ Workstation
-    </button>
-</div>
+            <!-- FILTROS -->
+            <div class="filtros" id="filtros">
 
+                <button class="active"
+                        data-category="Todos">
+                    Todos
+                </button>
 
-            <div id="catalogo" class="catalogo"></div>
+                <button data-category="Desktop">
+                    Desktop
+                </button>
 
-            <p class="notice">
-                Los precios son ilustrativos. Verifica los precios
-                y la disponibilidad en Newegg.
+                <button data-category="Laptop">
+                    Laptop
+                </button>
+
+                <button data-category="Móvil">
+                    Móvil
+                </button>
+
+                <button data-category="Workstation">
+                    Workstation
+                </button>
+
+            </div>
+
+            <!-- PRODUCTOS -->
+            <div class="catalogo" id="catalogo"></div>
+
+            <p class="pricing-note">
+                Los precios son ilustrativos.
+                Consulta los precios y la disponibilidad
+                directamente en Newegg.
             </p>
+
         </div>
     </section>
 
-    <!-- CARRITO -->
+    <!-- CARRITO DE COMPRAS -->
     <section class="cart-section" id="carrito">
+
         <div class="container">
-            <div class="glass cart-panel">
-                <div class="section-heading">
+
+            <!-- CARRITO QUE CORRE -->
+            <div class="cart-racetrack" aria-hidden="true">
+
+                <div class="track-line"></div>
+
+                <div class="running-cart" id="runningCart">
+
+                    <svg viewBox="0 0 100 75" fill="none">
+
+                        <path d="M5 15h13l14 37h48l12-29H24"
+                              stroke="#ff7900"
+                              stroke-width="5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"/>
+
+                        <path d="M33 59h50"
+                              stroke="#ff7900"
+                              stroke-width="4"/>
+
+                        <circle cx="40" cy="66" r="6"
+                                fill="white"
+                                stroke="#ff7900"
+                                stroke-width="3"/>
+
+                        <circle cx="75" cy="66" r="6"
+                                fill="white"
+                                stroke="#ff7900"
+                                stroke-width="3"/>
+
+                        <!-- BOLSA DENTRO DEL CARRITO -->
+                        <path d="M42 20h28l3 26H39L42 20Z"
+                              fill="#ff7900"/>
+
+                        <path d="M49 21v-6a7 7 0 0 1 14 0v6"
+                              stroke="white"
+                              stroke-width="3"/>
+
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="cart-panel glass">
+
+                <div class="cart-header">
+
                     <div>
-                        <span class="section-label">TU SELECCIÓN</span>
-                        <h2>MI <span>CARRITO</span></h2>
+                        <span class="eyebrow">
+                            TU SELECCIÓN
+                        </span>
+
+                        <h2>
+                            CARRITO DE <span>COMPRAS</span>
+                        </h2>
                     </div>
-                    <button id="vaciarCarrito" class="clear-btn">
+
+                    <button id="vaciarCarrito"
+                            class="clear-btn">
                         Vaciar carrito
                     </button>
+
                 </div>
 
-                <div class="cart-grid">
-                    <div id="listaCarrito" class="cart-items"></div>
+                <div class="cart-content">
+
+                    <div id="listaCarrito"
+                         class="cart-items"></div>
 
                     <div class="cart-summary glass">
-                        <small>TOTAL ESTIMADO</small>
-                        <h3 id="total">$0.00</h3>
-                        <p>
-                            Este catálogo es una demostración.
-                            No procesa pagos.
-                        </p>
+
+                        <p>TOTAL ESTIMADO</p>
+
+                        <strong id="total">$0.00</strong>
+
+                        <small>
+                            Catálogo de demostración.
+                            No procesa compras reales.
+                        </small>
+
                         <a href="https://www.newegg.com/"
                            target="_blank"
                            rel="noopener noreferrer"
-                           class="btn btn-orange">
-                            VISITAR NEWEGG ↗
+                           class="btn btn-primary">
+                            VISITAR NEWEGG
                         </a>
+
                     </div>
+
                 </div>
             </div>
+
         </div>
     </section>
+
 </main>
 
 <footer>
-    <div class="container">
-        <strong>PIEZAS<span>PC</span></strong>
-        <p>© 2026 Piezas para la Computadora</p>
-        <small>CONSTRUYE SIN LÍMITES.</small>
+    <div class="container footer-content">
+
+        <strong>
+            PIEZAS<span>PC</span>
+        </strong>
+
+        <p>
+            © 2026 Piezas para la Computadora
+        </p>
+
     </div>
 </footer>
 
