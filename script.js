@@ -1,13 +1,4 @@
-
-// =====================================
-// PIEZAS PC - CATALOGO BILINGUE
-// =====================================
-
-// Precios ilustrativos.
-// Imagenes externas de Newegg.
-
 const productos = [
-  // DESKTOP
   {
     id: 1,
     nombre: "ABS Cyclone Aqua Gaming",
@@ -38,13 +29,11 @@ const productos = [
     imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-976-10.jpg",
     enlace: "https://www.newegg.com/p/N82E16883360976"
   },
-
-  // LAPTOP
   {
     id: 4,
     nombre: "MSI Gaming Laptop RTX 4060",
     categoria: "Laptop",
-    precio: 1499,
+    precio: 1499.00,
     es: "Laptop gaming Intel Core i7 y RTX.",
     en: "Gaming laptop with Intel Core i7 and RTX.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-427-14.jpg",
@@ -64,18 +53,16 @@ const productos = [
     id: 6,
     nombre: "MSI Vector 16 HX AI",
     categoria: "Laptop",
-    precio: 2299,
-    es: "Portátil para gaming y creación de contenido.",
+    precio: 2299.00,
+    es: "Portatil para gaming y creacion de contenido.",
     en: "Laptop for gaming and content creation.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-737-01.jpg",
     enlace: "https://www.newegg.com/p/N82E16834156737"
   },
-
-  // MOVIL
   {
     id: 7,
     nombre: "Samsung Galaxy A17 4G",
-    categoria: "Móvil",
+    categoria: "Movil",
     precio: 194.99,
     es: "Smartphone Samsung desbloqueado.",
     en: "Unlocked Samsung smartphone.",
@@ -85,7 +72,7 @@ const productos = [
   {
     id: 8,
     nombre: "Samsung Galaxy S25 256GB",
-    categoria: "Móvil",
+    categoria: "Movil",
     precio: 938.25,
     es: "Smartphone Samsung de gama alta.",
     en: "High-end Samsung smartphone.",
@@ -95,21 +82,19 @@ const productos = [
   {
     id: 9,
     nombre: "Samsung Galaxy A17 5G",
-    categoria: "Móvil",
+    categoria: "Movil",
     precio: 279.99,
     es: "Smartphone con conectividad 5G.",
     en: "Smartphone with 5G connectivity.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/23B-0002-01YD6-01.jpg",
     enlace: "https://www.newegg.com/p/23B-0002-01YD6"
   },
-
-  // WORKSTATION
   {
     id: 10,
     nombre: "Lenovo ThinkStation P3 Tower",
     categoria: "Workstation",
-    precio: 839,
-    es: "Estación de trabajo profesional.",
+    precio: 839.00,
+    es: "Estacion de trabajo profesional.",
     en: "Professional desktop workstation.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/B0GJD2603311D1VC058.jpg",
     enlace: "https://www.newegg.com/p/1VK-01WM-00046"
@@ -128,7 +113,7 @@ const productos = [
     id: 12,
     nombre: "HP Z2 G9 SFF Workstation",
     categoria: "Workstation",
-    precio: 1089,
+    precio: 1089.00,
     es: "Workstation HP de formato compacto.",
     en: "Compact HP professional workstation.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/B0GJD2602050NNQ8U85.jpg",
@@ -136,114 +121,102 @@ const productos = [
   }
 ];
 
-// =====================================
-// TRADUCCIONES
-// =====================================
-
 const traducciones = {
   es: {
-    navHome: "Inicio",
-    navProducts: "Equipos",
-    navCart: "Carrito",
-    heroOne: "POTENCIA.",
-    heroTwo: "PRECISIÓN.",
-    heroThree: "VELOCIDAD.",
-    heroDescription:
-      "Encuentra tu próxima computadora. Explora desktops, laptops, dispositivos móviles y estaciones de trabajo.",
+    home: "Inicio",
+    products: "Equipos",
+    cart: "Carrito",
+    power: "POTENCIA.",
+    precision: "PRECISION.",
+    speed: "VELOCIDAD.",
+    heroText: "Encuentra tu proxima computadora. Explora desktops, laptops, moviles y estaciones de trabajo.",
     explore: "EXPLORAR EQUIPOS",
     viewCart: "VER CARRITO",
-    registered: "EQUIPOS REGISTRADOS",
-    categories: "CATEGORÍAS",
-    mobile: "Móvil",
-    catalogLabel: "CATÁLOGO DE EQUIPOS",
-    catalogTitle: "NUESTROS",
-    catalogTitle2: "EQUIPOS",
+    listed: "EQUIPOS REGISTRADOS",
+    categories: "CATEGORIAS",
+    mobile: "Movil",
+    catalogLabel: "CATALOGO DE EQUIPOS",
+    our: "NUESTROS",
+    equipment: "EQUIPOS",
     catalogDescription: "Equipos completos para cada necesidad.",
     sortBy: "Ordenar por:",
     featured: "Destacados",
-    lowPrice: "Menor precio",
-    highPrice: "Mayor precio",
-    alphabetical: "Nombre A-Z",
+    low: "Menor precio",
+    high: "Mayor precio",
+    name: "Nombre A-Z",
     all: "Todos",
-    priceNotice:
-      "Los precios son ilustrativos. Consulta los precios reales directamente en Newegg.",
-    yourSelection: "TU SELECCIÓN",
-    cartTitle: "CARRITO DE",
-    cartTitle2: "COMPRAS",
-    clearCart: "Vaciar carrito",
-    estimatedTotal: "TOTAL ESTIMADO",
-    demoWarning:
-      "Carrito de demostración. No procesa pagos.",
-    visitNewegg: "VISITAR NEWEGG",
-    searchPlaceholder: "Buscar equipos...",
+    priceNote: "Los precios son ilustrativos. Consulta precios reales y disponibilidad en Newegg.",
+    selection: "TU SELECCION",
+    cartTitleOne: "CARRITO DE",
+    cartTitleTwo: "COMPRAS",
+    clear: "Vaciar carrito",
+    estimated: "TOTAL ESTIMADO",
+    demo: "Carrito de demostracion. No procesa pagos.",
+    visit: "VISITAR NEWEGG",
+    search: "Buscar equipos...",
+    searchRule: "Solo letras, numeros y espacios.",
     loading: "Cargando equipos...",
     available: "equipos con imagen disponible",
-    unavailable: "No hay equipos con imágenes disponibles.",
-    samplePrice: "Precio ilustrativo",
+    unavailable: "No hay equipos con imagen disponible.",
+    sample: "Precio ilustrativo",
     add: "+ Agregar al carrito",
     remove: "Quitar",
-    empty: "Tu carrito está vacío.",
-    viewOnNewegg: "Ver en Newegg",
-    zoomImage: "Ampliar imagen",
+    empty: "Tu carrito esta vacio.",
+    viewNewegg: "Ver en Newegg",
+    zoom: "Ver imagen completa",
     close: "Cerrar",
-    pause: "Pausar animación",
-    resume: "Reanudar animación"
+    pause: "Pausar animacion",
+    resume: "Reanudar animacion"
   },
   en: {
-    navHome: "Home",
-    navProducts: "Computers",
-    navCart: "Cart",
-    heroOne: "POWER.",
-    heroTwo: "PRECISION.",
-    heroThree: "SPEED.",
-    heroDescription:
-      "Find your next computer. Explore desktops, laptops, mobile devices and professional workstations.",
+    home: "Home",
+    products: "Computers",
+    cart: "Cart",
+    power: "POWER.",
+    precision: "PRECISION.",
+    speed: "SPEED.",
+    heroText: "Find your next computer. Explore desktops, laptops, mobile devices and professional workstations.",
     explore: "EXPLORE COMPUTERS",
     viewCart: "VIEW CART",
-    registered: "LISTED DEVICES",
+    listed: "LISTED DEVICES",
     categories: "CATEGORIES",
     mobile: "Mobile",
     catalogLabel: "COMPUTER CATALOG",
-    catalogTitle: "OUR",
-    catalogTitle2: "COMPUTERS",
+    our: "OUR",
+    equipment: "COMPUTERS",
     catalogDescription: "Complete systems for every need.",
     sortBy: "Sort by:",
     featured: "Featured",
-    lowPrice: "Lowest price",
-    highPrice: "Highest price",
-    alphabetical: "Name A-Z",
+    low: "Lowest price",
+    high: "Highest price",
+    name: "Name A-Z",
     all: "All",
-    priceNotice:
-      "Prices are illustrative. Check current prices directly on Newegg.",
-    yourSelection: "YOUR SELECTION",
-    cartTitle: "SHOPPING",
-    cartTitle2: "CART",
-    clearCart: "Clear cart",
-    estimatedTotal: "ESTIMATED TOTAL",
-    demoWarning:
-      "Demo shopping cart. No payments are processed.",
-    visitNewegg: "VISIT NEWEGG",
-    searchPlaceholder: "Search computers...",
+    priceNote: "Prices are illustrative. Check real prices and availability on Newegg.",
+    selection: "YOUR SELECTION",
+    cartTitleOne: "SHOPPING",
+    cartTitleTwo: "CART",
+    clear: "Clear cart",
+    estimated: "ESTIMATED TOTAL",
+    demo: "Demo shopping cart. No payments are processed.",
+    visit: "VISIT NEWEGG",
+    search: "Search computers...",
+    searchRule: "Letters, numbers and spaces only.",
     loading: "Loading computers...",
     available: "computers with available images",
     unavailable: "No computers with available images.",
-    samplePrice: "Illustrative price",
+    sample: "Illustrative price",
     add: "+ Add to cart",
     remove: "Remove",
     empty: "Your cart is empty.",
-    viewOnNewegg: "View on Newegg",
-    zoomImage: "Enlarge image",
+    viewNewegg: "View on Newegg",
+    zoom: "View full image",
     close: "Close",
     pause: "Pause animation",
     resume: "Resume animation"
   }
 };
 
-// =====================================
-// ESTADO Y UTILIDADES
-// =====================================
-
-const $ = id => document.getElementById(id);
+const $ = (id) => document.getElementById(id);
 
 let idioma = "es";
 let categoriaActual = "Todos";
@@ -254,8 +227,8 @@ let renderActual = 0;
 const catalogo = $("catalogo");
 const cartLink = $("cartLink");
 const runningCart = $("runningCart");
-
-const imagenes = new Map();
+const runningCharacter = $("runningCharacter");
+const cacheImagenes = new Map();
 
 function t(clave) {
   return traducciones[idioma][clave] || clave;
@@ -269,125 +242,132 @@ function dinero(valor) {
 }
 
 function movimientoReducido() {
-  return window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  ).matches;
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-// =====================================
-// CAMBIAR IDIOMA
-// =====================================
+/* IDIOMA */
 
 function cambiarIdioma(nuevoIdioma) {
   idioma = nuevoIdioma;
   document.documentElement.lang = idioma;
 
-  document.querySelectorAll("[data-i18n]")
-    .forEach(elemento => {
-      elemento.textContent = t(elemento.dataset.i18n);
-    });
+  document.querySelectorAll("[data-i18n]").forEach((elemento) => {
+    elemento.textContent = t(elemento.dataset.i18n);
+  });
 
-  $("buscar").placeholder = t("searchPlaceholder");
-  $("buscar").setAttribute(
-    "aria-label", t("searchPlaceholder")
-  );
+  $("buscar").placeholder = t("search");
+  $("buscar").setAttribute("aria-label", t("search"));
 
   $("langES").classList.toggle("active", idioma === "es");
   $("langEN").classList.toggle("active", idioma === "en");
 
-  $("langES").setAttribute(
-    "aria-pressed", String(idioma === "es")
-  );
-  $("langEN").setAttribute(
-    "aria-pressed", String(idioma === "en")
-  );
+  $("langES").setAttribute("aria-pressed", String(idioma === "es"));
+  $("langEN").setAttribute("aria-pressed", String(idioma === "en"));
 
   $("closeImage").setAttribute("aria-label", t("close"));
+  cartLink.setAttribute("aria-label", t("viewCart"));
 
-  const pausada = $("pcInteractive")
-    .classList.contains("paused");
-
-  $("pcInteractive").setAttribute(
-    "aria-label", t(pausada ? "resume" : "pause")
-  );
+  const pausada = $("pcInteractive").classList.contains("paused");
+  $("pcInteractive").setAttribute("aria-label", t(pausada ? "resume" : "pause"));
 
   mostrarProductos();
   actualizarCarrito();
 }
 
-$("langES").addEventListener("click", () => {
-  cambiarIdioma("es");
+$("langES").addEventListener("click", () => cambiarIdioma("es"));
+$("langEN").addEventListener("click", () => cambiarIdioma("en"));
+
+/* BLOQUEAR CARACTERES ESPECIALES EN EL BUSCADOR */
+
+function limpiarTextoBusqueda(texto) {
+  return texto
+    .replace(/[^a-zA-Z0-9\s]/g, "")
+    .replace(/\s{2,}/g, " ")
+    .trimStart();
+}
+
+$("buscar").addEventListener("input", (evento) => {
+  const limpio = limpiarTextoBusqueda(evento.target.value);
+  if (evento.target.value !== limpio) {
+    evento.target.value = limpio;
+  }
+  mostrarProductos();
 });
 
-$("langEN").addEventListener("click", () => {
-  cambiarIdioma("en");
+$("buscar").addEventListener("paste", (evento) => {
+  evento.preventDefault();
+  const texto = (evento.clipboardData || window.clipboardData).getData("text");
+  const limpio = limpiarTextoBusqueda(texto);
+  const input = evento.target;
+  const inicio = input.selectionStart ?? input.value.length;
+  const fin = input.selectionEnd ?? input.value.length;
+  input.setRangeText(limpio, inicio, fin, "end");
+  input.value = limpiarTextoBusqueda(input.value);
+  mostrarProductos();
 });
 
-// =====================================
-// VERIFICAR IMAGENES DE NEWEGG
-// =====================================
+/* IMAGENES */
 
 function verificarImagen(url) {
   if (!url || !url.startsWith("https://")) {
     return Promise.resolve(false);
   }
 
-  if (imagenes.has(url)) {
-    return imagenes.get(url);
+  if (cacheImagenes.has(url)) {
+    return cacheImagenes.get(url);
   }
 
-  const comprobacion = new Promise(resolve => {
+  const comprobacion = new Promise((resolve) => {
     const imagen = new Image();
 
-    imagen.onload = () => resolve(
-      imagen.naturalWidth > 0 &&
-      imagen.naturalHeight > 0
-    );
+    imagen.onload = () => {
+      resolve(imagen.naturalWidth > 0 && imagen.naturalHeight > 0);
+    };
 
-    imagen.onerror = () => resolve(false);
+    imagen.onerror = () => {
+      resolve(false);
+    };
+
     imagen.src = url;
   });
 
-  imagenes.set(url, comprobacion);
+  cacheImagenes.set(url, comprobacion);
   return comprobacion;
 }
 
-// =====================================
-// MOSTRAR EQUIPOS
-// =====================================
+/* CATALOGO */
 
 async function mostrarProductos() {
   const turno = ++renderActual;
-  const busqueda = $("buscar").value
-    .toLowerCase().trim();
+  const busqueda = limpiarTextoBusqueda($("buscar").value).toLowerCase().trim();
 
-  let visibles = productos.filter(p => {
-    const coincideCategoria =
-      categoriaActual === "Todos" ||
-      p.categoria === categoriaActual;
+  let visibles = productos.filter((p) => {
+    const categoriaValida =
+      categoriaActual === "Todos" || p.categoria === categoriaActual;
 
-    const texto =
-      `${p.nombre} ${p.categoria} ${p.es} ${p.en}`
-        .toLowerCase();
+    const texto = (
+      p.nombre + " " +
+      p.categoria + " " +
+      p.es + " " +
+      p.en
+    ).toLowerCase();
 
-    return coincideCategoria && texto.includes(busqueda);
+    return categoriaValida && texto.includes(busqueda);
   });
 
   if (ordenActual === "asc") {
-    visibles.sort((a,b) => a.precio - b.precio);
+    visibles.sort((a, b) => a.precio - b.precio);
   } else if (ordenActual === "desc") {
-    visibles.sort((a,b) => b.precio - a.precio);
+    visibles.sort((a, b) => b.precio - a.precio);
   } else if (ordenActual === "name") {
-    visibles.sort((a,b) =>
-      a.nombre.localeCompare(b.nombre, idioma)
-    );
+    visibles.sort((a, b) => a.nombre.localeCompare(b.nombre, idioma));
   }
 
   catalogo.replaceChildren();
   $("resultCount").textContent = t("loading");
 
   const resultados = await Promise.all(
-    visibles.map(async p => ({
+    visibles.map(async (p) => ({
       producto: p,
       valida: await verificarImagen(p.imagen)
     }))
@@ -396,8 +376,8 @@ async function mostrarProductos() {
   if (turno !== renderActual) return;
 
   resultados
-    .filter(item => item.valida)
-    .forEach(item => crearTarjeta(item.producto));
+    .filter((resultado) => resultado.valida)
+    .forEach((resultado) => crearTarjeta(resultado.producto));
 
   actualizarContador();
 }
@@ -408,35 +388,34 @@ function crearTarjeta(p) {
 
   tarjeta.innerHTML = `
     <span class="product-category">
-      ${p.categoria === "Móvil" ? t("mobile") : p.categoria}
+      ${p.categoria === "Movil" ? t("mobile") : p.categoria}
     </span>
 
-    <button class="product-image" type="button"
-            aria-label="${t("zoomImage")}: ${p.nombre}">
-      <img src="${p.imagen}"
-           alt="${p.nombre}" loading="lazy">
+    <button class="product-image" type="button" aria-label="${t("zoom")}: ${p.nombre}">
+      <img src="${p.imagen}" alt="${p.nombre}">
     </button>
 
     <h3>${p.nombre}</h3>
+
     <p class="product-description">${p[idioma]}</p>
 
     <div class="product-bottom">
       <p class="precio">
         ${dinero(p.precio)}
-        <small>${t("samplePrice")}</small>
+        <small>${t("sample")}</small>
       </p>
 
       <div class="product-actions">
-        <button class="add-btn" type="button">
-          ${t("add")}
-        </button>
+        <button class="add-btn" type="button">${t("add")}</button>
 
-        <a href="${p.enlace}" class="external-btn"
-           target="_blank" rel="noopener noreferrer"
-           title="${t("viewOnNewegg")}"
-           aria-label="${t("viewOnNewegg")}">
-          ↗
-        </a>
+        <a
+          href="${p.enlace}"
+          class="external-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="${t("viewNewegg")}"
+          title="${t("viewNewegg")}"
+        >↗</a>
       </div>
     </div>
   `;
@@ -445,40 +424,34 @@ function crearTarjeta(p) {
 
   imagen.addEventListener("error", () => {
     tarjeta.remove();
-    imagenes.delete(p.imagen);
+    cacheImagenes.delete(p.imagen);
     actualizarContador();
   });
 
-  tarjeta.querySelector(".product-image")
-    .addEventListener("click", () => {
-      abrirImagen(p);
-    });
+  tarjeta.querySelector(".product-image").addEventListener("click", () => {
+    abrirImagen(p);
+  });
 
-  tarjeta.querySelector(".add-btn")
-    .addEventListener("click", evento => {
-      agregarCarrito(p.id, evento.currentTarget);
-    });
+  tarjeta.querySelector(".add-btn").addEventListener("click", (evento) => {
+    agregarCarrito(p.id, evento.currentTarget);
+  });
 
   catalogo.appendChild(tarjeta);
 }
 
 function actualizarContador() {
-  const cantidad =
-    catalogo.querySelectorAll(".producto").length;
-
-  $("resultCount").textContent =
-    `${cantidad} ${t("available")}`;
+  const cantidad = catalogo.querySelectorAll(".producto").length;
+  $("resultCount").textContent = `${cantidad} ${t("available")}`;
 
   if (cantidad === 0) {
-    catalogo.innerHTML = `
-      <div class="empty-results">${t("unavailable")}</div>
-    `;
+    const aviso = document.createElement("div");
+    aviso.className = "empty-results";
+    aviso.textContent = t("unavailable");
+    catalogo.replaceChildren(aviso);
   }
 }
 
-// =====================================
-// VISOR DE IMAGEN COMPLETA
-// =====================================
+/* VISOR */
 
 const visor = $("imageViewer");
 
@@ -487,69 +460,68 @@ function abrirImagen(p) {
   $("largeImage").alt = p.nombre;
   $("imageCaption").textContent = p.nombre;
 
-  if (!visor.open) visor.showModal();
+  if (!visor.open) {
+    visor.showModal();
+  }
 }
 
 function cerrarImagen() {
-  visor.close();
-  $("largeImage").removeAttribute("src");
+  if (visor.open) {
+    visor.close();
+  }
 }
 
 $("closeImage").addEventListener("click", cerrarImagen);
 
-visor.addEventListener("click", evento => {
-  if (evento.target === visor) cerrarImagen();
+visor.addEventListener("click", (evento) => {
+  if (evento.target === visor) {
+    cerrarImagen();
+  }
 });
 
 visor.addEventListener("close", () => {
   $("largeImage").removeAttribute("src");
 });
 
-// =====================================
-// FILTROS Y ORDENAMIENTO
-// =====================================
+/* FILTROS */
 
 function filtrar(categoria) {
   categoriaActual = categoria;
 
-  document.querySelectorAll("#filtros button")
-    .forEach(boton => {
-      const activo =
-        boton.dataset.category === categoria;
-
-      boton.classList.toggle("active", activo);
-      boton.setAttribute("aria-pressed", String(activo));
-    });
+  document.querySelectorAll("#filtros button").forEach((boton) => {
+    const activo = boton.dataset.category === categoria;
+    boton.classList.toggle("active", activo);
+    boton.setAttribute("aria-pressed", String(activo));
+  });
 
   mostrarProductos();
 }
 
-$("filtros").addEventListener("click", evento => {
+$("filtros").addEventListener("click", (evento) => {
   const boton = evento.target.closest("[data-category]");
-  if (boton) filtrar(boton.dataset.category);
+  if (boton) {
+    filtrar(boton.dataset.category);
+  }
 });
 
-$("sortButtons").addEventListener("click", evento => {
+/* ORDENAR */
+
+$("sortButtons").addEventListener("click", (evento) => {
   const boton = evento.target.closest("[data-sort]");
   if (!boton) return;
 
   ordenActual = boton.dataset.sort;
 
-  document.querySelectorAll("#sortButtons button")
-    .forEach(item => {
-      const activo = item === boton;
-      item.classList.toggle("active", activo);
-      item.setAttribute("aria-pressed", String(activo));
-    });
+  document.querySelectorAll("#sortButtons button").forEach((item) => {
+    const activo = item === boton;
+    item.classList.toggle("active", activo);
+    item.setAttribute("aria-pressed", String(activo));
+  });
 
   mostrarProductos();
 });
 
-$("buscar").addEventListener("input", mostrarProductos);
-
-// =====================================
-// BOLSA REDONDA LANZADA EN ARCO
-// =====================================
+/* IMPACTO CARRITO */
 
 function impactoCarrito() {
   cartLink.classList.remove("cart-impact");
@@ -557,65 +529,53 @@ function impactoCarrito() {
   cartLink.classList.add("cart-impact");
 }
 
-cartLink.addEventListener("animationend", evento => {
+cartLink.addEventListener("animationend", (evento) => {
   if (evento.animationName === "cartImpact") {
     cartLink.classList.remove("cart-impact");
   }
 });
 
-function lanzarBolsa(boton) {
-  if (movimientoReducido()) {
+/* BOLSA EN ARCO */
+
+function lanzarBolsa(botonOrigen) {
+  if (movimientoReducido() || !botonOrigen) {
     impactoCarrito();
     return;
   }
 
   const plantilla = $("shoppingBagTemplate");
   const bolsa = document.createElement("div");
-
   bolsa.className = "flying-bag";
-  bolsa.appendChild(
-    plantilla.content.firstElementChild.cloneNode(true)
-  );
-
+  bolsa.appendChild(plantilla.content.firstElementChild.cloneNode(true));
   document.body.appendChild(bolsa);
 
-  const origen = boton.getBoundingClientRect();
-  const destino = cartLink
-    .querySelector(".cart-svg")
-    .getBoundingClientRect();
+  const origen = botonOrigen.getBoundingClientRect();
+  const destino = cartLink.querySelector(".cart-svg").getBoundingClientRect();
+  const tamano = 31;
 
-  const size = 31;
+  const x0 = origen.left + origen.width / 2 - tamano / 2;
+  const y0 = origen.top + origen.height / 2 - tamano / 2;
+  const x1 = destino.left + destino.width / 2 - tamano / 2;
+  const y1 = destino.top + destino.height * .45 - tamano / 2;
 
-  const x0 = origen.left + origen.width / 2 - size / 2;
-  const y0 = origen.top + origen.height / 2 - size / 2;
-
-  const x1 = destino.left + destino.width / 2 - size / 2;
-  const y1 = destino.top + destino.height * .45 - size / 2;
-
-  const altura = Math.min(
-    230,
-    Math.max(65, Math.abs(x1 - x0) * .32)
-  );
-
+  const altura = Math.min(230, Math.max(65, Math.abs(x1 - x0) * .32));
   const puntos = [];
 
   for (let i = 0; i <= 30; i++) {
-    const t = i / 30;
+    const progreso = i / 30;
+    const x = x0 + (x1 - x0) * progreso;
+    const y = y0 + (y1 - y0) * progreso - 4 * altura * progreso * (1 - progreso);
+    const escala = 1 - .5 * progreso;
+    const rotacion = -22 + 45 * progreso;
 
-    const x = x0 + (x1 - x0) * t;
-    const y = y0 + (y1 - y0) * t
-      - 4 * altura * t * (1 - t);
-
-    const escala = 1 - .5 * t;
-    const rotacion = -22 + 45 * t;
+    let opacidad = 1;
+    if (progreso < .06) opacidad = progreso / .06;
+    if (progreso > .93) opacidad = (1 - progreso) / .07;
 
     puntos.push({
-      offset: t,
-      transform:
-        `translate(${x}px,${y}px) ` +
-        `rotate(${rotacion}deg) scale(${escala})`,
-      opacity: t < .06 ? t / .06 :
-        t > .93 ? (1 - t) / .07 : 1
+      offset: progreso,
+      transform: `translate(${x}px, ${y}px) rotate(${rotacion}deg) scale(${escala})`,
+      opacity: opacidad
     });
   }
 
@@ -630,18 +590,18 @@ function lanzarBolsa(boton) {
       bolsa.remove();
       impactoCarrito();
     })
-    .catch(() => bolsa.remove());
+    .catch(() => {
+      bolsa.remove();
+    });
 }
 
-// =====================================
-// CARRITO DE COMPRAS
-// =====================================
+/* CARRITO DE COMPRAS */
 
 function agregarCarrito(id, boton) {
-  const producto = productos.find(p => p.id === id);
+  const producto = productos.find((p) => p.id === id);
   if (!producto) return;
 
-  const existente = carrito.find(item => item.id === id);
+  const existente = carrito.find((item) => item.id === id);
 
   if (existente) {
     existente.cantidad++;
@@ -654,7 +614,7 @@ function agregarCarrito(id, boton) {
 }
 
 function eliminarProducto(id) {
-  carrito = carrito.filter(item => item.id !== id);
+  carrito = carrito.filter((item) => item.id !== id);
   actualizarCarrito();
 }
 
@@ -677,12 +637,11 @@ function actualizarCarrito() {
     lista.appendChild(vacio);
   }
 
-  carrito.forEach(item => {
-    const p = productos.find(x => x.id === item.id);
+  carrito.forEach((item) => {
+    const p = productos.find((producto) => producto.id === item.id);
     if (!p) return;
 
     const subtotal = p.precio * item.cantidad;
-
     total += subtotal;
     cantidad += item.cantidad;
 
@@ -694,18 +653,16 @@ function actualizarCarrito() {
         <strong>${p.nombre}</strong>
         <small>${item.cantidad} × ${dinero(p.precio)}</small>
       </div>
+
       <div class="cart-row-right">
         <span>${dinero(subtotal)}</span><br>
-        <button class="remove-btn" type="button">
-          ${t("remove")}
-        </button>
+        <button class="remove-btn" type="button">${t("remove")}</button>
       </div>
     `;
 
-    fila.querySelector(".remove-btn")
-      .addEventListener("click", () => {
-        eliminarProducto(p.id);
-      });
+    fila.querySelector(".remove-btn").addEventListener("click", () => {
+      eliminarProducto(p.id);
+    });
 
     lista.appendChild(fila);
   });
@@ -714,71 +671,109 @@ function actualizarCarrito() {
   $("cartCount").textContent = cantidad;
 }
 
-$("vaciarCarrito").addEventListener(
-  "click", vaciarCarrito
-);
+$("vaciarCarrito").addEventListener("click", vaciarCarrito);
 
-// =====================================
-// CARRITO CORRIENDO EN SU SECCION
-// =====================================
+/* CARRITO CORRIENDO + MUÑEQUITO */
 
-function correrCarrito() {
-  if (movimientoReducido()) return;
+const INTERVALO_CARRITO = 25000;
+let intervaloCarrito = null;
+let carritoEnVista = false;
+
+function correrCarritoAnimado() {
+  if (movimientoReducido() || document.hidden) return;
 
   runningCart.classList.remove("run");
+  runningCharacter.classList.remove("run");
+
   void runningCart.offsetWidth;
+  void runningCharacter.offsetWidth;
+
+  runningCharacter.classList.add("run");
   runningCart.classList.add("run");
 }
 
-runningCart.addEventListener("animationend", evento => {
+function detenerCarrera() {
+  if (intervaloCarrito !== null) {
+    clearInterval(intervaloCarrito);
+    intervaloCarrito = null;
+  }
+
+  runningCart.classList.remove("run");
+  runningCharacter.classList.remove("run");
+}
+
+function iniciarCarrera() {
+  if (intervaloCarrito !== null) return;
+  if (!carritoEnVista || document.hidden || movimientoReducido()) return;
+
+  correrCarritoAnimado();
+
+  intervaloCarrito = setInterval(() => {
+    if (carritoEnVista && !document.hidden) {
+      correrCarritoAnimado();
+    }
+  }, INTERVALO_CARRITO);
+}
+
+runningCart.addEventListener("animationend", (evento) => {
   if (evento.animationName === "raceCart") {
     runningCart.classList.remove("run");
   }
 });
 
-let carritoEnVista = false;
+runningCharacter.addEventListener("animationend", (evento) => {
+  if (evento.animationName === "raceRunner") {
+    runningCharacter.classList.remove("run");
+  }
+});
 
-const observador = new IntersectionObserver(
-  entradas => {
-    entradas.forEach(entrada => {
-      if (entrada.isIntersecting && !carritoEnVista) {
-        correrCarrito();
-      }
+const observadorCarrito = new IntersectionObserver(
+  (entradas) => {
+    entradas.forEach((entrada) => {
       carritoEnVista = entrada.isIntersecting;
+
+      if (carritoEnVista) {
+        iniciarCarrera();
+      } else {
+        detenerCarrera();
+      }
     });
   },
   { threshold: .3 }
 );
 
-observador.observe($("carrito"));
+observadorCarrito.observe($("carrito"));
 
-// =====================================
-// PC ANIMADA
-// =====================================
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    detenerCarrera();
+  } else if (carritoEnVista) {
+    iniciarCarrera();
+  }
+});
+
+/* PC */
 
 const pc = $("pcInteractive");
 
 function alternarPc() {
   const pausada = pc.classList.toggle("paused");
-
   pc.setAttribute("aria-pressed", String(pausada));
-  pc.setAttribute(
-    "aria-label", t(pausada ? "resume" : "pause")
-  );
+  pc.setAttribute("aria-label", t(pausada ? "resume" : "pause"));
 }
 
 pc.addEventListener("click", alternarPc);
 
-pc.addEventListener("keydown", evento => {
+pc.addEventListener("keydown", (evento) => {
   if (evento.key === "Enter" || evento.key === " ") {
     evento.preventDefault();
     alternarPc();
   }
 });
 
-// =====================================
-// INICIAR
-// =====================================
+/* INICIO */
 
 $("heroCount").textContent = productos.length;
 cambiarIdioma("es");
+mostrarProductos();
+actualizarCarrito();
