@@ -1,91 +1,132 @@
 
 // ==========================================
 // PIEZAS PARA LA COMPUTADORA
-// CATALOGO DE EQUIPOS COMPLETOS - NEWEGG
+// CATALOGO Y ANIMACIONES
 // ==========================================
 
-// Precios ilustrativos, no actualizados en vivo.
-// Las imagenes se cargan directamente desde Newegg.
+// Los precios son ilustrativos.
+// Las imagenes se solicitan desde Newegg.
 
 const productos = [
-    // ===== DESKTOP =====
+
+    // DESKTOP
+
     {
         id: 1,
-        nombre: "ABS Cyclone Aqua Gaming PC",
+        nombre: "ABS Cyclone Aqua Gaming",
         categoria: "Desktop",
         precio: 1049.99,
-        descripcion: "Intel Core i5-14400F, RTX 5060, 32GB RAM, SSD 1TB, Windows 11.",
+        descripcion: "Desktop gaming Intel Core i5 y RTX 5060.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-936-17.jpg",
         enlace: "https://www.newegg.com/p/N82E16883360936"
     },
     {
         id: 2,
-        nombre: "ABS Cyclone Aqua Ultra Gaming",
+        nombre: "ABS Cyclone Aqua Ultra",
         categoria: "Desktop",
         precio: 1499.99,
-        descripcion: "Intel Core Ultra 5 250KF Plus, RTX 5060, 32GB DDR5, SSD 1TB.",
+        descripcion: "Desktop Intel Core Ultra y GeForce RTX.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-968-22.jpg",
         enlace: "https://www.newegg.com/p/N82E16883360968"
     },
-
-    // ===== LAPTOP =====
     {
         id: 3,
+        nombre: "ABS Flux II Aqua",
+        categoria: "Desktop",
+        precio: 1149.99,
+        descripcion: "Computadora preensamblada para gaming.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-976-10.jpg",
+        enlace: "https://www.newegg.com/p/N82E16883360976"
+    },
+
+    // LAPTOP
+
+    {
+        id: 4,
         nombre: "MSI Gaming Laptop RTX 4060",
         categoria: "Laptop",
         precio: 1499.00,
-        descripcion: "Intel Core i7-13620H, RTX 4060, 16GB DDR5, SSD 1TB, pantalla 15.6 pulgadas.",
+        descripcion: "Laptop gaming Intel Core i7 y RTX.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-427-14.jpg",
         enlace: "https://www.newegg.com/p/N82E16834156427"
     },
     {
-        id: 4,
+        id: 5,
         nombre: "HP ProBook 640 G4",
         categoria: "Laptop",
         precio: 649.99,
-        descripcion: "Laptop reacondicionada de 14 pulgadas, Intel Core i5, 8GB RAM y SSD 256GB.",
+        descripcion: "Laptop empresarial reacondicionada.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/A6ZP_1_201912041570217384.jpg",
         enlace: "https://www.newegg.com/p/2WC-0001-00YP4"
     },
-
-    // ===== MOVIL =====
     {
-        id: 5,
+        id: 6,
+        nombre: "MSI Vector 16 HX AI",
+        categoria: "Laptop",
+        precio: 2299.00,
+        descripcion: "Portatil para gaming y creacion de contenido.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-737-01.jpg",
+        enlace: "https://www.newegg.com/p/N82E16834156737"
+    },
+
+    // MOVIL
+
+    {
+        id: 7,
         nombre: "Samsung Galaxy A17 4G",
         categoria: "Móvil",
         precio: 194.99,
-        descripcion: "Smartphone desbloqueado, pantalla 6.7 pulgadas, 4GB RAM y 128GB.",
+        descripcion: "Smartphone Samsung desbloqueado.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/ABPXS2512020MIWLS9A.jpg",
         enlace: "https://www.newegg.com/p/23B-0002-01ZV3"
     },
     {
-        id: 6,
+        id: 8,
         nombre: "Samsung Galaxy S25 256GB",
         categoria: "Móvil",
         precio: 938.25,
-        descripcion: "Samsung Galaxy S25, pantalla AMOLED 6.2 pulgadas, 12GB RAM y 256GB.",
+        descripcion: "Smartphone Samsung de gama alta.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/A24GD2502110EEKAR23.jpg",
         enlace: "https://www.newegg.com/p/0V4-000B-01S27"
     },
-
-    // ===== WORKSTATION =====
     {
-        id: 7,
+        id: 9,
+        nombre: "Samsung Galaxy A17 5G",
+        categoria: "Móvil",
+        precio: 279.99,
+        descripcion: "Smartphone con conectividad 5G.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/23B-0002-01YD6-01.jpg",
+        enlace: "https://www.newegg.com/p/23B-0002-01YD6"
+    },
+
+    // WORKSTATION
+
+    {
+        id: 10,
         nombre: "Lenovo ThinkStation P3 Tower",
         categoria: "Workstation",
         precio: 839.00,
-        descripcion: "Workstation profesional con Intel Core Ultra 5, 16GB DDR5, SSD 512GB y Windows 11 Pro.",
+        descripcion: "Estacion de trabajo profesional.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/B0GJD2603311D1VC058.jpg",
         enlace: "https://www.newegg.com/p/1VK-01WM-00046"
     },
     {
-        id: 8,
-        nombre: "Lenovo ThinkStation P3 i3",
+        id: 11,
+        nombre: "Lenovo ThinkStation P3",
         categoria: "Workstation",
         precio: 1776.93,
-        descripcion: "Estacion de trabajo reacondicionada con Intel Core i3-13100, 16GB RAM y SSD 512GB.",
+        descripcion: "Workstation para productividad profesional.",
         imagen: "https://c1.neweggimages.com/productimage/nb640/APGHD2407020Q2US525.jpg",
         enlace: "https://www.newegg.com/p/1VK-0003-1RWE6"
+    },
+    {
+        id: 12,
+        nombre: "HP Z2 G9 SFF Workstation",
+        categoria: "Workstation",
+        precio: 1089.00,
+        descripcion: "Workstation HP de formato compacto.",
+        imagen: "https://c1.neweggimages.com/productimage/nb640/B0GJD2602050NNQ8U85.jpg",
+        enlace: "https://www.newegg.com/p/1VK-001E-4UK47"
     }
 ];
 
@@ -93,14 +134,17 @@ const productos = [
 // VARIABLES
 // ==========================================
 
+const $ = id => document.getElementById(id);
+
 let categoriaActual = "Todos";
 let carrito = [];
 let renderActual = 0;
 
-const catalogo = document.getElementById("catalogo");
-const buscar = document.getElementById("buscar");
-const ordenar = document.getElementById("ordenar");
-const contador = document.getElementById("resultCount");
+const catalogo = $("catalogo");
+const cartLink = $("cartLink");
+const runningCart = $("runningCart");
+
+const imagenes = new Map();
 
 // ==========================================
 // FORMATO DE DINERO
@@ -117,35 +161,36 @@ function dinero(valor) {
 // VERIFICAR IMAGEN
 // ==========================================
 
-const imagenesValidas = new Map();
-
 function verificarImagen(url) {
+
     if (!url || !url.startsWith("https://")) {
         return Promise.resolve(false);
     }
 
-    if (imagenesValidas.has(url)) {
-        return imagenesValidas.get(url);
+    if (imagenes.has(url)) {
+        return imagenes.get(url);
     }
 
     const comprobacion = new Promise(resolve => {
-        const imagen = new Image();
 
-        imagen.onload = () => {
+        const img = new Image();
+
+        img.onload = () => {
             resolve(
-                imagen.naturalWidth > 0 &&
-                imagen.naturalHeight > 0
+                img.naturalWidth > 0 &&
+                img.naturalHeight > 0
             );
         };
 
-        imagen.onerror = () => {
+        img.onerror = () => {
             resolve(false);
         };
 
-        imagen.src = url;
+        img.src = url;
     });
 
-    imagenesValidas.set(url, comprobacion);
+    imagenes.set(url, comprobacion);
+
     return comprobacion;
 }
 
@@ -154,146 +199,165 @@ function verificarImagen(url) {
 // ==========================================
 
 async function mostrarProductos() {
-    const solicitud = ++renderActual;
-    const texto = buscar.value.toLowerCase().trim();
 
-    let visibles = productos.filter(producto => {
-        const categoriaCorrecta =
+    const turno = ++renderActual;
+
+    const texto = $("buscar").value
+        .toLowerCase()
+        .trim();
+
+    let visibles = productos.filter(p => {
+
+        const categoria =
             categoriaActual === "Todos" ||
-            producto.categoria === categoriaActual;
+            p.categoria === categoriaActual;
 
-        const coincideBusqueda = (
-            producto.nombre + " " +
-            producto.descripcion + " " +
-            producto.categoria
+        const busqueda = (
+            p.nombre + " " +
+            p.categoria + " " +
+            p.descripcion
         ).toLowerCase().includes(texto);
 
-        return categoriaCorrecta && coincideBusqueda;
+        return categoria && busqueda;
     });
 
-    if (ordenar.value === "asc") {
+    const orden = $("ordenar").value;
+
+    if (orden === "asc") {
         visibles.sort((a, b) => a.precio - b.precio);
     }
 
-    if (ordenar.value === "desc") {
+    if (orden === "desc") {
         visibles.sort((a, b) => b.precio - a.precio);
     }
 
-    if (ordenar.value === "name") {
+    if (orden === "name") {
         visibles.sort((a, b) =>
             a.nombre.localeCompare(b.nombre, "es")
         );
     }
 
-    catalogo.innerHTML = "";
-    contador.textContent = "Cargando equipos...";
+    catalogo.replaceChildren();
 
-    // Esperar a que las imagenes esten disponibles.
+    $("resultCount").textContent =
+        "Cargando equipos...";
+
+    // Comprobar imagenes externas
     const resultados = await Promise.all(
-        visibles.map(async producto => ({
-            producto,
-            valida: await verificarImagen(producto.imagen)
+        visibles.map(async p => ({
+            producto: p,
+            valida: await verificarImagen(p.imagen)
         }))
     );
 
-    // Evitar resultados de busquedas anteriores.
-    if (solicitud !== renderActual) return;
+    if (turno !== renderActual) {
+        return;
+    }
 
     const disponibles = resultados
-        .filter(resultado => resultado.valida)
-        .map(resultado => resultado.producto);
+        .filter(item => item.valida)
+        .map(item => item.producto);
 
-    if (disponibles.length === 0) {
-        catalogo.innerHTML = `
-            <div class="empty-results">
-                No hay equipos con imagen disponible
-                para esta seleccion.
-            </div>
-        `;
-    } else {
-        disponibles.forEach(crearTarjeta);
-    }
+    disponibles.forEach(crearTarjeta);
 
     actualizarContador();
 }
 
 // ==========================================
-// CREAR TARJETA
+// TARJETAS DE PRODUCTOS
 // ==========================================
 
-function crearTarjeta(producto) {
+function crearTarjeta(p) {
+
     const tarjeta = document.createElement("article");
+
     tarjeta.className = "producto";
 
     tarjeta.innerHTML = `
         <span class="product-category">
-            ${producto.categoria}
+            ${p.categoria}
         </span>
 
         <div class="product-image">
             <img
-                src="${producto.imagen}"
-                alt="${producto.nombre}"
+                src="${p.imagen}"
+                alt="${p.nombre}"
+                loading="lazy"
             >
         </div>
 
-        <h3>${producto.nombre}</h3>
+        <h3>${p.nombre}</h3>
 
         <p class="product-description">
-            ${producto.descripcion}
+            ${p.descripcion}
         </p>
 
         <div class="product-bottom">
+
             <p class="precio">
-                ${dinero(producto.precio)}
-                <small>Precio ilustrativo</small>
+                ${dinero(p.precio)}
+
+                <small>
+                    Precio de demostración
+                </small>
             </p>
 
             <div class="product-actions">
-                <button class="add-btn">
+
+                <button class="add-btn" type="button">
                     + Agregar al carrito
                 </button>
 
                 <a
-                    href="${producto.enlace}"
                     class="external-btn"
+                    href="${p.enlace}"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Ver en Newegg"
-                    title="Ver en Newegg">
+                    title="Ver en Newegg"
+                    aria-label="Ver en Newegg">
                     ↗
                 </a>
+
             </div>
         </div>
     `;
 
-    const imagen = tarjeta.querySelector("img");
-
-    // Si falla la imagen, eliminar toda la tarjeta.
-    imagen.addEventListener("error", () => {
-        tarjeta.remove();
-        actualizarContador();
-    });
+    // Eliminar productos cuya imagen falle
+    tarjeta.querySelector("img")
+        .addEventListener("error", () => {
+            tarjeta.remove();
+            actualizarContador();
+        });
 
     tarjeta.querySelector(".add-btn")
         .addEventListener("click", () => {
-            agregarCarrito(producto.id);
+            agregarCarrito(p.id);
         });
 
     catalogo.appendChild(tarjeta);
 }
 
 // ==========================================
-// CONTADOR
+// CONTADOR DE EQUIPOS
 // ==========================================
 
 function actualizarContador() {
+
     const cantidad = catalogo.querySelectorAll(
         ".producto"
     ).length;
 
-    contador.textContent =
-        cantidad + " equipos disponibles en el catálogo";
+    $("resultCount").textContent =
+        cantidad + " equipos con imagen disponible";
+
+    if (cantidad === 0) {
+        catalogo.innerHTML = `
+            <div class="empty-results">
+                No hay equipos con imagen disponible
+                para esta selección.
+            </div>
+        `;
+    }
 }
 
 // ==========================================
@@ -301,178 +365,329 @@ function actualizarContador() {
 // ==========================================
 
 function filtrar(categoria) {
+
     categoriaActual = categoria;
 
-    document.querySelectorAll(".filters button")
-        .forEach(boton => {
-            boton.classList.toggle(
-                "active",
-                boton.dataset.category === categoria
-            );
-        });
+    document.querySelectorAll(
+        "#filtros [data-category]"
+    ).forEach(boton => {
+
+        const activo =
+            boton.dataset.category === categoria;
+
+        boton.classList.toggle("active", activo);
+
+        boton.setAttribute(
+            "aria-pressed",
+            String(activo)
+        );
+    });
 
     mostrarProductos();
 }
 
 // ==========================================
-// CARRITO
+// BOLSA PEQUEÑA QUE ENTRA AL CARRITO
+// ==========================================
+
+function animarBolsa() {
+
+    // Reiniciar animación al agregar otro producto
+    cartLink.classList.remove("bag-animate");
+
+    void cartLink.offsetWidth;
+
+    cartLink.classList.add("bag-animate");
+}
+
+// Quitar la clase cuando termine
+cartLink.addEventListener("animationend", evento => {
+
+    if (evento.animationName === "bolsaAlCarrito") {
+        cartLink.classList.remove("bag-animate");
+    }
+});
+
+// ==========================================
+// AGREGAR AL CARRITO
 // ==========================================
 
 function agregarCarrito(id) {
-    const producto = productos.find(p => p.id === id);
-    if (!producto) return;
 
-    const existente = carrito.find(p => p.id === id);
+    const producto = productos.find(
+        p => p.id === id
+    );
+
+    if (!producto) {
+        return;
+    }
+
+    const existente = carrito.find(
+        item => item.id === id
+    );
 
     if (existente) {
         existente.cantidad++;
     } else {
-        carrito.push({ id, cantidad: 1 });
+        carrito.push({
+            id: id,
+            cantidad: 1
+        });
     }
 
     actualizarCarrito();
+
+    // Bolsa que llega desde la izquierda
+    animarBolsa();
 }
 
+// ==========================================
+// ELIMINAR PRODUCTO
+// ==========================================
+
 function eliminarProducto(id) {
-    carrito = carrito.filter(p => p.id !== id);
+
+    carrito = carrito.filter(
+        item => item.id !== id
+    );
+
     actualizarCarrito();
 }
+
+// ==========================================
+// VACIAR CARRITO
+// ==========================================
 
 function vaciarCarrito() {
     carrito = [];
     actualizarCarrito();
 }
 
-function actualizarCarrito() {
-    const lista = document.getElementById("listaCarrito");
-    const totalElemento = document.getElementById("total");
+// ==========================================
+// ACTUALIZAR CARRITO
+// ==========================================
 
-    lista.innerHTML = "";
+function actualizarCarrito() {
+
+    const lista = $("listaCarrito");
+
+    lista.replaceChildren();
 
     let total = 0;
     let cantidad = 0;
 
     if (carrito.length === 0) {
+
         lista.innerHTML = `
             <div class="cart-empty">
-                🛒 Tu carrito está vacío.
+                Tu carrito está vacío.
                 Selecciona un equipo para comenzar.
             </div>
         `;
     }
 
     carrito.forEach(item => {
-        const producto = productos.find(
-            p => p.id === item.id
+
+        const p = productos.find(
+            x => x.id === item.id
         );
 
-        if (!producto) return;
+        if (!p) {
+            return;
+        }
 
-        const subtotal = producto.precio * item.cantidad;
+        const subtotal =
+            p.precio * item.cantidad;
+
         total += subtotal;
         cantidad += item.cantidad;
 
         const fila = document.createElement("div");
+
         fila.className = "cart-row";
 
         fila.innerHTML = `
             <div>
-                <strong>${producto.nombre}</strong>
+                <strong>${p.nombre}</strong>
+
                 <small>
-                    ${item.cantidad} x
-                    ${dinero(producto.precio)}
+                    ${item.cantidad} ×
+                    ${dinero(p.precio)}
                 </small>
             </div>
 
             <div class="cart-row-right">
-                <span>${dinero(subtotal)}</span>
+
+                <span>
+                    ${dinero(subtotal)}
+                </span>
+
                 <br>
-                <button class="remove-btn">
+
+                <button
+                    class="remove-btn"
+                    type="button">
                     Quitar
                 </button>
+
             </div>
         `;
 
         fila.querySelector(".remove-btn")
             .addEventListener("click", () => {
-                eliminarProducto(producto.id);
+                eliminarProducto(p.id);
             });
 
         lista.appendChild(fila);
     });
 
-    totalElemento.textContent = dinero(total);
+    $("total").textContent = dinero(total);
 
-    document.getElementById("cartCount").textContent =
-        cantidad;
+    $("cartCount").textContent = cantidad;
 }
 
 // ==========================================
-// EVENTOS DEL CATALOGO
+// CARRITO CORRIENDO AL ENTRAR
 // ==========================================
 
-buscar.addEventListener("input", mostrarProductos);
-ordenar.addEventListener("change", mostrarProductos);
+let carreraTerminada = false;
 
-document.getElementById("filtros")
-    .addEventListener("click", evento => {
-        const boton = evento.target.closest(
-            "[data-category]"
-        );
+function correrCarrito() {
 
-        if (boton) {
-            filtrar(boton.dataset.category);
+    if (window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches) {
+        return;
+    }
+
+    runningCart.classList.remove("run");
+
+    void runningCart.offsetWidth;
+
+    runningCart.classList.add("run");
+}
+
+// Terminar animación
+runningCart.addEventListener(
+    "animationend",
+    evento => {
+
+        if (evento.animationName === "raceCart") {
+            runningCart.classList.remove("run");
         }
-    });
-
-document.getElementById("vaciarCarrito")
-    .addEventListener("click", vaciarCarrito);
-
-// ==========================================
-// ANIMACION DE LA PC
-// ==========================================
-
-const pcInteractive = document.getElementById(
-    "pcInteractive"
+    }
 );
 
-function togglePcAnimation() {
-    const pausada = pcInteractive.classList.toggle(
-        "paused"
-    );
+// Detectar entrada a la sección
+const observadorCarrito = new IntersectionObserver(
+    entradas => {
 
-    pcInteractive.setAttribute(
+        entradas.forEach(entrada => {
+
+            if (
+                entrada.isIntersecting &&
+                !carreraTerminada
+            ) {
+                correrCarrito();
+                carreraTerminada = true;
+            }
+
+            if (!entrada.isIntersecting) {
+                carreraTerminada = false;
+            }
+        });
+    },
+    {
+        threshold: 0.3
+    }
+);
+
+observadorCarrito.observe($("carrito"));
+
+// También correr al presionar enlace Carrito
+document.querySelectorAll('a[href="#carrito"]')
+    .forEach(enlace => {
+
+        enlace.addEventListener("click", () => {
+            carreraTerminada = true;
+            correrCarrito();
+        });
+    });
+
+// ==========================================
+// ANIMACION DE LA COMPUTADORA
+// ==========================================
+
+const pc = $("pcInteractive");
+
+function alternarPc() {
+
+    const pausado = pc.classList.toggle("paused");
+
+    pc.setAttribute(
         "aria-pressed",
-        String(pausada)
+        String(pausado)
     );
 
-    pcInteractive.setAttribute(
+    pc.setAttribute(
         "aria-label",
-        pausada
+        pausado
             ? "Reanudar animación"
             : "Pausar animación"
     );
-
-    pcInteractive.querySelector(".state-text")
-        .textContent = pausada
-            ? "ENSAMBLAJE EN PAUSA"
-            : "ENSAMBLANDO COMPONENTES";
 }
 
-pcInteractive.addEventListener(
-    "click",
-    togglePcAnimation
-);
+// Pausar / reanudar con clic
+pc.addEventListener("click", alternarPc);
 
-pcInteractive.addEventListener("keydown", evento => {
-    if (evento.key === "Enter" || evento.key === " ") {
+// Accesibilidad de teclado
+pc.addEventListener("keydown", evento => {
+
+    if (
+        evento.key === "Enter" ||
+        evento.key === " "
+    ) {
         evento.preventDefault();
-        togglePcAnimation();
+        alternarPc();
     }
 });
 
 // ==========================================
-// INICIAR
+// EVENTOS GENERALES
+// ==========================================
+
+// Buscador
+$("buscar").addEventListener(
+    "input",
+    mostrarProductos
+);
+
+// Ordenamiento
+$("ordenar").addEventListener(
+    "change",
+    mostrarProductos
+);
+
+// Filtros
+$("filtros").addEventListener("click", evento => {
+
+    const boton = evento.target.closest(
+        "[data-category]"
+    );
+
+    if (boton) {
+        filtrar(boton.dataset.category);
+    }
+});
+
+// Vaciar carrito
+$("vaciarCarrito").addEventListener(
+    "click",
+    vaciarCarrito
+);
+
+// ==========================================
+// INICIAR PAGINA
 // ==========================================
 
 mostrarProductos();
