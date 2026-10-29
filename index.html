@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090a0e">
-  <title>PIEZASPC | Catalogo de Computadoras</title>
+  <title>PIEZASPC | Piezas para la Computadora</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -12,26 +13,32 @@
 
 <header class="site-header" id="inicio">
   <div class="container navbar">
-    <a href="#inicio" class="logo">PIEZAS<span>PC</span></a>
+    <a class="logo" href="#inicio">PIEZAS<span>PC</span></a>
 
-    <nav aria-label="Main navigation">
+    <nav aria-label="Navegación principal">
       <a href="#inicio" data-i18n="home">Inicio</a>
       <a href="#productos" data-i18n="products">Equipos</a>
       <a href="#carrito" data-i18n="cart">Carrito</a>
     </nav>
 
     <div class="nav-actions">
-      <div class="language-switch" aria-label="Language switch">
-        <button type="button" id="langES" class="active" aria-pressed="true">ES</button>
-        <button type="button" id="langEN" aria-pressed="false">EN</button>
+      <div class="language-switch" aria-label="Idioma / Language">
+        <button id="langES" class="active" type="button"
+                aria-pressed="true">ES</button>
+        <button id="langEN" type="button"
+                aria-pressed="false">EN</button>
       </div>
 
-      <a href="#carrito" class="cart-link" id="cartLink" aria-label="Ver carrito">
-        <svg class="cart-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 10h9l7 31h29l7-24H17"></path>
-          <path d="M23 46h28"></path>
-          <circle cx="26" cy="53" r="4"></circle>
-          <circle cx="48" cy="53" r="4"></circle>
+      <a id="cartLink" class="cart-link" href="#carrito"
+         aria-label="Ver carrito">
+        <svg class="cart-svg" viewBox="0 0 64 64"
+             fill="none" stroke="currentColor" stroke-width="3"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <path d="M5 10h9l7 31h29l7-24H17"/>
+          <path d="M23 46h28"/>
+          <circle cx="26" cy="53" r="4"/>
+          <circle cx="48" cy="53" r="4"/>
         </svg>
         <span class="cart-count" id="cartCount">0</span>
       </a>
@@ -47,17 +54,21 @@
 
         <h1>
           <span data-i18n="power">POTENCIA.</span><br>
-          <span data-i18n="precision">PRECISION.</span><br>
+          <span data-i18n="precision">PRECISIÓN.</span><br>
           <span class="accent" data-i18n="speed">VELOCIDAD.</span>
         </h1>
 
         <p data-i18n="heroText">
-          Encuentra tu proxima computadora. Explora desktops, laptops, moviles y estaciones de trabajo.
+          Encuentra tu próxima computadora.
+          Explora desktops, laptops, dispositivos móviles
+          y estaciones de trabajo.
         </p>
 
         <div class="hero-actions">
-          <a href="#productos" class="btn btn-primary" data-i18n="explore">EXPLORAR EQUIPOS</a>
-          <a href="#carrito" class="btn btn-glass" data-i18n="viewCart">VER CARRITO</a>
+          <a href="#productos" class="btn btn-primary"
+             data-i18n="explore">EXPLORAR EQUIPOS</a>
+          <a href="#carrito" class="btn btn-glass"
+             data-i18n="viewCart">VER CARRITO</a>
         </div>
 
         <div class="hero-stats">
@@ -67,123 +78,193 @@
           </div>
           <div>
             <strong>4</strong>
-            <small data-i18n="categories">CATEGORIAS</small>
+            <small data-i18n="categories">CATEGORÍAS</small>
           </div>
         </div>
       </div>
 
-      <div class="pc-visual" id="pcInteractive" role="button" tabindex="0" aria-pressed="false" aria-label="Pausar animacion de la computadora">
+      <!-- PC MINIMALISTA -->
+      <div class="pc-visual" id="pcInteractive"
+           role="button" tabindex="0" aria-pressed="false"
+           aria-label="Pausar animación">
         <div class="pc-glow"></div>
-
         <div class="pc-case">
           <div class="pc-window">
             <div class="motherboard pc-part"></div>
             <div class="processor pc-part">CPU</div>
             <div class="memory pc-part"><i></i><i></i></div>
             <div class="graphics pc-part">
-              <span>RTX</span>
-              <b></b><b></b>
+              <span>RTX</span><b></b><b></b>
             </div>
             <div class="pc-fan"></div>
           </div>
           <div class="case-front"><span></span></div>
         </div>
-
         <div class="pc-shadow"></div>
       </div>
     </div>
   </section>
 
+  <!-- CATEGORIAS -->
   <section class="categories-intro">
     <div class="container category-highlights">
       <div class="glass">Desktop</div>
       <div class="glass">Laptop</div>
-      <div class="glass" data-i18n="mobile">Movil</div>
+      <div class="glass" data-i18n="mobile">Móvil</div>
       <div class="glass">Workstation</div>
     </div>
   </section>
 
+  <!-- CATALOGO -->
   <section class="products-section" id="productos">
     <div class="container">
       <div class="section-heading">
         <div>
-          <span class="eyebrow" data-i18n="catalogLabel">CATALOGO DE EQUIPOS</span>
+          <span class="eyebrow" data-i18n="catalogLabel">
+            CATÁLOGO DE EQUIPOS
+          </span>
           <h2>
             <span data-i18n="our">NUESTROS</span>
             <span class="accent" data-i18n="equipment">EQUIPOS</span>
           </h2>
-          <p data-i18n="catalogDescription">Equipos completos para cada necesidad.</p>
+          <p data-i18n="catalogDescription">
+            Equipos completos para cada necesidad.
+          </p>
         </div>
-
         <span id="resultCount" aria-live="polite"></span>
       </div>
 
       <div class="catalog-toolbar glass">
-        <input
-          type="search"
-          id="buscar"
-          placeholder="Buscar equipos..."
-          aria-label="Buscar equipos"
-          autocomplete="off"
-          inputmode="text"
-        >
-        <small class="search-note" data-i18n="searchRule">
-          Solo letras, numeros y espacios.
+        <input id="buscar" type="search"
+               placeholder="Buscar equipos..."
+               aria-label="Buscar equipos"
+               autocomplete="off">
+        <small data-i18n="searchRule">
+          Solo letras, números y espacios.
         </small>
       </div>
 
+      <!-- SIN MENU DESPLEGABLE -->
       <div class="sort-bar">
         <span data-i18n="sortBy">Ordenar por:</span>
-
         <div class="sort-buttons" id="sortButtons">
-          <button type="button" class="active" data-sort="default" aria-pressed="true" data-i18n="featured">Destacados</button>
-          <button type="button" data-sort="asc" aria-pressed="false" data-i18n="low">Menor precio</button>
-          <button type="button" data-sort="desc" aria-pressed="false" data-i18n="high">Mayor precio</button>
-          <button type="button" data-sort="name" aria-pressed="false" data-i18n="name">Nombre A-Z</button>
+          <button class="active" type="button"
+                  data-sort="default" aria-pressed="true"
+                  data-i18n="featured">Destacados</button>
+          <button type="button" data-sort="asc"
+                  aria-pressed="false"
+                  data-i18n="low">Menor precio</button>
+          <button type="button" data-sort="desc"
+                  aria-pressed="false"
+                  data-i18n="high">Mayor precio</button>
+          <button type="button" data-sort="name"
+                  aria-pressed="false"
+                  data-i18n="name">Nombre A-Z</button>
         </div>
       </div>
 
       <div class="filtros" id="filtros">
-        <button type="button" class="active" data-category="Todos" aria-pressed="true" data-i18n="all">Todos</button>
-        <button type="button" data-category="Desktop" aria-pressed="false">Desktop</button>
-        <button type="button" data-category="Laptop" aria-pressed="false">Laptop</button>
-        <button type="button" data-category="Movil" aria-pressed="false" data-i18n="mobile">Movil</button>
-        <button type="button" data-category="Workstation" aria-pressed="false">Workstation</button>
+        <button class="active" type="button"
+                data-category="Todos" aria-pressed="true"
+                data-i18n="all">Todos</button>
+        <button type="button" data-category="Desktop"
+                aria-pressed="false">Desktop</button>
+        <button type="button" data-category="Laptop"
+                aria-pressed="false">Laptop</button>
+        <button type="button" data-category="Movil"
+                aria-pressed="false"
+                data-i18n="mobile">Móvil</button>
+        <button type="button" data-category="Workstation"
+                aria-pressed="false">Workstation</button>
       </div>
 
       <div class="catalogo" id="catalogo"></div>
 
       <p class="pricing-note" data-i18n="priceNote">
-        Los precios son ilustrativos. Consulta precios reales y disponibilidad en Newegg.
+        Precios ilustrativos. Consulta precios reales
+        y disponibilidad en Newegg.
       </p>
     </div>
   </section>
 
+  <!-- CARRITO -->
   <section class="cart-section" id="carrito">
     <div class="container">
+
+      <!-- ANIMACION: MUÑECO Y CARRITO JUNTOS -->
       <div class="cart-racetrack" aria-hidden="true">
         <div class="track-line"></div>
 
-        <div class="runner-stage" id="runnerStage">
+        <div class="race-group" id="raceGroup">
+
+          <!-- MUÑECO CORRIENDO DETRAS -->
           <div class="running-character" id="runningCharacter">
-            <svg viewBox="0 0 70 70" fill="none" aria-hidden="true">
-              <circle cx="18" cy="15" r="7" fill="#ffd2b0"></circle>
-              <path d="M18 23 L18 37" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></path>
-              <path d="M18 28 L8 23" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></path>
-              <path d="M18 28 L28 22" stroke="#ffffff" stroke-width="4" stroke-linecap="round"></path>
-              <path d="M18 37 L8 48" stroke="#ff7900" stroke-width="4" stroke-linecap="round"></path>
-              <path d="M18 37 L31 47" stroke="#ff7900" stroke-width="4" stroke-linecap="round"></path>
+            <svg viewBox="0 0 70 90"
+                 xmlns="http://www.w3.org/2000/svg"
+                 aria-hidden="true">
+
+              <!-- CABEZA -->
+              <circle cx="35" cy="14" r="10" fill="#ffd0a6"/>
+              <circle cx="39" cy="12" r="1.5" fill="#212121"/>
+
+              <!-- CAMISETA Y CUERPO -->
+              <path d="M35 25V49"
+                    stroke="#ffffff" stroke-width="8"
+                    stroke-linecap="round"/>
+              <path d="M29 30H41"
+                    stroke="#ff7900" stroke-width="3"
+                    stroke-linecap="round"/>
+
+              <!-- BRAZOS INDEPENDIENTES -->
+              <g class="runner-arm-left">
+                <path d="M35 30L19 42"
+                      stroke="#ff7900" stroke-width="5"
+                      stroke-linecap="round"/>
+              </g>
+
+              <g class="runner-arm-right">
+                <path d="M35 30L51 42"
+                      stroke="#ff7900" stroke-width="5"
+                      stroke-linecap="round"/>
+              </g>
+
+              <!-- PIERNAS INDEPENDIENTES -->
+              <g class="runner-leg-left">
+                <path d="M35 49L17 75"
+                      stroke="#ffffff" stroke-width="6"
+                      stroke-linecap="round"/>
+              </g>
+
+              <g class="runner-leg-right">
+                <path d="M35 49L53 75"
+                      stroke="#ffffff" stroke-width="6"
+                      stroke-linecap="round"/>
+              </g>
             </svg>
           </div>
 
+          <!-- CARRITO -->
           <div class="running-cart" id="runningCart">
-            <svg viewBox="0 0 100 75" fill="none">
-              <path d="M5 15h13l14 37h48l12-29H24" stroke="#ff7900" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M33 59h50" stroke="#ff7900" stroke-width="4"></path>
-              <circle cx="40" cy="66" r="6" fill="white" stroke="#ff7900" stroke-width="3"></circle>
-              <circle cx="75" cy="66" r="6" fill="white" stroke="#ff7900" stroke-width="3"></circle>
-              <path d="M42 20h28l3 26H39L42 20Z" fill="#ff7900"></path>
-              <path d="M49 21v-6a7 7 0 0 1 14 0v6" stroke="white" stroke-width="3"></path>
+            <svg viewBox="0 0 100 75" fill="none"
+                 aria-hidden="true">
+              <path d="M5 15h13l14 37h48l12-29H24"
+                    stroke="#ff7900" stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+              <path d="M33 59h50"
+                    stroke="#ff7900" stroke-width="4"/>
+              <circle cx="40" cy="66" r="6"
+                      fill="white" stroke="#ff7900"
+                      stroke-width="3"/>
+              <circle cx="75" cy="66" r="6"
+                      fill="white" stroke="#ff7900"
+                      stroke-width="3"/>
+
+              <!-- BOLSA DENTRO DEL CARRITO -->
+              <path d="M42 20h28l3 26H39L42 20Z"
+                    fill="#ff7900"/>
+              <path d="M49 21v-6a7 7 0 0 1 14 0v6"
+                    stroke="white" stroke-width="3"/>
             </svg>
           </div>
         </div>
@@ -192,28 +273,34 @@
       <div class="cart-panel glass">
         <div class="cart-header">
           <div>
-            <span class="eyebrow" data-i18n="selection">TU SELECCION</span>
+            <span class="eyebrow" data-i18n="selection">
+              TU SELECCIÓN
+            </span>
             <h2>
               <span data-i18n="cartTitleOne">CARRITO DE</span>
-              <span class="accent" data-i18n="cartTitleTwo">COMPRAS</span>
+              <span class="accent" data-i18n="cartTitleTwo">
+                COMPRAS
+              </span>
             </h2>
           </div>
-
-          <button type="button" id="vaciarCarrito" class="clear-btn" data-i18n="clear">Vaciar carrito</button>
+          <button type="button" id="vaciarCarrito"
+                  class="clear-btn" data-i18n="clear">
+            Vaciar carrito
+          </button>
         </div>
 
         <div class="cart-content">
           <div class="cart-items" id="listaCarrito"></div>
-
           <div class="cart-summary glass">
             <p data-i18n="estimated">TOTAL ESTIMADO</p>
             <strong id="total">$0.00</strong>
-
             <small data-i18n="demo">
-              Carrito de demostracion. No procesa pagos.
+              Carrito de demostración. No procesa pagos.
             </small>
-
-            <a href="https://www.newegg.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="visit">VISITAR NEWEGG</a>
+            <a href="https://www.newegg.com/"
+               target="_blank" rel="noopener noreferrer"
+               class="btn btn-primary"
+               data-i18n="visit">VISITAR NEWEGG</a>
           </div>
         </div>
       </div>
@@ -228,19 +315,30 @@
   </div>
 </footer>
 
-<dialog id="imageViewer" class="image-viewer" aria-label="Imagen del producto">
-  <button type="button" id="closeImage" class="close-image" aria-label="Cerrar">×</button>
+<!-- VISOR DE IMAGEN COMPLETA -->
+<dialog id="imageViewer" class="image-viewer">
+  <button type="button" id="closeImage"
+          class="close-image" aria-label="Cerrar">×</button>
   <img id="largeImage" alt="">
   <p id="imageCaption"></p>
 </dialog>
 
+<!-- BOLSA REDONDA VOLADORA -->
 <template id="shoppingBagTemplate">
-  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="24" cy="24" r="22" fill="#ff7900"></circle>
-    <circle cx="24" cy="24" r="21" stroke="#ffc48b" stroke-opacity=".75"></circle>
-    <path d="M16 21h16l1.5 14h-19L16 21Z" fill="#ffffff"></path>
-    <path d="M20 22v-4a4 4 0 0 1 8 0v4" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"></path>
-    <path d="M20 27h8" stroke="#ff7900" stroke-width="2" stroke-linecap="round"></path>
+  <svg viewBox="0 0 48 48" fill="none"
+       xmlns="http://www.w3.org/2000/svg"
+       aria-hidden="true">
+    <circle cx="24" cy="24" r="22" fill="#ff7900"/>
+    <circle cx="24" cy="24" r="21"
+            stroke="#ffc48b" stroke-opacity=".75"/>
+    <path d="M16 21h16l1.5 14h-19L16 21Z"
+          fill="white"/>
+    <path d="M20 22v-4a4 4 0 0 1 8 0v4"
+          stroke="white" stroke-width="2.6"
+          stroke-linecap="round"/>
+    <path d="M20 27h8"
+          stroke="#ff7900" stroke-width="2"
+          stroke-linecap="round"/>
   </svg>
 </template>
 
