@@ -2,17 +2,11 @@
 "use strict";
 
 // ==========================================
-// PIEZASPC - CATALOGO BILINGUE
+// PIEZASPC - PRODUCTOS
 // ==========================================
-// Compatible con index.html y style.css
-// de la version anterior.
-// ==========================================
-
-// Precios ilustrativos.
-// Las imagenes provienen de Newegg.
+// Precios ilustrativos; no son precios en vivo.
 
 const productos = [
-  // DESKTOP
   {
     id: 1,
     nombre: "ABS Cyclone Aqua Gaming",
@@ -28,7 +22,7 @@ const productos = [
     nombre: "ABS Cyclone Aqua Ultra",
     categoria: "Desktop",
     precio: 1499.99,
-    es: "Computadora de escritorio con Intel Core Ultra y GeForce RTX.",
+    es: "Computadora con Intel Core Ultra y GeForce RTX.",
     en: "Desktop with Intel Core Ultra and GeForce RTX.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-968-22.jpg",
     enlace: "https://www.newegg.com/p/N82E16883360968"
@@ -43,14 +37,12 @@ const productos = [
     imagen: "https://c1.neweggimages.com/productimage/nb640/83-360-976-10.jpg",
     enlace: "https://www.newegg.com/p/N82E16883360976"
   },
-
-  // LAPTOP
   {
     id: 4,
     nombre: "MSI Gaming Laptop RTX 4060",
     categoria: "Laptop",
     precio: 1499,
-    es: "Laptop para videojuegos con Intel Core i7 y RTX.",
+    es: "Laptop gaming con Intel Core i7 y RTX.",
     en: "Gaming laptop with Intel Core i7 and RTX.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-427-14.jpg",
     enlace: "https://www.newegg.com/p/N82E16834156427"
@@ -70,13 +62,11 @@ const productos = [
     nombre: "MSI Vector 16 HX AI",
     categoria: "Laptop",
     precio: 2299,
-    es: "Computadora portátil para videojuegos y creación de contenido.",
+    es: "Laptop para videojuegos y creación de contenido.",
     en: "Laptop for gaming and content creation.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/34-156-737-01.jpg",
     enlace: "https://www.newegg.com/p/N82E16834156737"
   },
-
-  // MOVIL
   {
     id: 7,
     nombre: "Samsung Galaxy A17 4G",
@@ -107,8 +97,6 @@ const productos = [
     imagen: "https://c1.neweggimages.com/productimage/nb640/23B-0002-01YD6-01.jpg",
     enlace: "https://www.newegg.com/p/23B-0002-01YD6"
   },
-
-  // WORKSTATION
   {
     id: 10,
     nombre: "Lenovo ThinkStation P3 Tower",
@@ -142,7 +130,7 @@ const productos = [
 ];
 
 // ==========================================
-// TRADUCCIONES COMPLETAS
+// TEXTOS EN ESPAÑOL E INGLES
 // ==========================================
 
 const traducciones = {
@@ -150,62 +138,44 @@ const traducciones = {
     home: "Inicio",
     products: "Equipos",
     cart: "Carrito",
-
     power: "POTENCIA.",
     precision: "PRECISIÓN.",
     speed: "VELOCIDAD.",
-
     heroText:
       "Encuentra tu próxima computadora. Explora computadoras de escritorio, laptops, dispositivos móviles y estaciones de trabajo.",
-
     explore: "EXPLORAR EQUIPOS",
     viewCart: "VER CARRITO",
     listed: "EQUIPOS REGISTRADOS",
     categories: "CATEGORÍAS",
-
     mobile: "Móvil",
-
     catalogLabel: "CATÁLOGO DE EQUIPOS",
     our: "NUESTROS",
     equipment: "EQUIPOS",
-    catalogDescription:
-      "Equipos completos para cada necesidad.",
-
+    catalogDescription: "Equipos completos para cada necesidad.",
+    searchRule: "Solo letras, números y espacios.",
     sortBy: "Ordenar por:",
     featured: "Destacados",
     low: "Menor precio",
     high: "Mayor precio",
     name: "Nombre A-Z",
-
     all: "Todos",
-
     priceNote:
-      "Los precios son ilustrativos. Consulta los precios reales y la disponibilidad en Newegg.",
-
+      "Precios ilustrativos. Consulta precios reales y disponibilidad en Newegg.",
     selection: "TU SELECCIÓN",
     cartTitleOne: "CARRITO DE",
     cartTitleTwo: "COMPRAS",
-
     clear: "Vaciar carrito",
     estimated: "TOTAL ESTIMADO",
-
-    demo:
-      "Carrito de demostración. No procesa pagos.",
-
+    demo: "Carrito de demostración. No procesa pagos.",
     visit: "VISITAR NEWEGG",
     search: "Buscar equipos...",
-    searchRule: "Solo letras, números y espacios.",
-
     loading: "Cargando equipos...",
     available: "equipos con imagen disponible",
-    unavailable:
-      "No hay equipos con imagen disponible para esta selección.",
-
+    unavailable: "No hay equipos con imágenes disponibles.",
     sample: "Precio ilustrativo",
     add: "+ Agregar al carrito",
     remove: "Quitar",
     empty: "Tu carrito está vacío.",
-
     viewNewegg: "Ver en Newegg",
     zoom: "Ver imagen completa",
     close: "Cerrar",
@@ -217,62 +187,44 @@ const traducciones = {
     home: "Home",
     products: "Computers",
     cart: "Cart",
-
     power: "POWER.",
     precision: "PRECISION.",
     speed: "SPEED.",
-
     heroText:
       "Find your next computer. Explore desktops, laptops, mobile devices and professional workstations.",
-
     explore: "EXPLORE COMPUTERS",
     viewCart: "VIEW CART",
     listed: "LISTED DEVICES",
     categories: "CATEGORIES",
-
     mobile: "Mobile",
-
     catalogLabel: "COMPUTER CATALOG",
     our: "OUR",
     equipment: "EQUIPMENT",
-    catalogDescription:
-      "Complete systems for every need.",
-
+    catalogDescription: "Complete systems for every need.",
+    searchRule: "Letters, numbers and spaces only.",
     sortBy: "Sort by:",
     featured: "Featured",
     low: "Lowest price",
     high: "Highest price",
     name: "Name A-Z",
-
     all: "All",
-
     priceNote:
-      "Prices are illustrative. Check current prices and availability directly on Newegg.",
-
+      "Illustrative prices. Check current prices and availability on Newegg.",
     selection: "YOUR SELECTION",
     cartTitleOne: "SHOPPING",
     cartTitleTwo: "CART",
-
     clear: "Clear cart",
     estimated: "ESTIMATED TOTAL",
-
-    demo:
-      "Demo shopping cart. No payments are processed.",
-
+    demo: "Demo shopping cart. No payments are processed.",
     visit: "VISIT NEWEGG",
     search: "Search computers...",
-    searchRule: "Letters, numbers and spaces only.",
-
     loading: "Loading computers...",
     available: "computers with available images",
-    unavailable:
-      "No computers with available images for this selection.",
-
+    unavailable: "No computers with available images.",
     sample: "Illustrative price",
     add: "+ Add to cart",
     remove: "Remove",
     empty: "Your cart is empty.",
-
     viewNewegg: "View on Newegg",
     zoom: "View full image",
     close: "Close",
@@ -282,7 +234,7 @@ const traducciones = {
 };
 
 // ==========================================
-// VARIABLES GENERALES
+// ESTADO Y UTILIDADES
 // ==========================================
 
 const $ = id => document.getElementById(id);
@@ -295,34 +247,18 @@ let renderActual = 0;
 
 const catalogo = $("catalogo");
 const cartLink = $("cartLink");
-const runningCart = $("runningCart");
-const runningCharacter = $("runningCharacter");
+const raceGroup = $("raceGroup");
 
 const cacheImagenes = new Map();
 
-// ==========================================
-// FUNCIONES AUXILIARES
-// ==========================================
-
 function t(clave) {
-  const texto = traducciones[idioma]?.[clave];
-
-  if (texto !== undefined) {
-    return texto;
-  }
-
-  // No mostrar nombres internos como
-  // cartTitleOne o equipment.
-  return "";
+  return traducciones[idioma]?.[clave] ?? "";
 }
 
 function dinero(valor) {
   return new Intl.NumberFormat(
     idioma === "es" ? "es-PR" : "en-US",
-    {
-      style: "currency",
-      currency: "USD"
-    }
+    { style: "currency", currency: "USD" }
   ).format(valor);
 }
 
@@ -333,7 +269,7 @@ function movimientoReducido() {
 }
 
 // ==========================================
-// CAMBIO DE IDIOMA
+// CAMBIAR IDIOMA
 // ==========================================
 
 function cambiarIdioma(nuevoIdioma) {
@@ -342,90 +278,55 @@ function cambiarIdioma(nuevoIdioma) {
   idioma = nuevoIdioma;
   document.documentElement.lang = idioma;
 
-  // Actualizar todos los textos del HTML.
-  document.querySelectorAll("[data-i18n]")
-    .forEach(elemento => {
-      const clave = elemento.dataset.i18n;
-      const traduccion = t(clave);
+  document.querySelectorAll("[data-i18n]").forEach(elemento => {
+    const texto = t(elemento.dataset.i18n);
+    if (texto) elemento.textContent = texto;
+  });
 
-      if (traduccion) {
-        elemento.textContent = traduccion;
-      }
-    });
-
-  // Buscador
   $("buscar").placeholder = t("search");
-  $("buscar").setAttribute(
-    "aria-label",
-    t("search")
-  );
+  $("buscar").setAttribute("aria-label", t("search"));
 
-  // Botones ES / EN
-  $("langES").classList.toggle(
-    "active",
-    idioma === "es"
-  );
-
-  $("langEN").classList.toggle(
-    "active",
-    idioma === "en"
-  );
+  $("langES").classList.toggle("active", idioma === "es");
+  $("langEN").classList.toggle("active", idioma === "en");
 
   $("langES").setAttribute(
-    "aria-pressed",
-    String(idioma === "es")
+    "aria-pressed", String(idioma === "es")
   );
-
   $("langEN").setAttribute(
-    "aria-pressed",
-    String(idioma === "en")
+    "aria-pressed", String(idioma === "en")
   );
 
-  // Accesibilidad
-  $("closeImage").setAttribute(
-    "aria-label",
-    t("close")
+  $("closeImage").setAttribute("aria-label", t("close"));
+  cartLink.setAttribute("aria-label", t("viewCart"));
+
+  const pausada = $("pcInteractive").classList.contains("paused");
+  $("pcInteractive").setAttribute(
+    "aria-label", t(pausada ? "resume" : "pause")
   );
 
-  cartLink.setAttribute(
-    "aria-label",
-    t("viewCart")
-  );
-
-  const pc = $("pcInteractive");
-  const pausada = pc.classList.contains("paused");
-
-  pc.setAttribute(
-    "aria-label",
-    t(pausada ? "resume" : "pause")
-  );
-
-  // Refrescar contenido generado por JavaScript
   mostrarProductos();
   actualizarCarrito();
 }
 
-$("langES").addEventListener("click", () => {
-  cambiarIdioma("es");
-});
-
-$("langEN").addEventListener("click", () => {
-  cambiarIdioma("en");
-});
+$("langES").addEventListener("click", () => cambiarIdioma("es"));
+$("langEN").addEventListener("click", () => cambiarIdioma("en"));
 
 // ==========================================
-// BUSCADOR SIN CARACTERES ESPECIALES
+// BUSCADOR SIN SIMBOLOS ESPECIALES
 // ==========================================
-
-// Se permiten letras acentuadas,
-// numeros y espacios.
-// Se bloquean @ # $ % & * etc.
 
 function limpiarBusqueda(texto) {
   return texto
     .replace(/[^\p{L}\p{N}\s]/gu, "")
     .replace(/\s{2,}/g, " ")
     .trimStart();
+}
+
+function normalizar(texto) {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
 }
 
 $("buscar").addEventListener("input", evento => {
@@ -440,7 +341,7 @@ $("buscar").addEventListener("input", evento => {
 });
 
 // ==========================================
-// VERIFICAR IMAGENES DE NEWEGG
+// IMAGENES
 // ==========================================
 
 function verificarImagen(url) {
@@ -452,106 +353,72 @@ function verificarImagen(url) {
     return cacheImagenes.get(url);
   }
 
-  const comprobacion = new Promise(resolve => {
-    const imagen = new Image();
+  const promesa = new Promise(resolve => {
+    const img = new Image();
 
-    imagen.onload = () => {
-      resolve(
-        imagen.naturalWidth > 0 &&
-        imagen.naturalHeight > 0
-      );
-    };
+    img.onload = () =>
+      resolve(img.naturalWidth > 0 && img.naturalHeight > 0);
 
-    imagen.onerror = () => {
-      resolve(false);
-    };
+    img.onerror = () => resolve(false);
 
-    imagen.src = url;
+    img.src = url;
   });
 
-  cacheImagenes.set(url, comprobacion);
-  return comprobacion;
+  cacheImagenes.set(url, promesa);
+  return promesa;
 }
 
 // ==========================================
-// MOSTRAR PRODUCTOS
+// CATALOGO
 // ==========================================
 
 async function mostrarProductos() {
   const turno = ++renderActual;
-
-  const busqueda = $("buscar").value
-    .toLocaleLowerCase()
-    .trim();
+  const busqueda = normalizar($("buscar").value.trim());
 
   let visibles = productos.filter(p => {
     const categoriaCorrecta =
       categoriaActual === "Todos" ||
       p.categoria === categoriaActual;
 
-    const texto = [
-      p.nombre,
-      p.categoria,
-      p.es,
-      p.en
-    ].join(" ").toLocaleLowerCase();
+    const texto = normalizar(
+      [p.nombre, p.categoria, p.es, p.en].join(" ")
+    );
 
-    return categoriaCorrecta &&
-      texto.includes(busqueda);
+    return categoriaCorrecta && texto.includes(busqueda);
   });
 
-  // Ordenar
   if (ordenActual === "asc") {
-    visibles.sort((a, b) =>
-      a.precio - b.precio
-    );
-  }
-
-  if (ordenActual === "desc") {
-    visibles.sort((a, b) =>
-      b.precio - a.precio
-    );
-  }
-
-  if (ordenActual === "name") {
+    visibles.sort((a, b) => a.precio - b.precio);
+  } else if (ordenActual === "desc") {
+    visibles.sort((a, b) => b.precio - a.precio);
+  } else if (ordenActual === "name") {
     visibles.sort((a, b) =>
       a.nombre.localeCompare(b.nombre, idioma)
     );
   }
 
   catalogo.replaceChildren();
-
   $("resultCount").textContent = t("loading");
 
-  // Mostrar solo productos con imagen disponible.
   const resultados = await Promise.all(
-    visibles.map(async producto => ({
-      producto,
-      imagenValida: await verificarImagen(
-        producto.imagen
-      )
+    visibles.map(async p => ({
+      producto: p,
+      disponible: await verificarImagen(p.imagen)
     }))
   );
 
-  // Evitar mostrar resultados de busquedas anteriores.
   if (turno !== renderActual) return;
 
   resultados
-    .filter(resultado => resultado.imagenValida)
-    .forEach(resultado => {
-      crearTarjeta(resultado.producto);
-    });
+    .filter(item => item.disponible)
+    .forEach(item => crearTarjeta(item.producto));
 
   actualizarContador();
 }
 
-// ==========================================
-// CREAR TARJETAS DE PRODUCTOS
-// ==========================================
-
 function crearTarjeta(p) {
   const tarjeta = document.createElement("article");
-
   tarjeta.className = "producto";
 
   tarjeta.innerHTML = `
@@ -559,21 +426,13 @@ function crearTarjeta(p) {
       ${p.categoria === "Movil" ? t("mobile") : p.categoria}
     </span>
 
-    <button
-      class="product-image"
-      type="button"
-      aria-label="${t("zoom")}: ${p.nombre}">
-
-      <img
-        src="${p.imagen}"
-        alt="${p.nombre}">
+    <button class="product-image" type="button"
+            aria-label="${t("zoom")}: ${p.nombre}">
+      <img src="${p.imagen}" alt="${p.nombre}">
     </button>
 
     <h3>${p.nombre}</h3>
-
-    <p class="product-description">
-      ${p[idioma]}
-    </p>
+    <p class="product-description">${p[idioma]}</p>
 
     <div class="product-bottom">
       <p class="precio">
@@ -582,78 +441,51 @@ function crearTarjeta(p) {
       </p>
 
       <div class="product-actions">
-
-        <button
-          class="add-btn"
-          type="button">
+        <button class="add-btn" type="button">
           ${t("add")}
         </button>
 
-        <a
-          href="${p.enlace}"
-          class="external-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="${t("viewNewegg")}"
-          title="${t("viewNewegg")}">
-          ↗
-        </a>
-
+        <a href="${p.enlace}" class="external-btn"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="${t("viewNewegg")}"
+           title="${t("viewNewegg")}">↗</a>
       </div>
     </div>
   `;
 
-  const imagen = tarjeta.querySelector("img");
-
-  // Si falla la imagen, eliminar toda la tarjeta.
-  imagen.addEventListener("error", () => {
+  tarjeta.querySelector("img").addEventListener("error", () => {
     tarjeta.remove();
     cacheImagenes.delete(p.imagen);
     actualizarContador();
   });
 
-  // Abrir imagen completa.
   tarjeta.querySelector(".product-image")
-    .addEventListener("click", () => {
-      abrirImagen(p);
-    });
+    .addEventListener("click", () => abrirImagen(p));
 
-  // Agregar al carrito.
   tarjeta.querySelector(".add-btn")
     .addEventListener("click", evento => {
-      agregarCarrito(
-        p.id,
-        evento.currentTarget
-      );
+      agregarCarrito(p.id, evento.currentTarget);
     });
 
   catalogo.appendChild(tarjeta);
 }
 
-// ==========================================
-// CONTADOR DE PRODUCTOS
-// ==========================================
-
 function actualizarContador() {
-  const cantidad = catalogo.querySelectorAll(
-    ".producto"
-  ).length;
+  const cantidad = catalogo.querySelectorAll(".producto").length;
 
   $("resultCount").textContent =
     `${cantidad} ${t("available")}`;
 
-  if (cantidad === 0) {
+  if (!cantidad) {
     const aviso = document.createElement("div");
-
     aviso.className = "empty-results";
     aviso.textContent = t("unavailable");
-
     catalogo.replaceChildren(aviso);
   }
 }
 
 // ==========================================
-// VISOR DE IMAGEN COMPLETA
+// VISOR DE IMAGEN
 // ==========================================
 
 const visor = $("imageViewer");
@@ -663,26 +495,17 @@ function abrirImagen(p) {
   $("largeImage").alt = p.nombre;
   $("imageCaption").textContent = p.nombre;
 
-  if (!visor.open) {
-    visor.showModal();
-  }
+  if (!visor.open) visor.showModal();
 }
 
 function cerrarImagen() {
-  if (visor.open) {
-    visor.close();
-  }
+  if (visor.open) visor.close();
 }
 
-$("closeImage").addEventListener(
-  "click",
-  cerrarImagen
-);
+$("closeImage").addEventListener("click", cerrarImagen);
 
 visor.addEventListener("click", evento => {
-  if (evento.target === visor) {
-    cerrarImagen();
-  }
+  if (evento.target === visor) cerrarImagen();
 });
 
 visor.addEventListener("close", () => {
@@ -690,76 +513,48 @@ visor.addEventListener("close", () => {
 });
 
 // ==========================================
-// FILTRAR CATEGORIAS
+// FILTROS Y ORDENAMIENTO
 // ==========================================
 
-function filtrar(categoria) {
-  categoriaActual = categoria;
+$("filtros").addEventListener("click", evento => {
+  const boton = evento.target.closest("[data-category]");
+  if (!boton) return;
+
+  categoriaActual = boton.dataset.category;
 
   document.querySelectorAll("#filtros button")
-    .forEach(boton => {
-      const activo =
-        boton.dataset.category === categoria;
-
-      boton.classList.toggle("active", activo);
-
-      boton.setAttribute(
-        "aria-pressed",
-        String(activo)
-      );
+    .forEach(item => {
+      const activo = item === boton;
+      item.classList.toggle("active", activo);
+      item.setAttribute("aria-pressed", String(activo));
     });
 
   mostrarProductos();
-}
-
-$("filtros").addEventListener("click", evento => {
-  const boton = evento.target.closest(
-    "[data-category]"
-  );
-
-  if (boton) {
-    filtrar(boton.dataset.category);
-  }
 });
 
-// ==========================================
-// ORDENAR PRODUCTOS
-// ==========================================
-
 $("sortButtons").addEventListener("click", evento => {
-  const boton = evento.target.closest(
-    "[data-sort]"
-  );
-
+  const boton = evento.target.closest("[data-sort]");
   if (!boton) return;
 
   ordenActual = boton.dataset.sort;
 
-  document.querySelectorAll(
-    "#sortButtons button"
-  ).forEach(item => {
-    const activo = item === boton;
-
-    item.classList.toggle("active", activo);
-
-    item.setAttribute(
-      "aria-pressed",
-      String(activo)
-    );
-  });
+  document.querySelectorAll("#sortButtons button")
+    .forEach(item => {
+      const activo = item === boton;
+      item.classList.toggle("active", activo);
+      item.setAttribute("aria-pressed", String(activo));
+    });
 
   mostrarProductos();
 });
 
 // ==========================================
-// ANIMACION DE IMPACTO DEL CARRITO
+// ANIMACION: BOLSA REDONDA EN ARCO
 // ==========================================
 
 function impactoCarrito() {
   cartLink.classList.remove("cart-impact");
-
   void cartLink.offsetWidth;
-
   cartLink.classList.add("cart-impact");
 }
 
@@ -769,164 +564,99 @@ cartLink.addEventListener("animationend", evento => {
   }
 });
 
-// ==========================================
-// BOLSA REDONDA LANZADA EN ARCO
-// ==========================================
-
-function lanzarBolsa(botonOrigen) {
-  if (
-    movimientoReducido() ||
-    !botonOrigen
-  ) {
+function lanzarBolsa(boton) {
+  if (!boton || movimientoReducido()) {
     impactoCarrito();
     return;
   }
 
-  const plantilla = $("shoppingBagTemplate");
   const bolsa = document.createElement("div");
-
   bolsa.className = "flying-bag";
 
   bolsa.appendChild(
-    plantilla.content.firstElementChild
-      .cloneNode(true)
+    $("shoppingBagTemplate").content
+      .firstElementChild.cloneNode(true)
   );
 
   document.body.appendChild(bolsa);
 
-  const origen =
-    botonOrigen.getBoundingClientRect();
-
+  const origen = boton.getBoundingClientRect();
   const destino = cartLink
-    .querySelector(".cart-svg")
-    .getBoundingClientRect();
+    .querySelector(".cart-svg").getBoundingClientRect();
 
-  const tamano = 31;
+  const tamaño = 31;
 
-  const x0 =
-    origen.left + origen.width / 2 - tamano / 2;
+  const x0 = origen.left + origen.width / 2 - tamaño / 2;
+  const y0 = origen.top + origen.height / 2 - tamaño / 2;
 
-  const y0 =
-    origen.top + origen.height / 2 - tamano / 2;
-
-  const x1 =
-    destino.left + destino.width / 2 - tamano / 2;
-
-  const y1 =
-    destino.top + destino.height * 0.45 - tamano / 2;
+  const x1 = destino.left + destino.width / 2 - tamaño / 2;
+  const y1 = destino.top + destino.height * .45 - tamaño / 2;
 
   const altura = Math.min(
     230,
-    Math.max(
-      65,
-      Math.abs(x1 - x0) * 0.32
-    )
+    Math.max(65, Math.abs(x1 - x0) * .32)
   );
 
   const puntos = [];
 
   for (let i = 0; i <= 30; i++) {
-    const progreso = i / 30;
+    const p = i / 30;
+    const x = x0 + (x1 - x0) * p;
+    const y = y0 + (y1 - y0) * p
+      - 4 * altura * p * (1 - p);
 
-    const x =
-      x0 + (x1 - x0) * progreso;
+    const escala = 1 - .5 * p;
+    const giro = -22 + 45 * p;
 
-    const y =
-      y0 + (y1 - y0) * progreso
-      - 4 * altura * progreso * (1 - progreso);
-
-    const escala =
-      1 - 0.5 * progreso;
-
-    const rotacion =
-      -22 + 45 * progreso;
-
-    let opacidad = 1;
-
-    if (progreso < 0.06) {
-      opacidad = progreso / 0.06;
-    } else if (progreso > 0.93) {
-      opacidad = (1 - progreso) / 0.07;
-    }
+    const opacidad =
+      p < .06 ? p / .06 :
+      p > .93 ? (1 - p) / .07 : 1;
 
     puntos.push({
-      offset: progreso,
+      offset: p,
       transform:
-        `translate(${x}px, ${y}px) ` +
-        `rotate(${rotacion}deg) ` +
-        `scale(${escala})`,
+        `translate(${x}px,${y}px) ` +
+        `rotate(${giro}deg) scale(${escala})`,
       opacity: opacidad
     });
   }
 
-  const animacion = bolsa.animate(puntos, {
+  bolsa.animate(puntos, {
     duration: 1100,
     easing: "linear",
     fill: "forwards"
+  }).finished.then(() => {
+    bolsa.remove();
+    impactoCarrito();
+  }).catch(() => {
+    bolsa.remove();
   });
-
-  animacion.finished
-    .then(() => {
-      bolsa.remove();
-      impactoCarrito();
-    })
-    .catch(() => {
-      bolsa.remove();
-    });
 }
 
 // ==========================================
-// AGREGAR AL CARRITO
+// CARRITO DE COMPRAS
 // ==========================================
 
 function agregarCarrito(id, boton) {
-  const producto = productos.find(
-    p => p.id === id
-  );
+  const p = productos.find(item => item.id === id);
+  if (!p) return;
 
-  if (!producto) return;
-
-  const existente = carrito.find(
-    item => item.id === id
-  );
+  const existente = carrito.find(item => item.id === id);
 
   if (existente) {
     existente.cantidad++;
   } else {
-    carrito.push({
-      id,
-      cantidad: 1
-    });
+    carrito.push({ id, cantidad: 1 });
   }
 
   actualizarCarrito();
   lanzarBolsa(boton);
 }
 
-// ==========================================
-// ELIMINAR PRODUCTO
-// ==========================================
-
 function eliminarProducto(id) {
-  carrito = carrito.filter(
-    item => item.id !== id
-  );
-
+  carrito = carrito.filter(item => item.id !== id);
   actualizarCarrito();
 }
-
-// ==========================================
-// VACIAR CARRITO
-// ==========================================
-
-function vaciarCarrito() {
-  carrito = [];
-  actualizarCarrito();
-}
-
-// ==========================================
-// ACTUALIZAR CARRITO
-// ==========================================
 
 function actualizarCarrito() {
   const lista = $("listaCarrito");
@@ -935,49 +665,32 @@ function actualizarCarrito() {
   let total = 0;
   let cantidad = 0;
 
-  if (carrito.length === 0) {
-    const vacio = document.createElement("div");
-
-    vacio.className = "cart-empty";
-    vacio.textContent = t("empty");
-
-    lista.appendChild(vacio);
+  if (!carrito.length) {
+    const aviso = document.createElement("div");
+    aviso.className = "cart-empty";
+    aviso.textContent = t("empty");
+    lista.appendChild(aviso);
   }
 
   carrito.forEach(item => {
-    const producto = productos.find(
-      p => p.id === item.id
-    );
+    const p = productos.find(producto => producto.id === item.id);
+    if (!p) return;
 
-    if (!producto) return;
-
-    const subtotal =
-      producto.precio * item.cantidad;
-
+    const subtotal = p.precio * item.cantidad;
     total += subtotal;
     cantidad += item.cantidad;
 
     const fila = document.createElement("div");
-
     fila.className = "cart-row";
 
     fila.innerHTML = `
       <div>
-        <strong>${producto.nombre}</strong>
-
-        <small>
-          ${item.cantidad} ×
-          ${dinero(producto.precio)}
-        </small>
+        <strong>${p.nombre}</strong>
+        <small>${item.cantidad} × ${dinero(p.precio)}</small>
       </div>
-
       <div class="cart-row-right">
-        <span>${dinero(subtotal)}</span>
-        <br>
-
-        <button
-          class="remove-btn"
-          type="button">
+        <span>${dinero(subtotal)}</span><br>
+        <button class="remove-btn" type="button">
           ${t("remove")}
         </button>
       </div>
@@ -985,7 +698,7 @@ function actualizarCarrito() {
 
     fila.querySelector(".remove-btn")
       .addEventListener("click", () => {
-        eliminarProducto(producto.id);
+        eliminarProducto(p.id);
       });
 
     lista.appendChild(fila);
@@ -995,14 +708,14 @@ function actualizarCarrito() {
   $("cartCount").textContent = cantidad;
 }
 
-$("vaciarCarrito").addEventListener(
-  "click",
-  vaciarCarrito
-);
+$("vaciarCarrito").addEventListener("click", () => {
+  carrito = [];
+  actualizarCarrito();
+});
 
 // ==========================================
-// CARRITO Y MUÑEQUITO CORRIENDO
-// CADA 25 SEGUNDOS
+// CARRITO + MUÑECO: 6 SEGUNDOS
+// REPETICION CADA 25 SEGUNDOS
 // ==========================================
 
 const INTERVALO_CARRITO = 25000;
@@ -1011,22 +724,27 @@ let intervaloCarrito = null;
 let carritoEnVista = false;
 
 function correrCarritoAnimado() {
-  if (
-    movimientoReducido() ||
-    document.hidden
-  ) {
-    return;
-  }
+  if (document.hidden || movimientoReducido()) return;
 
-  // Reiniciar ambas animaciones.
-  runningCart.classList.remove("run");
-  runningCharacter.classList.remove("run");
+  // Ajustar el recorrido al ancho real del carril.
+  const pista = document.querySelector(".cart-racetrack");
+  raceGroup.style.setProperty(
+    "--race-distance",
+    `${pista.clientWidth + 25}px`
+  );
 
-  void runningCart.offsetWidth;
-
-  runningCart.classList.add("run");
-  runningCharacter.classList.add("run");
+  // Reiniciar ambos simultaneamente,
+  // pues comparten el mismo contenedor.
+  raceGroup.classList.remove("run");
+  void raceGroup.offsetWidth;
+  raceGroup.classList.add("run");
 }
+
+raceGroup.addEventListener("animationend", evento => {
+  if (evento.animationName === "raceTogether") {
+    raceGroup.classList.remove("run");
+  }
+});
 
 function detenerCarrera() {
   if (intervaloCarrito !== null) {
@@ -1034,25 +752,17 @@ function detenerCarrera() {
     intervaloCarrito = null;
   }
 
-  runningCart.classList.remove("run");
-  runningCharacter.classList.remove("run");
+  raceGroup.classList.remove("run");
 }
 
 function iniciarCarrera() {
   if (intervaloCarrito !== null) return;
 
-  if (
-    !carritoEnVista ||
-    document.hidden ||
-    movimientoReducido()
-  ) {
-    return;
-  }
+  if (!carritoEnVista || document.hidden ||
+      movimientoReducido()) return;
 
-  // Primera carrera inmediatamente.
   correrCarritoAnimado();
 
-  // Repetir cada 25 segundos.
   intervaloCarrito = setInterval(() => {
     if (carritoEnVista && !document.hidden) {
       correrCarritoAnimado();
@@ -1060,26 +770,6 @@ function iniciarCarrera() {
   }, INTERVALO_CARRITO);
 }
 
-runningCart.addEventListener(
-  "animationend",
-  evento => {
-    if (evento.animationName === "raceCart") {
-      runningCart.classList.remove("run");
-    }
-  }
-);
-
-runningCharacter.addEventListener(
-  "animationend",
-  evento => {
-    if (evento.animationName === "raceRunner") {
-      runningCharacter.classList.remove("run");
-    }
-  }
-);
-
-// Detectar si la sección del carrito
-// está visible en pantalla.
 const observadorCarrito = new IntersectionObserver(
   entradas => {
     entradas.forEach(entrada => {
@@ -1092,28 +782,21 @@ const observadorCarrito = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.3
-  }
+  { threshold: .3 }
 );
 
 observadorCarrito.observe($("carrito"));
 
-// Pausar animaciones si la pestaña
-// del navegador está oculta.
-document.addEventListener(
-  "visibilitychange",
-  () => {
-    if (document.hidden) {
-      detenerCarrera();
-    } else if (carritoEnVista) {
-      iniciarCarrera();
-    }
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) {
+    detenerCarrera();
+  } else if (carritoEnVista) {
+    iniciarCarrera();
   }
-);
+});
 
 // ==========================================
-// PC MINIMALISTA
+// PC MINIMALISTA INTERACTIVA
 // ==========================================
 
 const pc = $("pcInteractive");
@@ -1121,35 +804,24 @@ const pc = $("pcInteractive");
 function alternarPc() {
   const pausada = pc.classList.toggle("paused");
 
+  pc.setAttribute("aria-pressed", String(pausada));
   pc.setAttribute(
-    "aria-pressed",
-    String(pausada)
-  );
-
-  pc.setAttribute(
-    "aria-label",
-    t(pausada ? "resume" : "pause")
+    "aria-label", t(pausada ? "resume" : "pause")
   );
 }
 
 pc.addEventListener("click", alternarPc);
 
 pc.addEventListener("keydown", evento => {
-  if (
-    evento.key === "Enter" ||
-    evento.key === " "
-  ) {
+  if (evento.key === "Enter" || evento.key === " ") {
     evento.preventDefault();
     alternarPc();
   }
 });
 
 // ==========================================
-// INICIAR PAGINA
+// INICIAR
 // ==========================================
 
 $("heroCount").textContent = productos.length;
-
-// Inicializa traducciones, catálogo
-// y carrito una sola vez.
 cambiarIdioma("es");
