@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090a0e">
-  <title>PIEZASPC | Piezas para la Computadora</title>
+  <title>PIEZASPC | Catálogo de computadoras</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
@@ -13,7 +13,7 @@
 
 <header class="site-header" id="inicio">
   <div class="container navbar">
-    <a class="logo" href="#inicio">PIEZAS<span>PC</span></a>
+    <a href="#inicio" class="logo">PIEZAS<span>PC</span></a>
 
     <nav aria-label="Navegación principal">
       <a href="#inicio" data-i18n="home">Inicio</a>
@@ -23,13 +23,13 @@
 
     <div class="nav-actions">
       <div class="language-switch" aria-label="Idioma / Language">
-        <button id="langES" class="active" type="button"
-                aria-pressed="true">ES</button>
-        <button id="langEN" type="button"
+        <button type="button" id="langES"
+                class="active" aria-pressed="true">ES</button>
+        <button type="button" id="langEN"
                 aria-pressed="false">EN</button>
       </div>
 
-      <a id="cartLink" class="cart-link" href="#carrito"
+      <a href="#carrito" id="cartLink" class="cart-link"
          aria-label="Ver carrito">
         <svg class="cart-svg" viewBox="0 0 64 64"
              fill="none" stroke="currentColor" stroke-width="3"
@@ -40,13 +40,14 @@
           <circle cx="26" cy="53" r="4"/>
           <circle cx="48" cy="53" r="4"/>
         </svg>
-        <span class="cart-count" id="cartCount">0</span>
+        <span id="cartCount" class="cart-count">0</span>
       </a>
     </div>
   </div>
 </header>
 
 <main>
+
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
@@ -59,9 +60,8 @@
         </h1>
 
         <p data-i18n="heroText">
-          Encuentra tu próxima computadora.
-          Explora desktops, laptops, dispositivos móviles
-          y estaciones de trabajo.
+          Encuentra tu próxima computadora. Explora
+          desktops, laptops, móviles y estaciones de trabajo.
         </p>
 
         <div class="hero-actions">
@@ -83,10 +83,10 @@
         </div>
       </div>
 
-      <!-- PC MINIMALISTA -->
+      <!-- COMPUTADORA INTERACTIVA -->
       <div class="pc-visual" id="pcInteractive"
-           role="button" tabindex="0" aria-pressed="false"
-           aria-label="Pausar animación">
+           role="button" tabindex="0"
+           aria-pressed="false" aria-label="Pausar animación">
         <div class="pc-glow"></div>
         <div class="pc-case">
           <div class="pc-window">
@@ -105,7 +105,6 @@
     </div>
   </section>
 
-  <!-- CATEGORIAS -->
   <section class="categories-intro">
     <div class="container category-highlights">
       <div class="glass">Desktop</div>
@@ -115,9 +114,9 @@
     </div>
   </section>
 
-  <!-- CATALOGO -->
   <section class="products-section" id="productos">
     <div class="container">
+
       <div class="section-heading">
         <div>
           <span class="eyebrow" data-i18n="catalogLabel">
@@ -135,7 +134,7 @@
       </div>
 
       <div class="catalog-toolbar glass">
-        <input id="buscar" type="search"
+        <input type="search" id="buscar"
                placeholder="Buscar equipos..."
                aria-label="Buscar equipos"
                autocomplete="off">
@@ -144,7 +143,6 @@
         </small>
       </div>
 
-      <!-- SIN MENU DESPLEGABLE -->
       <div class="sort-bar">
         <span data-i18n="sortBy">Ordenar por:</span>
         <div class="sort-buttons" id="sortButtons">
@@ -172,8 +170,7 @@
         <button type="button" data-category="Laptop"
                 aria-pressed="false">Laptop</button>
         <button type="button" data-category="Movil"
-                aria-pressed="false"
-                data-i18n="mobile">Móvil</button>
+                aria-pressed="false" data-i18n="mobile">Móvil</button>
         <button type="button" data-category="Workstation"
                 aria-pressed="false">Workstation</button>
       </div>
@@ -187,63 +184,53 @@
     </div>
   </section>
 
-  <!-- CARRITO -->
   <section class="cart-section" id="carrito">
     <div class="container">
 
-      <!-- ANIMACION: MUÑECO Y CARRITO JUNTOS -->
+      <!-- CARRERA CON STICKMAN -->
       <div class="cart-racetrack" aria-hidden="true">
         <div class="track-line"></div>
 
         <div class="race-group" id="raceGroup">
 
-          <!-- MUÑECO CORRIENDO DETRAS -->
           <div class="running-character" id="runningCharacter">
-            <svg viewBox="0 0 70 90"
+            <svg viewBox="0 0 100 110"
                  xmlns="http://www.w3.org/2000/svg"
-                 aria-hidden="true">
+                 fill="none" stroke="currentColor"
+                 stroke-width="7"
+                 stroke-linecap="round"
+                 stroke-linejoin="round">
 
-              <!-- CABEZA -->
-              <circle cx="35" cy="14" r="10" fill="#ffd0a6"/>
-              <circle cx="39" cy="12" r="1.5" fill="#212121"/>
+              <!-- CABEZA REDONDA -->
+              <circle cx="50" cy="20" r="11"
+                      fill="currentColor" stroke="none"/>
 
-              <!-- CAMISETA Y CUERPO -->
-              <path d="M35 25V49"
-                    stroke="#ffffff" stroke-width="8"
-                    stroke-linecap="round"/>
-              <path d="M29 30H41"
-                    stroke="#ff7900" stroke-width="3"
-                    stroke-linecap="round"/>
+              <!-- CUERPO INCLINADO -->
+              <path d="M50 34L39 70"/>
 
-              <!-- BRAZOS INDEPENDIENTES -->
-              <g class="runner-arm-left">
-                <path d="M35 30L19 42"
-                      stroke="#ff7900" stroke-width="5"
-                      stroke-linecap="round"/>
-              </g>
-
+              <!-- BRAZO DELANTERO -->
               <g class="runner-arm-right">
-                <path d="M35 30L51 42"
-                      stroke="#ff7900" stroke-width="5"
-                      stroke-linecap="round"/>
+                <path d="M46 42L69 47L82 32"/>
               </g>
 
-              <!-- PIERNAS INDEPENDIENTES -->
-              <g class="runner-leg-left">
-                <path d="M35 49L17 75"
-                      stroke="#ffffff" stroke-width="6"
-                      stroke-linecap="round"/>
+              <!-- BRAZO TRASERO -->
+              <g class="runner-arm-left">
+                <path d="M46 42L27 35L16 48"/>
               </g>
 
+              <!-- PIERNA DELANTERA -->
               <g class="runner-leg-right">
-                <path d="M35 49L53 75"
-                      stroke="#ffffff" stroke-width="6"
-                      stroke-linecap="round"/>
+                <path d="M39 70L69 78L62 99"/>
               </g>
+
+              <!-- PIERNA TRASERA -->
+              <g class="runner-leg-left">
+                <path d="M39 70L25 94L7 87"/>
+              </g>
+
             </svg>
           </div>
 
-          <!-- CARRITO -->
           <div class="running-cart" id="runningCart">
             <svg viewBox="0 0 100 75" fill="none"
                  aria-hidden="true">
@@ -259,14 +246,13 @@
               <circle cx="75" cy="66" r="6"
                       fill="white" stroke="#ff7900"
                       stroke-width="3"/>
-
-              <!-- BOLSA DENTRO DEL CARRITO -->
               <path d="M42 20h28l3 26H39L42 20Z"
                     fill="#ff7900"/>
               <path d="M49 21v-6a7 7 0 0 1 14 0v6"
                     stroke="white" stroke-width="3"/>
             </svg>
           </div>
+
         </div>
       </div>
 
@@ -283,6 +269,7 @@
               </span>
             </h2>
           </div>
+
           <button type="button" id="vaciarCarrito"
                   class="clear-btn" data-i18n="clear">
             Vaciar carrito
@@ -297,9 +284,9 @@
             <small data-i18n="demo">
               Carrito de demostración. No procesa pagos.
             </small>
-            <a href="https://www.newegg.com/"
+            <a class="btn btn-primary"
+               href="https://www.newegg.com/"
                target="_blank" rel="noopener noreferrer"
-               class="btn btn-primary"
                data-i18n="visit">VISITAR NEWEGG</a>
           </div>
         </div>
@@ -315,7 +302,7 @@
   </div>
 </footer>
 
-<!-- VISOR DE IMAGEN COMPLETA -->
+<!-- VISOR DE IMAGEN -->
 <dialog id="imageViewer" class="image-viewer">
   <button type="button" id="closeImage"
           class="close-image" aria-label="Cerrar">×</button>
@@ -323,7 +310,7 @@
   <p id="imageCaption"></p>
 </dialog>
 
-<!-- BOLSA REDONDA VOLADORA -->
+<!-- BOLSA REDONDA -->
 <template id="shoppingBagTemplate">
   <svg viewBox="0 0 48 48" fill="none"
        xmlns="http://www.w3.org/2000/svg"
