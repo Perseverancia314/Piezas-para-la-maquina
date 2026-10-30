@@ -3,55 +3,65 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090a0e">
-  <title>PIEZASPC | Catálogo de computadoras</title>
+  <title>PIEZASPC | Computadoras y Componentes</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header" id="inicio">
   <div class="container navbar">
-    <a href="#inicio" class="logo">PIEZAS<span>PC</span></a>
+
+    <a href="#inicio" class="logo">
+      PIEZAS<span>PC</span>
+    </a>
 
     <nav aria-label="Navegación principal">
       <a href="#inicio" data-i18n="home">Inicio</a>
       <a href="#productos" data-i18n="products">Equipos</a>
+      <a href="#piezas" data-i18n="partsNav">Piezas</a>
       <a href="#carrito" data-i18n="cart">Carrito</a>
     </nav>
 
     <div class="nav-actions">
-      <div class="language-switch" aria-label="Idioma / Language">
+      <div class="language-switch" aria-label="Idioma">
         <button type="button" id="langES"
                 class="active" aria-pressed="true">ES</button>
         <button type="button" id="langEN"
                 aria-pressed="false">EN</button>
       </div>
 
-      <a href="#carrito" id="cartLink" class="cart-link"
-         aria-label="Ver carrito">
+      <a href="#carrito" class="cart-link"
+         id="cartLink" aria-label="Ver carrito">
         <svg class="cart-svg" viewBox="0 0 64 64"
-             fill="none" stroke="currentColor" stroke-width="3"
-             stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true">
+             fill="none" stroke="currentColor"
+             stroke-width="3" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
           <path d="M5 10h9l7 31h29l7-24H17"/>
           <path d="M23 46h28"/>
           <circle cx="26" cy="53" r="4"/>
           <circle cx="48" cy="53" r="4"/>
         </svg>
-        <span id="cartCount" class="cart-count">0</span>
+        <span class="cart-count" id="cartCount">0</span>
       </a>
     </div>
+
   </div>
 </header>
 
 <main>
 
+  <!-- HERO -->
   <section class="hero">
     <div class="container hero-grid">
+
       <div class="hero-copy">
-        <span class="eyebrow">PERFORMANCE / TECHNOLOGY</span>
+        <span class="eyebrow">
+          PERFORMANCE / TECHNOLOGY
+        </span>
 
         <h1>
           <span data-i18n="power">POTENCIA.</span><br>
@@ -60,51 +70,61 @@
         </h1>
 
         <p data-i18n="heroText">
-          Encuentra tu próxima computadora. Explora
-          desktops, laptops, móviles y estaciones de trabajo.
+          Descubre computadoras completas y los componentes
+          que necesitas para construir tu próximo equipo.
         </p>
 
         <div class="hero-actions">
           <a href="#productos" class="btn btn-primary"
              data-i18n="explore">EXPLORAR EQUIPOS</a>
-          <a href="#carrito" class="btn btn-glass"
-             data-i18n="viewCart">VER CARRITO</a>
+
+          <a href="#piezas" class="btn btn-glass"
+             data-i18n="exploreParts">EXPLORAR PIEZAS</a>
         </div>
 
         <div class="hero-stats">
           <div>
             <strong id="heroCount">12</strong>
-            <small data-i18n="listed">EQUIPOS REGISTRADOS</small>
+            <small data-i18n="listed">EQUIPOS</small>
           </div>
           <div>
-            <strong>4</strong>
-            <small data-i18n="categories">CATEGORÍAS</small>
+            <strong id="partsCount">8</strong>
+            <small data-i18n="components">PIEZAS</small>
           </div>
         </div>
       </div>
 
-      <!-- COMPUTADORA INTERACTIVA -->
+      <!-- PC ANIMADA -->
       <div class="pc-visual" id="pcInteractive"
            role="button" tabindex="0"
-           aria-pressed="false" aria-label="Pausar animación">
+           aria-pressed="false"
+           aria-label="Pausar animación">
+
         <div class="pc-glow"></div>
+
         <div class="pc-case">
           <div class="pc-window">
             <div class="motherboard pc-part"></div>
             <div class="processor pc-part">CPU</div>
-            <div class="memory pc-part"><i></i><i></i></div>
+            <div class="memory pc-part">
+              <i></i><i></i>
+            </div>
             <div class="graphics pc-part">
-              <span>RTX</span><b></b><b></b>
+              <span>RTX</span>
+              <b></b><b></b>
             </div>
             <div class="pc-fan"></div>
           </div>
           <div class="case-front"><span></span></div>
         </div>
+
         <div class="pc-shadow"></div>
       </div>
+
     </div>
   </section>
 
+  <!-- CATEGORIAS DE COMPUTADORAS -->
   <section class="categories-intro">
     <div class="container category-highlights">
       <div class="glass">Desktop</div>
@@ -114,6 +134,7 @@
     </div>
   </section>
 
+  <!-- NUESTRAS COMPUTADORAS -->
   <section class="products-section" id="productos">
     <div class="container">
 
@@ -122,72 +143,169 @@
           <span class="eyebrow" data-i18n="catalogLabel">
             CATÁLOGO DE EQUIPOS
           </span>
+
           <h2>
             <span data-i18n="our">NUESTROS</span>
-            <span class="accent" data-i18n="equipment">EQUIPOS</span>
+            <span class="accent" data-i18n="equipment">
+              EQUIPOS
+            </span>
           </h2>
+
           <p data-i18n="catalogDescription">
-            Equipos completos para cada necesidad.
+            Computadoras completas para cada necesidad.
           </p>
         </div>
+
         <span id="resultCount" aria-live="polite"></span>
       </div>
 
+      <!-- BUSQUEDA -->
       <div class="catalog-toolbar glass">
-        <input type="search" id="buscar"
+        <input id="buscar" type="search"
                placeholder="Buscar equipos..."
                aria-label="Buscar equipos"
                autocomplete="off">
+
         <small data-i18n="searchRule">
           Solo letras, números y espacios.
         </small>
       </div>
 
+      <!-- ORDENAMIENTO -->
       <div class="sort-bar">
         <span data-i18n="sortBy">Ordenar por:</span>
+
         <div class="sort-buttons" id="sortButtons">
-          <button class="active" type="button"
+          <button type="button" class="active"
                   data-sort="default" aria-pressed="true"
                   data-i18n="featured">Destacados</button>
+
           <button type="button" data-sort="asc"
                   aria-pressed="false"
                   data-i18n="low">Menor precio</button>
+
           <button type="button" data-sort="desc"
                   aria-pressed="false"
                   data-i18n="high">Mayor precio</button>
+
           <button type="button" data-sort="name"
                   aria-pressed="false"
                   data-i18n="name">Nombre A-Z</button>
         </div>
       </div>
 
+      <!-- FILTROS -->
       <div class="filtros" id="filtros">
-        <button class="active" type="button"
+        <button type="button" class="active"
                 data-category="Todos" aria-pressed="true"
                 data-i18n="all">Todos</button>
+
         <button type="button" data-category="Desktop"
                 aria-pressed="false">Desktop</button>
+
         <button type="button" data-category="Laptop"
                 aria-pressed="false">Laptop</button>
+
         <button type="button" data-category="Movil"
-                aria-pressed="false" data-i18n="mobile">Móvil</button>
+                aria-pressed="false"
+                data-i18n="mobile">Móvil</button>
+
         <button type="button" data-category="Workstation"
                 aria-pressed="false">Workstation</button>
       </div>
 
-      <div class="catalogo" id="catalogo"></div>
+      <div id="catalogo" class="catalogo"></div>
 
       <p class="pricing-note" data-i18n="priceNote">
-        Precios ilustrativos. Consulta precios reales
-        y disponibilidad en Newegg.
+        Los precios son ilustrativos. Consulta precios
+        y disponibilidad reales en Newegg.
       </p>
+
     </div>
   </section>
 
+  <!-- ====================================
+       NUESTRAS PIEZAS
+  ===================================== -->
+  <section class="parts-section" id="piezas">
+    <div class="container">
+
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow" data-i18n="partsLabel">
+            COMPONENTES DE COMPUTADORAS
+          </span>
+
+          <h2>
+            <span data-i18n="partsTitleOne">NUESTRAS</span>
+            <span class="accent" data-i18n="partsTitleTwo">
+              PIEZAS
+            </span>
+          </h2>
+
+          <p data-i18n="partsDescription">
+            Procesadores, memorias, tarjetas gráficas
+            y todo lo necesario para tu computadora.
+          </p>
+        </div>
+
+        <span id="partsResultCount" aria-live="polite"></span>
+      </div>
+
+      <!-- FILTROS DE PIEZAS -->
+      <div class="parts-filters" id="partsFilters">
+
+        <button type="button" class="active"
+                data-part-filter="Todos"
+                aria-pressed="true"
+                data-i18n="all">Todos</button>
+
+        <button type="button" data-part-filter="CPU"
+                aria-pressed="false">CPU</button>
+
+        <button type="button" data-part-filter="RAM"
+                aria-pressed="false">RAM</button>
+
+        <button type="button" data-part-filter="GPU"
+                aria-pressed="false">GPU</button>
+
+        <button type="button" data-part-filter="SSD"
+                aria-pressed="false">SSD</button>
+
+        <button type="button" data-part-filter="Motherboard"
+                aria-pressed="false">Motherboard</button>
+
+        <button type="button" data-part-filter="PSU"
+                aria-pressed="false">PSU</button>
+
+        <button type="button" data-part-filter="Cooling"
+                aria-pressed="false"
+                data-i18n="cooling">Refrigeración</button>
+
+        <button type="button" data-part-filter="Case"
+                aria-pressed="false"
+                data-i18n="cases">Gabinetes</button>
+
+      </div>
+
+      <!-- CATALOGO DE COMPONENTES -->
+      <div class="parts-catalog" id="partsCatalog"></div>
+
+      <p class="pricing-note" data-i18n="partsPriceNote">
+        Precios de demostración. Comprueba la compatibilidad
+        de los componentes antes de comprar.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ====================================
+       CARRITO COMPARTIDO
+  ===================================== -->
   <section class="cart-section" id="carrito">
     <div class="container">
 
-      <!-- CARRERA CON STICKMAN -->
+      <!-- STICKMAN + CARRITO EN MOVIMIENTO -->
       <div class="cart-racetrack" aria-hidden="true">
         <div class="track-line"></div>
 
@@ -196,34 +314,29 @@
           <div class="running-character" id="runningCharacter">
             <svg viewBox="0 0 100 110"
                  xmlns="http://www.w3.org/2000/svg"
-                 fill="none" stroke="currentColor"
+                 fill="none"
+                 stroke="currentColor"
                  stroke-width="7"
                  stroke-linecap="round"
                  stroke-linejoin="round">
 
-              <!-- CABEZA REDONDA -->
               <circle cx="50" cy="20" r="11"
                       fill="currentColor" stroke="none"/>
 
-              <!-- CUERPO INCLINADO -->
               <path d="M50 34L39 70"/>
 
-              <!-- BRAZO DELANTERO -->
               <g class="runner-arm-right">
                 <path d="M46 42L69 47L82 32"/>
               </g>
 
-              <!-- BRAZO TRASERO -->
               <g class="runner-arm-left">
                 <path d="M46 42L27 35L16 48"/>
               </g>
 
-              <!-- PIERNA DELANTERA -->
               <g class="runner-leg-right">
                 <path d="M39 70L69 78L62 99"/>
               </g>
 
-              <!-- PIERNA TRASERA -->
               <g class="runner-leg-left">
                 <path d="M39 70L25 94L7 87"/>
               </g>
@@ -234,20 +347,26 @@
           <div class="running-cart" id="runningCart">
             <svg viewBox="0 0 100 75" fill="none"
                  aria-hidden="true">
+
               <path d="M5 15h13l14 37h48l12-29H24"
                     stroke="#ff7900" stroke-width="5"
                     stroke-linecap="round"
                     stroke-linejoin="round"/>
+
               <path d="M33 59h50"
                     stroke="#ff7900" stroke-width="4"/>
+
               <circle cx="40" cy="66" r="6"
                       fill="white" stroke="#ff7900"
                       stroke-width="3"/>
+
               <circle cx="75" cy="66" r="6"
                       fill="white" stroke="#ff7900"
                       stroke-width="3"/>
+
               <path d="M42 20h28l3 26H39L42 20Z"
                     fill="#ff7900"/>
+
               <path d="M49 21v-6a7 7 0 0 1 14 0v6"
                     stroke="white" stroke-width="3"/>
             </svg>
@@ -257,11 +376,13 @@
       </div>
 
       <div class="cart-panel glass">
+
         <div class="cart-header">
           <div>
             <span class="eyebrow" data-i18n="selection">
               TU SELECCIÓN
             </span>
+
             <h2>
               <span data-i18n="cartTitleOne">CARRITO DE</span>
               <span class="accent" data-i18n="cartTitleTwo">
@@ -270,26 +391,35 @@
             </h2>
           </div>
 
-          <button type="button" id="vaciarCarrito"
-                  class="clear-btn" data-i18n="clear">
+          <button type="button"
+                  id="vaciarCarrito"
+                  class="clear-btn"
+                  data-i18n="clear">
             Vaciar carrito
           </button>
         </div>
 
         <div class="cart-content">
           <div class="cart-items" id="listaCarrito"></div>
+
           <div class="cart-summary glass">
             <p data-i18n="estimated">TOTAL ESTIMADO</p>
             <strong id="total">$0.00</strong>
+
             <small data-i18n="demo">
               Carrito de demostración. No procesa pagos.
             </small>
-            <a class="btn btn-primary"
-               href="https://www.newegg.com/"
-               target="_blank" rel="noopener noreferrer"
-               data-i18n="visit">VISITAR NEWEGG</a>
+
+            <a href="https://www.newegg.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn btn-primary"
+               data-i18n="visit">
+              VISITAR NEWEGG
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -302,7 +432,7 @@
   </div>
 </footer>
 
-<!-- VISOR DE IMAGEN -->
+<!-- VISOR DE IMAGEN COMPLETA -->
 <dialog id="imageViewer" class="image-viewer">
   <button type="button" id="closeImage"
           class="close-image" aria-label="Cerrar">×</button>
@@ -310,22 +440,25 @@
   <p id="imageCaption"></p>
 </dialog>
 
-<!-- BOLSA REDONDA -->
+<!-- BOLSA REDONDA ANIMADA -->
 <template id="shoppingBagTemplate">
   <svg viewBox="0 0 48 48" fill="none"
        xmlns="http://www.w3.org/2000/svg"
        aria-hidden="true">
+
     <circle cx="24" cy="24" r="22" fill="#ff7900"/>
     <circle cx="24" cy="24" r="21"
             stroke="#ffc48b" stroke-opacity=".75"/>
+
     <path d="M16 21h16l1.5 14h-19L16 21Z"
           fill="white"/>
+
     <path d="M20 22v-4a4 4 0 0 1 8 0v4"
           stroke="white" stroke-width="2.6"
           stroke-linecap="round"/>
-    <path d="M20 27h8"
-          stroke="#ff7900" stroke-width="2"
-          stroke-linecap="round"/>
+
+    <path d="M20 27h8" stroke="#ff7900"
+          stroke-width="2" stroke-linecap="round"/>
   </svg>
 </template>
 
