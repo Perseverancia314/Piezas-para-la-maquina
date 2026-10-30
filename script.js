@@ -1,11 +1,11 @@
 
 "use strict";
 
-// ==========================================
-// PIEZASPC - CATALOGO BILINGUE
-// ==========================================
-// Precios ilustrativos, no en vivo.
-// Imagenes externas de Newegg.
+// ======================================
+// PIEZASPC - EQUIPOS COMPLETOS
+// ======================================
+// Precios de demostracion.
+// Imagenes externas sujetas a disponibilidad.
 
 const productos = [
   {
@@ -73,7 +73,7 @@ const productos = [
     nombre: "Samsung Galaxy A17 4G",
     categoria: "Movil",
     precio: 194.99,
-    es: "Teléfono inteligente Samsung desbloqueado.",
+    es: "Teléfono Samsung desbloqueado.",
     en: "Unlocked Samsung smartphone.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/ABPXS2512020MIWLS9A.jpg",
     enlace: "https://www.newegg.com/p/23B-0002-01ZV3"
@@ -83,7 +83,7 @@ const productos = [
     nombre: "Samsung Galaxy S25 256GB",
     categoria: "Movil",
     precio: 938.25,
-    es: "Teléfono inteligente Samsung de gama alta.",
+    es: "Teléfono Samsung de gama alta.",
     en: "High-end Samsung smartphone.",
     imagen: "https://c1.neweggimages.com/productimage/nb640/A24GD2502110EEKAR23.jpg",
     enlace: "https://www.newegg.com/p/0V4-000B-01S27"
@@ -130,38 +130,135 @@ const productos = [
   }
 ];
 
-// ==========================================
-// TRADUCCIONES CORREGIDAS
-// ==========================================
+// ======================================
+// PIEZAS INDIVIDUALES
+// ======================================
+// Estos son ejemplos genericos.
+// No se afirma compatibilidad entre ellos.
+
+const piezas = [
+  {
+    id: 101,
+    nombre: "Procesador Intel Core i7",
+    categoria: "CPU",
+    precio: 299.99,
+    es: "Procesador de escritorio. Verifica generación y socket.",
+    en: "Desktop processor. Check generation and socket."
+  },
+  {
+    id: 102,
+    nombre: "Memoria DDR5 32GB",
+    categoria: "RAM",
+    precio: 119.99,
+    es: "Kit de memoria DDR5. Requiere una placa compatible.",
+    en: "DDR5 memory kit. Requires a compatible motherboard."
+  },
+  {
+    id: 103,
+    nombre: "Tarjeta gráfica GeForce RTX",
+    categoria: "GPU",
+    precio: 499.99,
+    es: "Tarjeta gráfica dedicada para videojuegos y creación.",
+    en: "Dedicated graphics card for gaming and creation."
+  },
+  {
+    id: 104,
+    nombre: "SSD NVMe 2TB",
+    categoria: "SSD",
+    precio: 159.99,
+    es: "Almacenamiento de estado sólido para ranura M.2 compatible.",
+    en: "Solid-state storage for a compatible M.2 slot."
+  },
+  {
+    id: 105,
+    nombre: "Motherboard ATX",
+    categoria: "Motherboard",
+    precio: 189.99,
+    es: "Placa base ATX. Verifica socket, chipset y memoria.",
+    en: "ATX motherboard. Check socket, chipset and memory."
+  },
+  {
+    id: 106,
+    nombre: "Fuente de poder 850W",
+    categoria: "PSU",
+    precio: 129.99,
+    es: "Fuente de alimentación de 850 W para computadoras.",
+    en: "850 W power supply for desktop computers."
+  },
+  {
+    id: 107,
+    nombre: "Refrigeración de CPU",
+    categoria: "Cooling",
+    precio: 89.99,
+    es: "Sistema de refrigeración para procesadores compatibles.",
+    en: "Cooling system for compatible processors."
+  },
+  {
+    id: 108,
+    nombre: "Gabinete ATX",
+    categoria: "Case",
+    precio: 109.99,
+    es: "Gabinete de escritorio para placas y componentes compatibles.",
+    en: "Desktop case for compatible motherboards and components."
+  }
+];
+
+// ======================================
+// TRADUCCIONES COMPLETAS
+// ======================================
 
 const traducciones = {
   es: {
     home: "Inicio",
     products: "Equipos",
+    partsNav: "Piezas",
     cart: "Carrito",
+
     power: "POTENCIA.",
     precision: "PRECISIÓN.",
     speed: "VELOCIDAD.",
+
     heroText:
-      "Encuentra tu próxima computadora. Explora computadoras de escritorio, laptops, dispositivos móviles y estaciones de trabajo.",
+      "Descubre computadoras completas y los componentes que necesitas para construir tu próximo equipo.",
+
     explore: "EXPLORAR EQUIPOS",
-    viewCart: "VER CARRITO",
-    listed: "EQUIPOS REGISTRADOS",
+    exploreParts: "EXPLORAR PIEZAS",
+    listed: "EQUIPOS",
+    components: "PIEZAS",
     categories: "CATEGORÍAS",
+
     mobile: "Móvil",
+
     catalogLabel: "CATÁLOGO DE EQUIPOS",
     our: "NUESTROS",
     equipment: "EQUIPOS",
-    catalogDescription: "Equipos completos para cada necesidad.",
+    catalogDescription:
+      "Computadoras completas para cada necesidad.",
+
+    search: "Buscar equipos...",
     searchRule: "Solo letras, números y espacios.",
+
     sortBy: "Ordenar por:",
     featured: "Destacados",
     low: "Menor precio",
     high: "Mayor precio",
     name: "Nombre A-Z",
     all: "Todos",
+
     priceNote:
-      "Precios ilustrativos. Consulta precios reales y disponibilidad en Newegg.",
+      "Los precios son ilustrativos. Consulta precios y disponibilidad reales en Newegg.",
+
+    partsLabel: "COMPONENTES DE COMPUTADORAS",
+    partsTitleOne: "NUESTRAS",
+    partsTitleTwo: "PIEZAS",
+    partsDescription:
+      "Procesadores, memorias, tarjetas gráficas y todo lo necesario para tu computadora.",
+    partsPriceNote:
+      "Precios de demostración. Comprueba la compatibilidad de los componentes antes de comprar.",
+    cooling: "Refrigeración",
+    cases: "Gabinetes",
+    partsAvailable: "piezas disponibles",
+
     selection: "TU SELECCIÓN",
     cartTitleOne: "CARRITO DE",
     cartTitleTwo: "COMPRAS",
@@ -169,10 +266,12 @@ const traducciones = {
     estimated: "TOTAL ESTIMADO",
     demo: "Carrito de demostración. No procesa pagos.",
     visit: "VISITAR NEWEGG",
-    search: "Buscar equipos...",
+
     loading: "Cargando equipos...",
     available: "equipos con imagen disponible",
-    unavailable: "No hay equipos con imágenes disponibles.",
+    unavailable:
+      "No hay equipos con imágenes disponibles para esta selección.",
+
     sample: "Precio ilustrativo",
     add: "+ Agregar al carrito",
     remove: "Quitar",
@@ -187,30 +286,54 @@ const traducciones = {
   en: {
     home: "Home",
     products: "Computers",
+    partsNav: "Components",
     cart: "Cart",
+
     power: "POWER.",
     precision: "PRECISION.",
     speed: "SPEED.",
+
     heroText:
-      "Find your next computer. Explore desktops, laptops, mobile devices and professional workstations.",
+      "Discover complete computers and the components you need to build your next system.",
+
     explore: "EXPLORE COMPUTERS",
-    viewCart: "VIEW CART",
-    listed: "LISTED DEVICES",
+    exploreParts: "EXPLORE COMPONENTS",
+    listed: "COMPUTERS",
+    components: "COMPONENTS",
     categories: "CATEGORIES",
+
     mobile: "Mobile",
+
     catalogLabel: "COMPUTER CATALOG",
     our: "OUR",
-    equipment: "EQUIPMENT",
-    catalogDescription: "Complete systems for every need.",
+    equipment: "COMPUTERS",
+    catalogDescription:
+      "Complete computers for every need.",
+
+    search: "Search computers...",
     searchRule: "Letters, numbers and spaces only.",
+
     sortBy: "Sort by:",
     featured: "Featured",
     low: "Lowest price",
     high: "Highest price",
     name: "Name A-Z",
     all: "All",
+
     priceNote:
-      "Illustrative prices. Check current prices and availability on Newegg.",
+      "Prices are illustrative. Check actual prices and availability on Newegg.",
+
+    partsLabel: "COMPUTER COMPONENTS",
+    partsTitleOne: "OUR",
+    partsTitleTwo: "COMPONENTS",
+    partsDescription:
+      "Processors, memory, graphics cards and everything needed for your computer.",
+    partsPriceNote:
+      "Demo prices. Check component compatibility before purchasing.",
+    cooling: "Cooling",
+    cases: "Cases",
+    partsAvailable: "available components",
+
     selection: "YOUR SELECTION",
     cartTitleOne: "SHOPPING",
     cartTitleTwo: "CART",
@@ -218,10 +341,12 @@ const traducciones = {
     estimated: "ESTIMATED TOTAL",
     demo: "Demo shopping cart. No payments are processed.",
     visit: "VISIT NEWEGG",
-    search: "Search computers...",
+
     loading: "Loading computers...",
     available: "computers with available images",
-    unavailable: "No computers with available images.",
+    unavailable:
+      "No computers with available images for this selection.",
+
     sample: "Illustrative price",
     add: "+ Add to cart",
     remove: "Remove",
@@ -234,31 +359,39 @@ const traducciones = {
   }
 };
 
-// ==========================================
-// VARIABLES
-// ==========================================
+// ======================================
+// VARIABLES Y UTILIDADES
+// ======================================
 
 const $ = id => document.getElementById(id);
 
 let idioma = "es";
 let categoriaActual = "Todos";
 let ordenActual = "default";
+let filtroPiezas = "Todos";
 let carrito = [];
 let renderActual = 0;
 
 const catalogo = $("catalogo");
+const partsCatalog = $("partsCatalog");
 const cartLink = $("cartLink");
 const raceGroup = $("raceGroup");
+
 const cacheImagenes = new Map();
 
 function t(clave) {
-  return traducciones[idioma]?.[clave] ?? "";
+  return traducciones[idioma]?.[clave] ??
+         traducciones.es?.[clave] ??
+         "";
 }
 
 function dinero(valor) {
   return new Intl.NumberFormat(
     idioma === "es" ? "es-PR" : "en-US",
-    { style: "currency", currency: "USD" }
+    {
+      style: "currency",
+      currency: "USD"
+    }
   ).format(valor);
 }
 
@@ -269,14 +402,20 @@ function movimientoReducido() {
 }
 
 function normalizar(texto) {
-  return texto.normalize("NFD")
+  return texto
+    .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 }
 
-// ==========================================
+function buscarArticulo(id) {
+  return productos.find(p => p.id === id) ??
+         piezas.find(p => p.id === id);
+}
+
+// ======================================
 // CAMBIAR IDIOMA
-// ==========================================
+// ======================================
 
 function cambiarIdioma(nuevoIdioma) {
   if (!traducciones[nuevoIdioma]) return;
@@ -286,37 +425,67 @@ function cambiarIdioma(nuevoIdioma) {
 
   document.querySelectorAll("[data-i18n]")
     .forEach(elemento => {
-      const traduccion = t(elemento.dataset.i18n);
-      if (traduccion) elemento.textContent = traduccion;
+      const texto = t(elemento.dataset.i18n);
+
+      if (texto) {
+        elemento.textContent = texto;
+      }
     });
 
   $("buscar").placeholder = t("search");
-  $("buscar").setAttribute("aria-label", t("search"));
-
-  $("langES").classList.toggle("active", idioma === "es");
-  $("langEN").classList.toggle("active", idioma === "en");
-
-  $("langES").setAttribute("aria-pressed", String(idioma === "es"));
-  $("langEN").setAttribute("aria-pressed", String(idioma === "en"));
-
-  $("closeImage").setAttribute("aria-label", t("close"));
-  cartLink.setAttribute("aria-label", t("viewCart"));
-
-  const pausada = $("pcInteractive").classList.contains("paused");
-  $("pcInteractive").setAttribute(
-    "aria-label", t(pausada ? "resume" : "pause")
+  $("buscar").setAttribute(
+    "aria-label", t("search")
   );
 
+  $("langES").classList.toggle(
+    "active", idioma === "es"
+  );
+
+  $("langEN").classList.toggle(
+    "active", idioma === "en"
+  );
+
+  $("langES").setAttribute(
+    "aria-pressed", String(idioma === "es")
+  );
+
+  $("langEN").setAttribute(
+    "aria-pressed", String(idioma === "en")
+  );
+
+  $("closeImage").setAttribute(
+    "aria-label", t("close")
+  );
+
+  cartLink.setAttribute(
+    "aria-label", t("viewCart")
+  );
+
+  const pcPausada = $("pcInteractive")
+    .classList.contains("paused");
+
+  $("pcInteractive").setAttribute(
+    "aria-label",
+    t(pcPausada ? "resume" : "pause")
+  );
+
+  // Actualizar AMBOS catalogos.
   mostrarProductos();
+  renderizarPiezas();
   actualizarCarrito();
 }
 
-$("langES").addEventListener("click", () => cambiarIdioma("es"));
-$("langEN").addEventListener("click", () => cambiarIdioma("en"));
+$("langES").addEventListener("click", () => {
+  cambiarIdioma("es");
+});
 
-// ==========================================
+$("langEN").addEventListener("click", () => {
+  cambiarIdioma("en");
+});
+
+// ======================================
 // BUSCADOR SIN CARACTERES ESPECIALES
-// ==========================================
+// ======================================
 
 function limpiarBusqueda(texto) {
   return texto
@@ -329,14 +498,16 @@ $("buscar").addEventListener("input", evento => {
   const input = evento.target;
   const limpio = limpiarBusqueda(input.value);
 
-  if (input.value !== limpio) input.value = limpio;
+  if (input.value !== limpio) {
+    input.value = limpio;
+  }
 
   mostrarProductos();
 });
 
-// ==========================================
-// COMPROBAR IMAGENES
-// ==========================================
+// ======================================
+// COMPROBAR IMAGENES EXTERNAS
+// ======================================
 
 function verificarImagen(url) {
   if (!url || !url.startsWith("https://")) {
@@ -350,11 +521,15 @@ function verificarImagen(url) {
   const promesa = new Promise(resolve => {
     const imagen = new Image();
 
-    imagen.onload = () => resolve(
-      imagen.naturalWidth > 0 && imagen.naturalHeight > 0
-    );
+    imagen.onload = () => {
+      resolve(
+        imagen.naturalWidth > 0 &&
+        imagen.naturalHeight > 0
+      );
+    };
 
     imagen.onerror = () => resolve(false);
+
     imagen.src = url;
   });
 
@@ -362,31 +537,35 @@ function verificarImagen(url) {
   return promesa;
 }
 
-// ==========================================
-// CATALOGO DE EQUIPOS
-// ==========================================
+// ======================================
+// CATALOGO DE COMPUTADORAS
+// ======================================
 
 async function mostrarProductos() {
   const turno = ++renderActual;
-  const busqueda = normalizar($("buscar").value.trim());
+  const busqueda = normalizar(
+    $("buscar").value.trim()
+  );
 
   let visibles = productos.filter(p => {
     const categoriaCorrecta =
-      categoriaActual === "Todos" || p.categoria === categoriaActual;
+      categoriaActual === "Todos" ||
+      p.categoria === categoriaActual;
 
     const texto = normalizar(
       [p.nombre, p.categoria, p.es, p.en].join(" ")
     );
 
-    return categoriaCorrecta && texto.includes(busqueda);
+    return categoriaCorrecta &&
+           texto.includes(busqueda);
   });
 
   if (ordenActual === "asc") {
-    visibles.sort((a, b) => a.precio - b.precio);
+    visibles.sort((a,b) => a.precio - b.precio);
   } else if (ordenActual === "desc") {
-    visibles.sort((a, b) => b.precio - a.precio);
+    visibles.sort((a,b) => b.precio - a.precio);
   } else if (ordenActual === "name") {
-    visibles.sort((a, b) =>
+    visibles.sort((a,b) =>
       a.nombre.localeCompare(b.nombre, idioma)
     );
   }
@@ -401,15 +580,19 @@ async function mostrarProductos() {
     }))
   );
 
+  // Evita resultados atrasados.
   if (turno !== renderActual) return;
 
-  resultados.filter(item => item.valida)
-    .forEach(item => crearTarjeta(item.producto));
+  resultados
+    .filter(resultado => resultado.valida)
+    .forEach(resultado => {
+      crearTarjetaProducto(resultado.producto);
+    });
 
   actualizarContador();
 }
 
-function crearTarjeta(p) {
+function crearTarjetaProducto(p) {
   const tarjeta = document.createElement("article");
   tarjeta.className = "producto";
 
@@ -424,7 +607,10 @@ function crearTarjeta(p) {
     </button>
 
     <h3>${p.nombre}</h3>
-    <p class="product-description">${p[idioma]}</p>
+
+    <p class="product-description">
+      ${p[idioma]}
+    </p>
 
     <div class="product-bottom">
       <p class="precio">
@@ -436,33 +622,41 @@ function crearTarjeta(p) {
         <button type="button" class="add-btn">
           ${t("add")}
         </button>
-        <a href="${p.enlace}" class="external-btn"
-           target="_blank" rel="noopener noreferrer"
+
+        <a href="${p.enlace}"
+           class="external-btn"
+           target="_blank"
+           rel="noopener noreferrer"
            aria-label="${t("viewNewegg")}">↗</a>
       </div>
     </div>
   `;
 
-  tarjeta.querySelector("img")
-    .addEventListener("error", () => {
-      tarjeta.remove();
-      cacheImagenes.delete(p.imagen);
-      actualizarContador();
-    });
+  const imagen = tarjeta.querySelector("img");
+
+  imagen.addEventListener("error", () => {
+    tarjeta.remove();
+    cacheImagenes.delete(p.imagen);
+    actualizarContador();
+  });
 
   tarjeta.querySelector(".product-image")
-    .addEventListener("click", () => abrirImagen(p));
+    .addEventListener("click", () => {
+      abrirImagen(p);
+    });
 
   tarjeta.querySelector(".add-btn")
-    .addEventListener("click", evento =>
-      agregarCarrito(p.id, evento.currentTarget)
-    );
+    .addEventListener("click", evento => {
+      agregarCarrito(p.id, evento.currentTarget);
+    });
 
   catalogo.appendChild(tarjeta);
 }
 
 function actualizarContador() {
-  const cantidad = catalogo.querySelectorAll(".producto").length;
+  const cantidad = catalogo.querySelectorAll(
+    ".producto"
+  ).length;
 
   $("resultCount").textContent =
     `${cantidad} ${t("available")}`;
@@ -475,9 +669,286 @@ function actualizarContador() {
   }
 }
 
-// ==========================================
+// ======================================
+// ILUSTRACIONES VECTORIALES DE PIEZAS
+// ======================================
+
+function iconoPieza(tipo) {
+  const baseInicio = `
+    <svg viewBox="0 0 160 120"
+         xmlns="http://www.w3.org/2000/svg"
+         fill="none"
+         stroke="#ff7900"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+  `;
+
+  const baseFin = "</svg>";
+
+  const iconos = {
+    CPU: `
+      <rect x="48" y="28" width="64" height="64"
+            rx="7" fill="#30343d" stroke-width="3"/>
+      <rect x="62" y="42" width="36" height="36"
+            rx="3" stroke-width="3"/>
+      <path d="M60 17V28M80 17V28M100 17V28
+               M60 92V103M80 92V103M100 92V103
+               M37 40H48M37 60H48M37 80H48
+               M112 40H123M112 60H123M112 80H123"
+            stroke-width="4"/>
+      <text x="80" y="65" text-anchor="middle"
+            fill="#ffffff" stroke="none"
+            font-size="14" font-weight="bold">CPU</text>
+    `,
+
+    RAM: `
+      <rect x="12" y="40" width="136" height="40"
+            rx="5" fill="#263a30" stroke-width="3"/>
+      <rect x="25" y="48" width="17" height="23" rx="2"
+            fill="#ff7900" opacity=".6"/>
+      <rect x="49" y="48" width="17" height="23" rx="2"
+            fill="#ff7900" opacity=".6"/>
+      <rect x="73" y="48" width="17" height="23" rx="2"
+            fill="#ff7900" opacity=".6"/>
+      <rect x="97" y="48" width="17" height="23" rx="2"
+            fill="#ff7900" opacity=".6"/>
+      <rect x="121" y="48" width="13" height="23" rx="2"
+            fill="#ff7900" opacity=".6"/>
+      <path d="M27 80V88M45 80V88M63 80V88
+               M81 80V88M99 80V88M117 80V88
+               M135 80V88" stroke-width="4"/>
+    `,
+
+    GPU: `
+      <rect x="12" y="31" width="136" height="60"
+            rx="7" fill="#30343d" stroke-width="3"/>
+      <circle cx="56" cy="61" r="23" stroke-width="3"/>
+      <circle cx="56" cy="61" r="9"
+              fill="#ff7900" stroke="none"/>
+      <circle cx="108" cy="61" r="23" stroke-width="3"/>
+      <circle cx="108" cy="61" r="9"
+              fill="#ff7900" stroke="none"/>
+      <path d="M23 91V100H91" stroke-width="4"/>
+    `,
+
+    SSD: `
+      <rect x="12" y="43" width="136" height="35"
+            rx="5" fill="#30343d" stroke-width="3"/>
+      <rect x="25" y="51" width="68" height="19"
+            rx="3" fill="#ff7900" opacity=".4"/>
+      <path d="M104 53H128M104 62H120M104 70H128"
+            stroke-width="3"/>
+      <circle cx="139" cy="61" r="3" fill="#ff7900"/>
+    `,
+
+    Motherboard: `
+      <rect x="44" y="10" width="72" height="100"
+            rx="5" fill="#263a30" stroke-width="3"/>
+      <rect x="56" y="23" width="34" height="34"
+            rx="4" stroke-width="3"/>
+      <rect x="97" y="22" width="8" height="47"
+            fill="#ff7900" opacity=".65"/>
+      <path d="M54 68H88M54 77H88M54 86H88
+               M92 80H106M92 90H106"
+            stroke-width="3"/>
+      <circle cx="58" cy="98" r="3" fill="#ff7900"/>
+    `,
+
+    PSU: `
+      <rect x="30" y="28" width="100" height="66"
+            rx="7" fill="#30343d" stroke-width="3"/>
+      <circle cx="78" cy="61" r="25" stroke-width="3"/>
+      <circle cx="78" cy="61" r="8" fill="#ff7900"/>
+      <path d="M78 36V52M78 70V86
+               M53 61H69M87 61H103
+               M60 43L71 54M85 68L97 80
+               M96 43L85 54M71 68L60 80"
+            stroke-width="3"/>
+    `,
+
+    Cooling: `
+      <rect x="42" y="22" width="76" height="76"
+            rx="9" fill="#30343d" stroke-width="3"/>
+      <circle cx="80" cy="60" r="29" stroke-width="3"/>
+      <path d="M80 60Q64 33 88 39Q108 48 80 60
+               M80 60Q107 43 104 68Q96 87 80 60
+               M80 60Q101 84 76 83Q58 74 80 60
+               M80 60Q55 79 57 54Q66 35 80 60"
+            fill="#ff7900" opacity=".65"
+            stroke="none"/>
+      <circle cx="80" cy="60" r="7"
+              fill="#ffffff" stroke="none"/>
+    `,
+
+    Case: `
+      <rect x="52" y="9" width="59" height="102"
+            rx="6" fill="#30343d" stroke-width="3"/>
+      <path d="M92 9V111" stroke-width="3"/>
+      <rect x="60" y="20" width="25" height="69"
+            rx="3" stroke-width="2"/>
+      <circle cx="101" cy="29" r="4" fill="#ff7900"/>
+      <path d="M65 100H80" stroke-width="3"/>
+    `
+  };
+
+  return baseInicio +
+    (iconos[tipo] || iconos.CPU) +
+    baseFin;
+}
+
+// ======================================
+// MOSTRAR NUESTRAS PIEZAS
+// ======================================
+
+function renderizarPiezas() {
+  partsCatalog.replaceChildren();
+
+  const visibles = piezas.filter(p =>
+    filtroPiezas === "Todos" ||
+    p.categoria === filtroPiezas
+  );
+
+  visibles.forEach(p => {
+    const tarjeta = document.createElement("article");
+    tarjeta.className = "part-card";
+
+    let categoriaVisible = p.categoria;
+
+    if (p.categoria === "Cooling") {
+      categoriaVisible = t("cooling");
+    }
+
+    if (p.categoria === "Case") {
+      categoriaVisible = t("cases");
+    }
+
+    tarjeta.innerHTML = `
+      <div class="part-visual" aria-hidden="true">
+        ${iconoPieza(p.categoria)}
+      </div>
+
+      <span class="part-type">
+        ${categoriaVisible}
+      </span>
+
+      <h3>${p.nombre}</h3>
+
+      <p class="part-description">
+        ${p[idioma]}
+      </p>
+
+      <div class="part-bottom">
+        <strong class="part-price">
+          ${dinero(p.precio)}
+          <small>${t("sample")}</small>
+        </strong>
+
+        <button type="button" class="part-add">
+          ${t("add")}
+        </button>
+      </div>
+    `;
+
+    tarjeta.querySelector(".part-add")
+      .addEventListener("click", evento => {
+        agregarCarrito(p.id, evento.currentTarget);
+      });
+
+    partsCatalog.appendChild(tarjeta);
+  });
+
+  $("partsResultCount").textContent =
+    `${visibles.length} ${t("partsAvailable")}`;
+}
+
+$("partsFilters").addEventListener(
+  "click",
+  evento => {
+    const boton = evento.target.closest(
+      "[data-part-filter]"
+    );
+
+    if (!boton) return;
+
+    filtroPiezas = boton.dataset.partFilter;
+
+    document.querySelectorAll(
+      "#partsFilters button"
+    ).forEach(item => {
+      const activo = item === boton;
+
+      item.classList.toggle("active", activo);
+
+      item.setAttribute(
+        "aria-pressed", String(activo)
+      );
+    });
+
+    renderizarPiezas();
+  }
+);
+
+// ======================================
+// FILTROS DE COMPUTADORAS
+// ======================================
+
+$("filtros").addEventListener("click", evento => {
+  const boton = evento.target.closest(
+    "[data-category]"
+  );
+
+  if (!boton) return;
+
+  categoriaActual = boton.dataset.category;
+
+  document.querySelectorAll("#filtros button")
+    .forEach(item => {
+      const activo = item === boton;
+
+      item.classList.toggle("active", activo);
+
+      item.setAttribute(
+        "aria-pressed", String(activo)
+      );
+    });
+
+  mostrarProductos();
+});
+
+// ======================================
+// ORDENAR COMPUTADORAS
+// ======================================
+
+$("sortButtons").addEventListener(
+  "click",
+  evento => {
+    const boton = evento.target.closest(
+      "[data-sort]"
+    );
+
+    if (!boton) return;
+
+    ordenActual = boton.dataset.sort;
+
+    document.querySelectorAll(
+      "#sortButtons button"
+    ).forEach(item => {
+      const activo = item === boton;
+
+      item.classList.toggle("active", activo);
+
+      item.setAttribute(
+        "aria-pressed", String(activo)
+      );
+    });
+
+    mostrarProductos();
+  }
+);
+
+// ======================================
 // VISOR DE IMAGEN COMPLETA
-// ==========================================
+// ======================================
 
 const visor = $("imageViewer");
 
@@ -486,74 +957,49 @@ function abrirImagen(p) {
   $("largeImage").alt = p.nombre;
   $("imageCaption").textContent = p.nombre;
 
-  if (!visor.open) visor.showModal();
+  if (!visor.open) {
+    visor.showModal();
+  }
 }
 
 function cerrarImagen() {
   if (visor.open) visor.close();
 }
 
-$("closeImage").addEventListener("click", cerrarImagen);
+$("closeImage").addEventListener(
+  "click", cerrarImagen
+);
 
 visor.addEventListener("click", evento => {
-  if (evento.target === visor) cerrarImagen();
+  if (evento.target === visor) {
+    cerrarImagen();
+  }
 });
 
 visor.addEventListener("close", () => {
   $("largeImage").removeAttribute("src");
 });
 
-// ==========================================
-// FILTROS Y ORDENAMIENTO
-// ==========================================
-
-$("filtros").addEventListener("click", evento => {
-  const boton = evento.target.closest("[data-category]");
-  if (!boton) return;
-
-  categoriaActual = boton.dataset.category;
-
-  document.querySelectorAll("#filtros button")
-    .forEach(item => {
-      const activo = item === boton;
-      item.classList.toggle("active", activo);
-      item.setAttribute("aria-pressed", String(activo));
-    });
-
-  mostrarProductos();
-});
-
-$("sortButtons").addEventListener("click", evento => {
-  const boton = evento.target.closest("[data-sort]");
-  if (!boton) return;
-
-  ordenActual = boton.dataset.sort;
-
-  document.querySelectorAll("#sortButtons button")
-    .forEach(item => {
-      const activo = item === boton;
-      item.classList.toggle("active", activo);
-      item.setAttribute("aria-pressed", String(activo));
-    });
-
-  mostrarProductos();
-});
-
-// ==========================================
-// BOLSA REDONDA LANZADA EN ARCO
-// ==========================================
+// ======================================
+// ANIMACION: BOLSA REDONDA EN ARCO
+// ======================================
 
 function impactoCarrito() {
   cartLink.classList.remove("cart-impact");
+
   void cartLink.offsetWidth;
+
   cartLink.classList.add("cart-impact");
 }
 
-cartLink.addEventListener("animationend", evento => {
-  if (evento.animationName === "cartImpact") {
-    cartLink.classList.remove("cart-impact");
+cartLink.addEventListener(
+  "animationend",
+  evento => {
+    if (evento.animationName === "cartImpact") {
+      cartLink.classList.remove("cart-impact");
+    }
   }
-});
+);
 
 function lanzarBolsa(boton) {
   if (!boton || movimientoReducido()) {
@@ -568,27 +1014,39 @@ function lanzarBolsa(boton) {
     $("shoppingBagTemplate").content
       .firstElementChild.cloneNode(true)
   );
+
   document.body.appendChild(bolsa);
 
   const origen = boton.getBoundingClientRect();
+
   const destino = cartLink
     .querySelector(".cart-svg")
     .getBoundingClientRect();
 
   const tamano = 31;
-  const x0 = origen.left + origen.width / 2 - tamano / 2;
-  const y0 = origen.top + origen.height / 2 - tamano / 2;
-  const x1 = destino.left + destino.width / 2 - tamano / 2;
-  const y1 = destino.top + destino.height * .45 - tamano / 2;
+
+  const x0 =
+    origen.left + origen.width / 2 - tamano / 2;
+
+  const y0 =
+    origen.top + origen.height / 2 - tamano / 2;
+
+  const x1 =
+    destino.left + destino.width / 2 - tamano / 2;
+
+  const y1 =
+    destino.top + destino.height * .45 - tamano / 2;
 
   const altura = Math.min(
-    230, Math.max(65, Math.abs(x1 - x0) * .32)
+    230,
+    Math.max(65, Math.abs(x1 - x0) * .32)
   );
 
   const puntos = [];
 
   for (let i = 0; i <= 30; i++) {
     const p = i / 30;
+
     const x = x0 + (x1 - x0) * p;
     const y = y0 + (y1 - y0) * p
       - 4 * altura * p * (1 - p);
@@ -602,7 +1060,9 @@ function lanzarBolsa(boton) {
 
     puntos.push({
       offset: p,
-      transform: `translate(${x}px,${y}px) rotate(${giro}deg) scale(${escala})`,
+      transform:
+        `translate(${x}px,${y}px) ` +
+        `rotate(${giro}deg) scale(${escala})`,
       opacity: opacidad
     });
   }
@@ -611,33 +1071,57 @@ function lanzarBolsa(boton) {
     duration: 1100,
     easing: "linear",
     fill: "forwards"
-  }).finished.then(() => {
-    bolsa.remove();
-    impactoCarrito();
-  }).catch(() => bolsa.remove());
+  }).finished
+    .then(() => {
+      bolsa.remove();
+      impactoCarrito();
+    })
+    .catch(() => bolsa.remove());
 }
 
-// ==========================================
-// CARRITO DE COMPRAS
-// ==========================================
+// ======================================
+// UN SOLO CARRITO PARA TODO
+// ======================================
 
 function agregarCarrito(id, boton) {
-  const producto = productos.find(p => p.id === id);
-  if (!producto) return;
+  // Busca tanto computadoras como piezas.
+  const articulo = buscarArticulo(id);
 
-  const existente = carrito.find(item => item.id === id);
+  if (!articulo) return;
 
-  if (existente) existente.cantidad++;
-  else carrito.push({ id, cantidad: 1 });
+  const existente = carrito.find(
+    item => item.id === id
+  );
+
+  if (existente) {
+    existente.cantidad++;
+  } else {
+    carrito.push({
+      id,
+      cantidad: 1
+    });
+  }
 
   actualizarCarrito();
   lanzarBolsa(boton);
 }
 
 function eliminarProducto(id) {
-  carrito = carrito.filter(item => item.id !== id);
+  carrito = carrito.filter(
+    item => item.id !== id
+  );
+
   actualizarCarrito();
 }
+
+function vaciarCarrito() {
+  carrito = [];
+  actualizarCarrito();
+}
+
+$("vaciarCarrito").addEventListener(
+  "click", vaciarCarrito
+);
 
 function actualizarCarrito() {
   const lista = $("listaCarrito");
@@ -647,38 +1131,52 @@ function actualizarCarrito() {
   let cantidad = 0;
 
   if (!carrito.length) {
-    const aviso = document.createElement("div");
-    aviso.className = "cart-empty";
-    aviso.textContent = t("empty");
-    lista.appendChild(aviso);
+    const vacio = document.createElement("div");
+
+    vacio.className = "cart-empty";
+    vacio.textContent = t("empty");
+
+    lista.appendChild(vacio);
   }
 
   carrito.forEach(item => {
-    const p = productos.find(producto => producto.id === item.id);
-    if (!p) return;
+    // FUNCIONA CON AMBOS CATALOGOS.
+    const articulo = buscarArticulo(item.id);
 
-    const subtotal = p.precio * item.cantidad;
+    if (!articulo) return;
+
+    const subtotal =
+      articulo.precio * item.cantidad;
+
     total += subtotal;
     cantidad += item.cantidad;
 
     const fila = document.createElement("div");
+
     fila.className = "cart-row";
 
     fila.innerHTML = `
       <div>
-        <strong>${p.nombre}</strong>
-        <small>${item.cantidad} × ${dinero(p.precio)}</small>
+        <strong>${articulo.nombre}</strong>
+        <small>
+          ${item.cantidad} ×
+          ${dinero(articulo.precio)}
+        </small>
       </div>
+
       <div class="cart-row-right">
-        <span>${dinero(subtotal)}</span><br>
-        <button class="remove-btn" type="button">
+        <span>${dinero(subtotal)}</span>
+        <br>
+        <button type="button" class="remove-btn">
           ${t("remove")}
         </button>
       </div>
     `;
 
     fila.querySelector(".remove-btn")
-      .addEventListener("click", () => eliminarProducto(p.id));
+      .addEventListener("click", () => {
+        eliminarProducto(articulo.id);
+      });
 
     lista.appendChild(fila);
   });
@@ -687,60 +1185,74 @@ function actualizarCarrito() {
   $("cartCount").textContent = cantidad;
 }
 
-$("vaciarCarrito").addEventListener("click", () => {
-  carrito = [];
-  actualizarCarrito();
-});
-
-// ==========================================
-// CARRERA: STICKMAN + CARRITO
-// 6 SEGUNDOS, CADA 25 SEGUNDOS
-// ==========================================
+// ======================================
+// STICKMAN + CARRITO CORRIENDO
+// DURACION: 6 SEGUNDOS
+// REPETICION: CADA 25 SEGUNDOS
+// ======================================
 
 const INTERVALO_CARRITO = 25000;
+
 let intervaloCarrito = null;
 let carritoEnVista = false;
 
 function correrCarritoAnimado() {
-  if (document.hidden || movimientoReducido()) return;
+  if (document.hidden || movimientoReducido()) {
+    return;
+  }
 
-  const pista = document.querySelector(".cart-racetrack");
+  const pista = document.querySelector(
+    ".cart-racetrack"
+  );
 
-  // Recorre exactamente el ancho de la pista.
   raceGroup.style.setProperty(
     "--race-distance",
     `${pista.clientWidth + 25}px`
   );
 
   raceGroup.classList.remove("run");
+
   void raceGroup.offsetWidth;
+
   raceGroup.classList.add("run");
 }
 
-raceGroup.addEventListener("animationend", evento => {
-  if (evento.target === raceGroup &&
-      evento.animationName === "raceTogether") {
-    raceGroup.classList.remove("run");
+raceGroup.addEventListener(
+  "animationend",
+  evento => {
+    if (
+      evento.target === raceGroup &&
+      evento.animationName === "raceTogether"
+    ) {
+      raceGroup.classList.remove("run");
+    }
   }
-});
+);
 
 function detenerCarrera() {
   if (intervaloCarrito !== null) {
     clearInterval(intervaloCarrito);
     intervaloCarrito = null;
   }
+
   raceGroup.classList.remove("run");
 }
 
 function iniciarCarrera() {
   if (intervaloCarrito !== null) return;
-  if (!carritoEnVista || document.hidden ||
-      movimientoReducido()) return;
 
-  // Corre inmediatamente al entrar.
+  if (
+    !carritoEnVista ||
+    document.hidden ||
+    movimientoReducido()
+  ) {
+    return;
+  }
+
+  // Carrera inmediata al entrar.
   correrCarritoAnimado();
 
-  // Repite cada 25 segundos.
+  // Repeticion automatica.
   intervaloCarrito = setInterval(() => {
     if (carritoEnVista && !document.hidden) {
       correrCarritoAnimado();
@@ -753,46 +1265,70 @@ const observadorCarrito = new IntersectionObserver(
     entradas.forEach(entrada => {
       carritoEnVista = entrada.isIntersecting;
 
-      if (carritoEnVista) iniciarCarrera();
-      else detenerCarrera();
+      if (carritoEnVista) {
+        iniciarCarrera();
+      } else {
+        detenerCarrera();
+      }
     });
   },
-  { threshold: .3 }
+  {
+    threshold: .3
+  }
 );
 
 observadorCarrito.observe($("carrito"));
 
-document.addEventListener("visibilitychange", () => {
-  if (document.hidden) detenerCarrera();
-  else if (carritoEnVista) iniciarCarrera();
-});
+document.addEventListener(
+  "visibilitychange",
+  () => {
+    if (document.hidden) {
+      detenerCarrera();
+    } else if (carritoEnVista) {
+      iniciarCarrera();
+    }
+  }
+);
 
-// ==========================================
-// PC ANIMADA PAUSAR / REANUDAR
-// ==========================================
+// ======================================
+// PC MINIMALISTA: PAUSAR Y REANUDAR
+// ======================================
 
 const pc = $("pcInteractive");
 
 function alternarPc() {
   const pausada = pc.classList.toggle("paused");
 
-  pc.setAttribute("aria-pressed", String(pausada));
   pc.setAttribute(
-    "aria-label", t(pausada ? "resume" : "pause")
+    "aria-pressed", String(pausada)
+  );
+
+  pc.setAttribute(
+    "aria-label",
+    t(pausada ? "resume" : "pause")
   );
 }
 
 pc.addEventListener("click", alternarPc);
+
 pc.addEventListener("keydown", evento => {
-  if (evento.key === "Enter" || evento.key === " ") {
+  if (
+    evento.key === "Enter" ||
+    evento.key === " "
+  ) {
     evento.preventDefault();
     alternarPc();
   }
 });
 
-// ==========================================
-// INICIAR
-// ==========================================
+// ======================================
+// INICIAR LA PAGINA COMPLETA
+// ======================================
 
 $("heroCount").textContent = productos.length;
+$("partsCount").textContent = piezas.length;
+
+// Una sola inicializacion.
+// Carga ambos catalogos, traducciones
+// y carrito desde el principio.
 cambiarIdioma("es");
