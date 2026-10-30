@@ -2,9 +2,10 @@
 "use strict";
 
 // ==========================================
-// PIEZASPC - PRODUCTOS
+// PIEZASPC - CATALOGO BILINGUE
 // ==========================================
-// Precios ilustrativos; no son precios en vivo.
+// Precios ilustrativos, no en vivo.
+// Imagenes externas de Newegg.
 
 const productos = [
   {
@@ -130,7 +131,7 @@ const productos = [
 ];
 
 // ==========================================
-// TEXTOS EN ESPAÑOL E INGLES
+// TRADUCCIONES CORREGIDAS
 // ==========================================
 
 const traducciones = {
@@ -234,7 +235,7 @@ const traducciones = {
 };
 
 // ==========================================
-// ESTADO Y UTILIDADES
+// VARIABLES
 // ==========================================
 
 const $ = id => document.getElementById(id);
@@ -248,7 +249,6 @@ let renderActual = 0;
 const catalogo = $("catalogo");
 const cartLink = $("cartLink");
 const raceGroup = $("raceGroup");
-
 const cacheImagenes = new Map();
 
 function t(clave) {
@@ -268,6 +268,12 @@ function movimientoReducido() {
   ).matches;
 }
 
+function normalizar(texto) {
+  return texto.normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
 // ==========================================
 // CAMBIAR IDIOMA
 // ==========================================
@@ -278,10 +284,11 @@ function cambiarIdioma(nuevoIdioma) {
   idioma = nuevoIdioma;
   document.documentElement.lang = idioma;
 
-  document.querySelectorAll("[data-i18n]").forEach(elemento => {
-    const texto = t(elemento.dataset.i18n);
-    if (texto) elemento.textContent = texto;
-  });
+  document.querySelectorAll("[data-i18n]")
+    .forEach(elemento => {
+      const traduccion = t(elemento.dataset.i18n);
+      if (traduccion) elemento.textContent = traduccion;
+    });
 
   $("buscar").placeholder = t("search");
   $("buscar").setAttribute("aria-label", t("search"));
@@ -289,12 +296,8 @@ function cambiarIdioma(nuevoIdioma) {
   $("langES").classList.toggle("active", idioma === "es");
   $("langEN").classList.toggle("active", idioma === "en");
 
-  $("langES").setAttribute(
-    "aria-pressed", String(idioma === "es")
-  );
-  $("langEN").setAttribute(
-    "aria-pressed", String(idioma === "en")
-  );
+  $("langES").setAttribute("aria-pressed", String(idioma === "es"));
+  $("langEN").setAttribute("aria-pressed", String(idioma === "en"));
 
   $("closeImage").setAttribute("aria-label", t("close"));
   cartLink.setAttribute("aria-label", t("viewCart"));
@@ -312,7 +315,7 @@ $("langES").addEventListener("click", () => cambiarIdioma("es"));
 $("langEN").addEventListener("click", () => cambiarIdioma("en"));
 
 // ==========================================
-// BUSCADOR SIN SIMBOLOS ESPECIALES
+// BUSCADOR SIN CARACTERES ESPECIALES
 // ==========================================
 
 function limpiarBusqueda(texto) {
@@ -322,26 +325,17 @@ function limpiarBusqueda(texto) {
     .trimStart();
 }
 
-function normalizar(texto) {
-  return texto
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
-}
-
 $("buscar").addEventListener("input", evento => {
   const input = evento.target;
   const limpio = limpiarBusqueda(input.value);
 
-  if (input.value !== limpio) {
-    input.value = limpio;
-  }
+  if (input.value !== limpio) input.value = limpio;
 
   mostrarProductos();
 });
 
 // ==========================================
-// IMAGENES
+// COMPROBAR IMAGENES
 // ==========================================
 
 function verificarImagen(url) {
@@ -354,14 +348,14 @@ function verificarImagen(url) {
   }
 
   const promesa = new Promise(resolve => {
-    const img = new Image();
+    const imagen = new Image();
 
-    img.onload = () =>
-      resolve(img.naturalWidth > 0 && img.naturalHeight > 0);
+    imagen.onload = () => resolve(
+      imagen.naturalWidth > 0 && imagen.naturalHeight > 0
+    );
 
-    img.onerror = () => resolve(false);
-
-    img.src = url;
+    imagen.onerror = () => resolve(false);
+    imagen.src = url;
   });
 
   cacheImagenes.set(url, promesa);
@@ -369,7 +363,7 @@ function verificarImagen(url) {
 }
 
 // ==========================================
-// CATALOGO
+// CATALOGO DE EQUIPOS
 // ==========================================
 
 async function mostrarProductos() {
@@ -378,8 +372,7 @@ async function mostrarProductos() {
 
   let visibles = productos.filter(p => {
     const categoriaCorrecta =
-      categoriaActual === "Todos" ||
-      p.categoria === categoriaActual;
+      categoriaActual === "Todos" || p.categoria === categoriaActual;
 
     const texto = normalizar(
       [p.nombre, p.categoria, p.es, p.en].join(" ")
@@ -402,16 +395,15 @@ async function mostrarProductos() {
   $("resultCount").textContent = t("loading");
 
   const resultados = await Promise.all(
-    visibles.map(async p => ({
-      producto: p,
-      disponible: await verificarImagen(p.imagen)
+    visibles.map(async producto => ({
+      producto,
+      valida: await verificarImagen(producto.imagen)
     }))
   );
 
   if (turno !== renderActual) return;
 
-  resultados
-    .filter(item => item.disponible)
+  resultados.filter(item => item.valida)
     .forEach(item => crearTarjeta(item.producto));
 
   actualizarContador();
@@ -426,7 +418,7 @@ function crearTarjeta(p) {
       ${p.categoria === "Movil" ? t("mobile") : p.categoria}
     </span>
 
-    <button class="product-image" type="button"
+    <button type="button" class="product-image"
             aria-label="${t("zoom")}: ${p.nombre}">
       <img src="${p.imagen}" alt="${p.nombre}">
     </button>
@@ -441,31 +433,30 @@ function crearTarjeta(p) {
       </p>
 
       <div class="product-actions">
-        <button class="add-btn" type="button">
+        <button type="button" class="add-btn">
           ${t("add")}
         </button>
-
         <a href="${p.enlace}" class="external-btn"
            target="_blank" rel="noopener noreferrer"
-           aria-label="${t("viewNewegg")}"
-           title="${t("viewNewegg")}">↗</a>
+           aria-label="${t("viewNewegg")}">↗</a>
       </div>
     </div>
   `;
 
-  tarjeta.querySelector("img").addEventListener("error", () => {
-    tarjeta.remove();
-    cacheImagenes.delete(p.imagen);
-    actualizarContador();
-  });
+  tarjeta.querySelector("img")
+    .addEventListener("error", () => {
+      tarjeta.remove();
+      cacheImagenes.delete(p.imagen);
+      actualizarContador();
+    });
 
   tarjeta.querySelector(".product-image")
     .addEventListener("click", () => abrirImagen(p));
 
   tarjeta.querySelector(".add-btn")
-    .addEventListener("click", evento => {
-      agregarCarrito(p.id, evento.currentTarget);
-    });
+    .addEventListener("click", evento =>
+      agregarCarrito(p.id, evento.currentTarget)
+    );
 
   catalogo.appendChild(tarjeta);
 }
@@ -485,7 +476,7 @@ function actualizarContador() {
 }
 
 // ==========================================
-// VISOR DE IMAGEN
+// VISOR DE IMAGEN COMPLETA
 // ==========================================
 
 const visor = $("imageViewer");
@@ -549,7 +540,7 @@ $("sortButtons").addEventListener("click", evento => {
 });
 
 // ==========================================
-// ANIMACION: BOLSA REDONDA EN ARCO
+// BOLSA REDONDA LANZADA EN ARCO
 // ==========================================
 
 function impactoCarrito() {
@@ -577,24 +568,21 @@ function lanzarBolsa(boton) {
     $("shoppingBagTemplate").content
       .firstElementChild.cloneNode(true)
   );
-
   document.body.appendChild(bolsa);
 
   const origen = boton.getBoundingClientRect();
   const destino = cartLink
-    .querySelector(".cart-svg").getBoundingClientRect();
+    .querySelector(".cart-svg")
+    .getBoundingClientRect();
 
-  const tamaño = 31;
-
-  const x0 = origen.left + origen.width / 2 - tamaño / 2;
-  const y0 = origen.top + origen.height / 2 - tamaño / 2;
-
-  const x1 = destino.left + destino.width / 2 - tamaño / 2;
-  const y1 = destino.top + destino.height * .45 - tamaño / 2;
+  const tamano = 31;
+  const x0 = origen.left + origen.width / 2 - tamano / 2;
+  const y0 = origen.top + origen.height / 2 - tamano / 2;
+  const x1 = destino.left + destino.width / 2 - tamano / 2;
+  const y1 = destino.top + destino.height * .45 - tamano / 2;
 
   const altura = Math.min(
-    230,
-    Math.max(65, Math.abs(x1 - x0) * .32)
+    230, Math.max(65, Math.abs(x1 - x0) * .32)
   );
 
   const puntos = [];
@@ -614,9 +602,7 @@ function lanzarBolsa(boton) {
 
     puntos.push({
       offset: p,
-      transform:
-        `translate(${x}px,${y}px) ` +
-        `rotate(${giro}deg) scale(${escala})`,
+      transform: `translate(${x}px,${y}px) rotate(${giro}deg) scale(${escala})`,
       opacity: opacidad
     });
   }
@@ -628,9 +614,7 @@ function lanzarBolsa(boton) {
   }).finished.then(() => {
     bolsa.remove();
     impactoCarrito();
-  }).catch(() => {
-    bolsa.remove();
-  });
+  }).catch(() => bolsa.remove());
 }
 
 // ==========================================
@@ -638,16 +622,13 @@ function lanzarBolsa(boton) {
 // ==========================================
 
 function agregarCarrito(id, boton) {
-  const p = productos.find(item => item.id === id);
-  if (!p) return;
+  const producto = productos.find(p => p.id === id);
+  if (!producto) return;
 
   const existente = carrito.find(item => item.id === id);
 
-  if (existente) {
-    existente.cantidad++;
-  } else {
-    carrito.push({ id, cantidad: 1 });
-  }
+  if (existente) existente.cantidad++;
+  else carrito.push({ id, cantidad: 1 });
 
   actualizarCarrito();
   lanzarBolsa(boton);
@@ -697,9 +678,7 @@ function actualizarCarrito() {
     `;
 
     fila.querySelector(".remove-btn")
-      .addEventListener("click", () => {
-        eliminarProducto(p.id);
-      });
+      .addEventListener("click", () => eliminarProducto(p.id));
 
     lista.appendChild(fila);
   });
@@ -714,34 +693,33 @@ $("vaciarCarrito").addEventListener("click", () => {
 });
 
 // ==========================================
-// CARRITO + MUÑECO: 6 SEGUNDOS
-// REPETICION CADA 25 SEGUNDOS
+// CARRERA: STICKMAN + CARRITO
+// 6 SEGUNDOS, CADA 25 SEGUNDOS
 // ==========================================
 
 const INTERVALO_CARRITO = 25000;
-
 let intervaloCarrito = null;
 let carritoEnVista = false;
 
 function correrCarritoAnimado() {
   if (document.hidden || movimientoReducido()) return;
 
-  // Ajustar el recorrido al ancho real del carril.
   const pista = document.querySelector(".cart-racetrack");
+
+  // Recorre exactamente el ancho de la pista.
   raceGroup.style.setProperty(
     "--race-distance",
     `${pista.clientWidth + 25}px`
   );
 
-  // Reiniciar ambos simultaneamente,
-  // pues comparten el mismo contenedor.
   raceGroup.classList.remove("run");
   void raceGroup.offsetWidth;
   raceGroup.classList.add("run");
 }
 
 raceGroup.addEventListener("animationend", evento => {
-  if (evento.animationName === "raceTogether") {
+  if (evento.target === raceGroup &&
+      evento.animationName === "raceTogether") {
     raceGroup.classList.remove("run");
   }
 });
@@ -751,18 +729,18 @@ function detenerCarrera() {
     clearInterval(intervaloCarrito);
     intervaloCarrito = null;
   }
-
   raceGroup.classList.remove("run");
 }
 
 function iniciarCarrera() {
   if (intervaloCarrito !== null) return;
-
   if (!carritoEnVista || document.hidden ||
       movimientoReducido()) return;
 
+  // Corre inmediatamente al entrar.
   correrCarritoAnimado();
 
+  // Repite cada 25 segundos.
   intervaloCarrito = setInterval(() => {
     if (carritoEnVista && !document.hidden) {
       correrCarritoAnimado();
@@ -775,11 +753,8 @@ const observadorCarrito = new IntersectionObserver(
     entradas.forEach(entrada => {
       carritoEnVista = entrada.isIntersecting;
 
-      if (carritoEnVista) {
-        iniciarCarrera();
-      } else {
-        detenerCarrera();
-      }
+      if (carritoEnVista) iniciarCarrera();
+      else detenerCarrera();
     });
   },
   { threshold: .3 }
@@ -788,15 +763,12 @@ const observadorCarrito = new IntersectionObserver(
 observadorCarrito.observe($("carrito"));
 
 document.addEventListener("visibilitychange", () => {
-  if (document.hidden) {
-    detenerCarrera();
-  } else if (carritoEnVista) {
-    iniciarCarrera();
-  }
+  if (document.hidden) detenerCarrera();
+  else if (carritoEnVista) iniciarCarrera();
 });
 
 // ==========================================
-// PC MINIMALISTA INTERACTIVA
+// PC ANIMADA PAUSAR / REANUDAR
 // ==========================================
 
 const pc = $("pcInteractive");
@@ -811,7 +783,6 @@ function alternarPc() {
 }
 
 pc.addEventListener("click", alternarPc);
-
 pc.addEventListener("keydown", evento => {
   if (evento.key === "Enter" || evento.key === " ") {
     evento.preventDefault();
